@@ -4,10 +4,11 @@ author = "Mafinar Khan"
 title = "Day 1 - Tabula Rasa"
 linktitle = "Day 1 - Tabula Rasa"
 tags = [
+    "elixir",
+    "elixir-diary",
     "basic",
     "error-handling",
-    "pattern",
-    "guard"
+    "pattern-matching"
 ]
 weight = 10
 description = "I did enough exploration the past few days and it's time I clean slate and proceed as someone learning Elixir. Not a Python programmer trying to translate Python idioms into Elixir or a Clojure programmer's view of the language, but starting with a clean slate and learning from zero."
@@ -23,7 +24,7 @@ So, assuming zero knowledge of the language, I proceed with the rest of my days 
 
 How do I run a file? I know `iex` is the magical shell that let's me insta-code, but what if I want to write a program, a script of sorts with Elixir? Easy, I write a `.exs` file and do an `elixir <my_file_name>.exs`. 
 
-```
+```elixir
 # hello_world.exs
 defmodule HelloWorld do
     def play do
@@ -42,7 +43,7 @@ What if I am in the shell, compiled the code and then I change it and want to se
 
 *Modules* in Elixir contain functions. There are anonymous functions which are of the `fn(<arg1>,<arg2>...) -> <body> end` syntax and can be bound with a var, but for the named functions to exist, they have to reside under a module. 
 
-```
+```elixir
 # Anonymous function
 square_area = fn(n) -> n*n end
 
@@ -58,7 +59,7 @@ end
 
 We can add more functions to the module, for instance, the ability to compute the area of a rectangle, given `height` and `width`:
 
-```
+```elixir
 defmodule Area do
     def square(side \\ 0) do
         side * side
@@ -76,7 +77,7 @@ What were those `\\ 0` about? That's how Elixir shows default arguments. `height
 
 The `=` in Elixir is called the *match operator*. It doesn't seem like other languages' `=`-s in a sense that it doesn't assign anything to a variable, it matches, and binds the right hand side expression with the left hand side one. 
 
-```
+```elixir
 x = 1 # We all know what happens here
 x = 2 # `x` now refers to someone else
 3 = x # 3 does *not* match with `x`, so we get a `MatchError`
@@ -91,7 +92,7 @@ I always make sure I familiar myself with error messages of a programing languag
 
 This brings us to exception handling. I know it's too early to be handling exceptions but well, I had dived in there early for all but my first and second languages. Let's start with everybody's favorite example:
 
-```
+```elixir
 # Let's 1/0 and see what the error is called, ArithmeticError eh?
 defmodule BadMath do
     def divide(a, b) do
@@ -122,7 +123,7 @@ How do you ~~throw~~ `raise` an exception? The `raise` macro, of course. Just pu
 
 ~~Speaking of striking out things,~~ looks like Elixir has `throw` and `catch` as well (See what I mean by starting with _No knowlege at all?_). `throw` is *not* like `raise`. It just does it's namesake, takes a value, and throws it into the `catch`ers pitch, anything that is thrown gets handled. Like the following:
 
-```
+```elixir
 tct = fn a,b ->
     try do
         c = a/b
@@ -149,7 +150,7 @@ end
 
 One thing we notice is, a lot of functions demand to be wrapped inside a `try`. And there's sugar for it too:
 
-```
+```elixir
 defmodule BadMath do
     def divide(a, b) do
         a/b
@@ -188,7 +189,7 @@ Let's take an example here, `[1, 2, 3]` is a list, right? And what of `[x, y, z]
 
 So, let's do some pattern matchings based on whatever we know:
 
-```
+```elixir
 [a, 2, [c, d], 5] = [1, 2, [3, 4], 5]
 #[a, 2, [c, d], 5]
 #[1, 2, [3, 4], 5]
@@ -221,7 +222,7 @@ I have briefly mentioned `List`, `Tuple` and `Map` without talking about it much
 
 Back to patterns. And here's something interesting, function arguments are pattern-ready. Which means if we define a function definition like `def f(0, 1, x)` and put `0, 1, 2` as the actual parameters, then the function will be activated and `x` will be bound with `2`. This eliminates a lot of conditions and logics and makes the programs look declarative. Modules match all definitions of the functions from top to bottom and activates the first match. Here's an example:
 
-```
+```elixir
 defmodule BadMath do
     def factorial(0), do: 1
     def factorial(n), do: n * factorial(n-1)
@@ -232,7 +233,7 @@ In the snippet above, when we call `BadMath.factorial(4)`, then it first matches
 
 Here's one with the head rest pattern.
 
-```
+```elixir
 defmodule Sort do
     def quicksort([]), do: []
     def quicksort([h|t]) do
@@ -248,7 +249,7 @@ end
 
 This is fun... let's write some more of these.
 
-```
+```elixir
 defmodule List do
     def len([]), do: 0
     def len([h|t]), do: 1 + len(t)
@@ -267,7 +268,7 @@ Then there are guards. Guards are basically the `when` clauses that were mention
 
 Guards guard their patterns, a guard starts with `when` and is followed by a condition expression. Boolean functions can be called too but predicates that guards allow are very few in number and user-custom functions cannot be used.
 
-```
+```elixir
 defmodule Grade do
     def show(n) when n <= 100 and n >= 90, do: "A"
     def show(n) when n < 90 and n > 80, do: "B"
@@ -280,7 +281,7 @@ end
 
 This brings us to the `case` macro. The `case` macro takes an expression and matches it with a set of patterns. The grade above could be `case`d like:
 
-```
+```elixir
 pass_or_fail = fn marks ->
     case marks do
         m when m < 33 -> :fail
@@ -294,7 +295,7 @@ See when we call the function above, the `:wrong` never appears. This is because
 
 Similar is `cond` macro. Instead of taking a value and matching a set of patterns, it dictates a set of conditions and expression that is associated with them.
 
-```
+```elixir
 pass_or_fail = fn marks ->
     cond do
         marks <= 100 and marks >= 33 -> :pass
@@ -310,7 +311,7 @@ Firstly, Guards know limited functions. Not all functions can be used in guards,
 
 Guards don't throw exceptions. I had understood it the hard way. The following piece of code, for example:
 
-```
+```elixir
 defmodule WeirdMath do
     # def division_even(a, 0), do: raise ArithmeticError, "Division by zero"
     def division_even(a, b) when rem(a/b, 2) == 1, do: false

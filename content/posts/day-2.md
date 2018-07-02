@@ -4,11 +4,10 @@ author = "Mafinar Khan"
 title = "Day 2 - Diving in..."
 linktitle = "Day 2 - Diving In..."
 tags = [
+    "elixir",
+    "elixir-diary",
     "enum",
-    "list",
-    "tuple",
-    "set",
-    "comprehension"
+    "tuple"
 ]
 weight = 10
 description = "Since last night I've been playing with some of the data structures of Elixir, mostly lists, tuples and maps. While I'm not new to these data structures, the way Elixir's API is laid out is a little different and took awhile to get used to"
@@ -24,7 +23,7 @@ Tuples are fit for use cases that leverages its find-by-index performance issue 
 
 There is this pattern I've seen a lot in Elixir. You use tuples as return values and put the status as the first element, as an atom. It's kindof like the `(result, err)` pattern of `Golang`, with the `err` part positioned first, and also as `keyword`. They are also good candidates as function arguments and replacing if-s. For instance:
 
-```
+```elixir
 defmodule Area do
     @pi 3.1416
 
@@ -62,7 +61,7 @@ So what is this `Enum` thing? It does all the kung-fu required to play with iter
 * Compute the distance between each tuples of every chunk in the list
 * Compute the total of all distances
 
-```
+```elixir
 defmodule Distance do
     # Saving me some typings, `import` saves you from 
     # `<module>.` prefixes. Can be just `map` instead of `Enum.map`
@@ -116,7 +115,7 @@ Keywords lists are special lists in which all elements are 2-tuples in which fir
 
 Keyword lists add an additional syntactic benefit. If a named functions last argument is expected to be a keyword list, then the enclosing `[]` can be stripped off.
 
-```
+```elixir
 defmodule StrippedKW do
     def example name: name, id: id do
         {:info, "#{name} - #{id}"}
@@ -128,7 +127,7 @@ StrippedKW.example name: name, id: id
 ```
 The sugar of omitting the `[` and `]` allows us to create fluent and beautiful APIs. For example, we can do stuff like:
 
-``` 
+```elixir
 Assets.all(  
   from vehicle in Assets.Vehicles,
       where: vehicle.truck? == true,
@@ -142,7 +141,7 @@ Omission of parentheses or brackets make a set of function call seem like a tota
 
 `Set` structure is similar to its mathematical equivalent and is depicted by the `%MapSet{}` struct and created with the `new/1` function. For example `MapSet.new [1, 2, 3]` is equivalent of the mathematical `{1, 2, 3}`. All set operations such as `MapSet.union/2`, `MapSet.intersection/2`, `MapSet.difference/2` etc are defined under the `MapSet` module along with predicates such as `MapSet.member?/2`, `MapSet.disjoint?/2`.
 
-```
+```elixir
 u = MapSet.new [1, 2, 3, 4, 5, 6]
 a = MapSet.new [1, 3, 5]
 b = MapSet.new [2, 4, 6]
@@ -167,7 +166,7 @@ The `Enum` contains a good load of function to play with iterable structures. Al
 
 Let's play a little more with `Enum`s (Will write the first few minutes' ones here)
 
-```
+```elixir
 [10, 34, 32, 12, 11, 19, 20] # Le list 
     |> Enum.with_index # Get indexed tuple at {value, index} formation 
     |> Enum.filter(fn {v, idx} -> rem(idx, 2) == 1 end) # Find odd-indexed tuples

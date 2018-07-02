@@ -6,9 +6,9 @@ linktitle = "Day 3 - Mix"
 next = "/"
 prev = "/"
 tags = [
-    "mix",
-    "tooling",
-    "task"
+    "elixir",
+    "elixir-diary",
+    "mix"
 ]
 weight = 10
 description = "OMG It's over six months and I'm at day 3! Let's mix in some tooling today"
@@ -50,7 +50,7 @@ Well, without any preverification I could tell that `mix.exs` might just be `Mix
 
 Next step would be to inspect the `mix.exs` file. Here is it-
 
-```
+```elixir
 defmodule HelloMix.Mixfile do
   use Mix.Project
 
@@ -96,7 +96,7 @@ I think other than the `version` part, I should leave the `application` segment 
 
 ~~Common sense tells me to add a dependancy as a map, and it was correct~~ (erm, no it was not, we're not in Clojure anymore, use `Tuple`), so let's add `{:timex, "~> 3.0"}` to our dependancy list so that it looks like:
 
-```
+```elixir
   defp deps do
     [{:timex, "~> 3.0"}]
   end
@@ -110,7 +110,7 @@ One thing I have seen is that I did not have to put anything in the `application
 
 If I do a single `iex`, then I cannot get all the `deps` goodness I mentioned to `Mix`, the `-S mix` takes care of that and gives me an environment where `Time<TAB>` would autocomplete to `Timex`. So I can play with it straight away. Let's write something in `lib/hello_mix.ex`:
 
-```
+```elixir
 defmodule HelloMix do
   @moduledoc """
   Documentation for HelloMix.
@@ -132,7 +132,7 @@ Now if we `iex -S mix` and type in `HelloMix.now()`, we'll see a formatted strin
 
 `mix compile`, as the name says, compiles your project, but what if I needed `mix c`? Aliases to the rescue...
 
-```
+```elixir
 defp aliases do
  [c: "compile"]
 end
@@ -142,7 +142,7 @@ And then add `aliases: aliases()` to the project vector.
 
 Aliases can also have functions defined within the module and work as task, so if, we say, have a `hello` function, it can run it out with `mix hello`. The function would be `defp hello(_), do: IO.puts "Hello"`. The first parameter is a list of arguments provided, so if we want to know about the arguments, we can go like:
 
-```
+```elixir
 # Note to self, DO UPDATE the `project` with the `aliases`
 defp aliases do
   [c: "compile",
@@ -160,7 +160,7 @@ end
 
 The way of running tasks defined here is more likely to stay `private` to the app I am using, since the definitions all go into my own `mix.exs`. We can make usable by other project task by simple creating a module that `uses` the `Mix.Task` behaviour. Such as the one below: (I saved it in and as `lib/tasks/concat.ex`)
 
-```
+```elixir
 defmodule Mix.Tasks.Concat do
   use Mix.Task
 

@@ -6,7 +6,7 @@ copyright = "&copy; Copyright 2018 Mafinar K."
 
 [params]
   bgcolor = "#34495e"
-  subtitle = "<a class='about-link' href='#'>Mafinar</a> writes about things"
+  subtitle = "<a class='about-link' href='/pages/about/'>Mafinar</a> writes about things"
   author = "Mafinar Khan"
   bio = "Pythonista.Djangonaut.Alchemist"
   twitter = "mafinar"
@@ -23,5 +23,4 @@ copyright = "&copy; Copyright 2018 Mafinar K."
   themecolor = "#34495e"
 
   [taxonomies]
-  category = "categories"
   tag = "tags"
