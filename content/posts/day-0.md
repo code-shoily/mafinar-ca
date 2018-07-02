@@ -15,13 +15,13 @@ description = "Let's install this thing and do some explorations. This is a tota
 
 Obviously the first thing I need to do is, to unbox the goodies. For me, it's just `brew install elixir` and that's it. I will try out my Linux machine tomorrow. Moving on...
 
-### The Editor
+## The Editor
 
 Vim's been good to me for the past decade and I see no reason why I should not use it. A quick googling introduced me to [alchemist.vim](https://github.com/slashmili/alchemist.vim) and [vim-elixir](https://github.com/elixir-lang/vim-elixir). I'm guessing the former does autocompletion and stuff while the latter is for syntax highlighting.
 
 I'm also liking Visual Studio Code a lot these days so might as well go and set it up too. I think the command I'm looking for is `ext install vscode-elixir`. Done. Though I don't think I'll be using the editor much today.
 
-### The Shell
+## The Shell
 
 Here's the fun part. I like languages with REPLs, and those that encourage the use of it by giving some nice helpers built-in. After firing up the `iex` command, it seems to me that Elixir has awesome support for it. Just go ahead and try typing `h()` in the shell and you'll see what I mean.
 
@@ -32,11 +32,11 @@ Anyway, one of the things we Pythonistas are used to is the `help()` and `dir()`
 How do I get out? `CTRL+C` does it for Elixir shell. That's exit!
 
 
-### Exploration
+## Exploration
 
 This is where I fire up the shell and start playing. The first thing I need to see is how I get to assign stuff. That's easy, just do a `variable_name = value`. No `let`, `var`, `val` etc. Since Elixir is a functional programming language, the first thing I'd look for is, well, functions? Let's see,
 
-```elixir
+```
 odd? = fn(n) -> rem(n, 2) == 1 end
 even? = fn n -> not odd?.(n) end
 
@@ -46,7 +46,7 @@ IO.puts even?.(11) #=> false
 
 Despite knowing it, I did end up calling the function as `odd?(11)`. It seems that Elixir anonymous functions need a `.()` for the arguments to be applied. True and False are just true/false. There's a convenient shortcut for it too:
 
-```elixir
+```
 odd? = &(rem(&1, 2) == 1)
 event? = &(not odd?.(&1))
 right_triangle? = &(&1*&1 == &2*&2 + &3*&3)
@@ -54,7 +54,7 @@ right_triangle? = &(&1*&1 == &2*&2 + &3*&3)
 
 Sort of like Clojure's `#(odd? %1)`. Convenient. But how do I make stuff that I can call without the parenthesis? Define a named function inside a module:
 
-```elixir
+```
 defmodule OddEven do
     def odd? n do
         rem(n, 2) == 1
@@ -70,7 +70,7 @@ Oh, and comments begin `# with a hash`
 
 It is a common syntax pattern of Elixir to have constructs like `<something> <expression> do <body> end` it seems. Let's take a look at `if`:
 
-```elixir
+```
 defmodule LeapYear do
     def leap_year? year do
         if rem(n, 400) == 0 do
@@ -90,7 +90,7 @@ end
 
 See what I mean? But Elixir is a very pattern-happy language, so there's another way of doing it:
 
-```elixir
+```
 defmodule LeapYear do
     def leap_year?(year) when rem(year, 400) == 0 do
         true
@@ -111,7 +111,7 @@ It's like those piecewise defined functions we did at school.
 
 We skimmed `conditions`, let's `loop`. I didn't see any C-style `for` equivalent yet. And I'm not supposed to since Elixir doesn't mutate things. Instead I get recursion:
 
-```elixir
+```
 defmodule Fibonacci do
     def compute n do
         if n <= 1 do
@@ -131,7 +131,7 @@ end
 
 So we have a `foreach`-ish construct. It's called comprehension and is better viewed as `for i <- <range> do: ...`. The `something do body end`-s have a short form of `something, do: ...` it seems. And instead of the `if` as base case in `compute`, could we instead use that piecewise defined thingy?
 
-```elixir
+```
 defmodule Fibonacci do
     def compute(n) when n <= 1 do
         n
@@ -149,14 +149,14 @@ end
 
 An interesting thing about for comprehensions is that you can put conditions in the comma separated values, or multiple iterations too, take for example, this one:
 
-```elixir
+```
 # Can you tell me what this yields?
 triplets = for a <- 1..10, b <- 1..10, c <- 1..10, c*c = a*a + b*b, do: {a, b, c}
 ```
 
 This brings us to composite types. It's safe to assume that List and Map types exist. And there's a Tuple too. There's more, obviously.
 
-```elixir
+```
 # Lists
 lost_numbers = [4, 8, 15, 16, 23, 42]
 Enum.at(lost_numbers, 0) #=> 4
@@ -183,7 +183,7 @@ lost_candidates[23] #=> "Jack"
 
 Looks to me like Elixir calls module functions a lot. It's not `lost_candidates.keys` but `Dict.keys lost_candidates`, not `lost_numbers.at(0)` but `Enum.at lost_numbers, 0`. The first argument being lost_numbers can have an important impact:
 
-```elixir
+```
 # Square the lost_numbers, then find the odd ones, then spit out the product.
 square = fn n -> n*n end
 odd? = fn n -> rem(n, 2) == 1 end
@@ -194,7 +194,7 @@ Enum.reduce(Enum.filter(Enum.map(lost_numbers, square), odd?), product)
 
 So, the `map` gives out the squared numbers, and feeds it as the first argument to the `filter`, which in turn spits the odd numbers and becomes the first argument of the `reduce` function. Instead, why not do a pipe? Remember those UNIX `|` constructs?
 
-```elixir
+```
 square = fn n -> n*n end
 odd? = fn n -> rem(n, 2) == 1 end
 product = fn a, b -> a * b end

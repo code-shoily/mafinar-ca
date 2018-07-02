@@ -152,9 +152,9 @@ end
 
 defp concat(args) do
   args 
-    |> Enum.reduce(&<>/2)
-    |> String.reverser
-    |> IO.puts
+  |> Enum.reduce(&<>/2)
+  |> String.reverser
+  |> IO.puts
 end
 ```
 
@@ -166,9 +166,9 @@ defmodule Mix.Tasks.Concat do
 
   def run(args) do
     args 
-      |> Enum.reduce(&<>/2)
-      |> String.reverse
-      |> IO.puts
+    |> Enum.reduce(&<>/2)
+    |> String.reverse
+    |> IO.puts
   end
 end
 ```

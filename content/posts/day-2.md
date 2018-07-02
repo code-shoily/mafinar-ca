@@ -16,7 +16,7 @@ description = "Since last night I've been playing with some of the data structur
 
 Since last night I've been playing with some of Elixir's data structures, mostly lists, tuples and maps. While I'm not new to these data structures, the way Elixir's API is laid out is a little different and took awhile to get used to. The syntaxes for list and tuple seemed intuitive enough, `[1, 2, [3, 4]]` is a list, `{91, 23}` is a tuple. With maps it was a little different, `%{"key" => "value"}` or `%{keyThatsAtom: "value"}`. Actually, this is me remembering the feeling I had few days ago when I actually started Elixir. I already played a little, today I'll just get a better feeling of them since I've more or less grokked pattern matching (hopefully). 
 
-### Tuple
+## Tuple
 
 I'll start with tuples. I first heard the term tuple when learning Python. In Elixir, a tuple is wrapped with curly braces and the syntax is like: `white = {255, 255, 255}`. The elements are place contiguously in memory. So it is faster for accessing by index. There's a function for that too, `Kernel.elem/2`. `elem(white, 0)` will yield `255` (I should've picked another color). Since data is placed contiguously on memory, finding the length of the tuple is also easy, which is done with the `Kernel.tuple_length/1` function. `Kernel.is_tuple/1` tests for tuple, a pattern which we will see for other types as well. 
 
@@ -24,7 +24,7 @@ Tuples are fit for use cases that leverages its find-by-index performance issue 
 
 There is this pattern I've seen a lot in Elixir. You use tuples as return values and put the status as the first element, as an atom. It's kindof like the `(result, err)` pattern of `Golang`, with the `err` part positioned first, and also as `keyword`. They are also good candidates as function arguments and replacing if-s. For instance:
 
-```elixir
+```
 defmodule Area do
     @pi 3.1416
 
@@ -44,7 +44,7 @@ end
 
 By the way, the `@pi` thing was *module attribute*, it has many purposes, one of them is to store module owned constants, and `@pi` was exactly that (I'll learn more on *module attributes* later). 
 
-### Lists
+## Lists
 
 Lists in Elixir are linked lists. Each element has a value and a pointer to the next element. A list is of the type `[first_element | nextElementsAsList]` all the way till `nextElementsAsList` becomes `[]`. From this behavior it is clear that prepending to an Elixir list should be easier since it would mean getting the new element and putting the current list in the *tail section* (obviously, returning the new structure, not modifying the old list in anyway, immutate all the things!). 
 
@@ -52,7 +52,7 @@ If I got a nickel everytime I tried to access an element of a list by `list[elem
 
 > *What if my list is `[1, nil, 3]` and I do a `Enum.at lst, 1`? Wouldn't it be better to raise an error instead of just `nil`? Or at least an `Enum.at!` alternative?*
 
-#### Enum
+### Enum
 
 So what is this `Enum` thing? It does all the kung-fu required to play with iterables, want to `find` something? `map`, `reduce`, `filter`? `Enum`-s got it all. As an example, let's say we have a list of latitudes and longitudes of the path of a certain locomotive and we want to find the total distance travelled. So, the first thing we do is, extract `{lat, lng}` tuple from the list, then take 2 of each in `a->b, b->c, c->d` etc format, call the distance function amongst each pair, and then return the sum total of it. The operationset is as follows: 
 
@@ -62,7 +62,7 @@ So what is this `Enum` thing? It does all the kung-fu required to play with iter
 * Compute the distance between each tuples of every chunk in the list
 * Compute the total of all distances
 
-```elixir
+```
 defmodule Distance do
     # Saving me some typings, `import` saves you from 
     # `<module>.` prefixes. Can be just `map` instead of `Enum.map`
@@ -116,7 +116,7 @@ Keywords lists are special lists in which all elements are 2-tuples in which fir
 
 Keyword lists add an additional syntactic benefit. If a named functions last argument is expected to be a keyword list, then the enclosing `[]` can be stripped off.
 
-```elixir
+```
 defmodule StrippedKW do
     def example name: name, id: id do
         {:info, "#{name} - #{id}"}
@@ -128,7 +128,7 @@ StrippedKW.example name: name, id: id
 ```
 The sugar of omitting the `[` and `]` allows us to create fluent and beautiful APIs. For example, we can do stuff like:
 
-```elixir 
+``` 
 Assets.all(  
   from vehicle in Assets.Vehicles,
       where: vehicle.truck? == true,
@@ -142,7 +142,7 @@ Omission of parentheses or brackets make a set of function call seem like a tota
 
 `Set` structure is similar to its mathematical equivalent and is depicted by the `%MapSet{}` struct and created with the `new/1` function. For example `MapSet.new [1, 2, 3]` is equivalent of the mathematical `{1, 2, 3}`. All set operations such as `MapSet.union/2`, `MapSet.intersection/2`, `MapSet.difference/2` etc are defined under the `MapSet` module along with predicates such as `MapSet.member?/2`, `MapSet.disjoint?/2`.
 
-```elixir
+```
 u = MapSet.new [1, 2, 3, 4, 5, 6]
 a = MapSet.new [1, 3, 5]
 b = MapSet.new [2, 4, 6]
@@ -161,13 +161,13 @@ List comprehension is one of my favorite language features and I'm glad Elixir a
 
 What if we want to do a comprehension but yield the result into a different structure? For example, we iterate through a list and want to return a set? The `into:` is there for this (I will have to read more on this). `for i <- [1, 1, 5, 7, 8, 8, 16, 32, 32], into: %MapSet{}, do: i*i` does the trick!
 
-### Playing on...
+## Playing on...
 
 The `Enum` contains a good load of function to play with iterable structures. All I need to do is push `Enum.` and then the `<TAB>` button to see the list of possibilities and `h Enum.<function>` to see what it does in the `iex`. The documentation is fantastic and it's a piece of cake to know which function does what. The `|>` operator can compose multiple expressions and still be readable and feel fluent. This is especially due to the consistancy of first argument being the structure that the pipe operator can function. Some of the functions here reside in `Kernel` instead of their respective modules, which I need to dig further to grok the reason why.
 
 Let's play a little more with `Enum`s (Will write the first few minutes' ones here)
 
-```elixir
+```
 [10, 34, 32, 12, 11, 19, 20] # Le list 
     |> Enum.with_index # Get indexed tuple at {value, index} formation 
     |> Enum.filter(fn {v, idx} -> rem(idx, 2) == 1 end) # Find odd-indexed tuples
