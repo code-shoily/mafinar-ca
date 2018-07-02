@@ -2,6 +2,7 @@ baseurl = "http://mafinar.ca/"
 title = "learn ▷ play ▷ write"
 theme = "vienna"
 languageCode = "en-us"
+DefaultContentLanguage = "en"
 copyright = "&copy; Copyright 2018 Mafinar K."
 publishDir = "docs"
 
@@ -23,6 +24,13 @@ publishDir = "docs"
   contact = "mafinar@gmail.com"
   themecolor = "#34495e"
 
-  [taxonomies]
+[taxonomies]
   pages = "pages"
   tag = "tags"
+
+[languages]
+  [languages.en]
+    weight = 1
+
+  [languages.bn]
+    weight = 2

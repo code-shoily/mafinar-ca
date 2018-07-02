@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://mafinar.ca/bn/pages/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://mafinar.ca/pages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="http://mafinar.ca/bn/pages/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://mafinar.ca/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="http://mafinar.ca/bn/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://mafinar.ca/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="http://mafinar.ca/bn/"
+                />
+  </url>
+  
+</urlset>
