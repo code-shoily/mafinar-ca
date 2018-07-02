@@ -33,3 +33,5 @@ disqusShortname = "mafinar-dot-ca"
 
   [languages.bn]
     weight = 2
+    [languages.bn.taxonomies]
+      tags = "tags"
