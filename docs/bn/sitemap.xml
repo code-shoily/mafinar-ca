@@ -47,21 +47,6 @@
   </url>
   
   <url>
-    <loc>http://mafinar.ca/bn/pages/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://mafinar.ca/pages/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="http://mafinar.ca/bn/pages/"
-                />
-  </url>
-  
-  <url>
     <loc>http://mafinar.ca/bn/posts/</loc>
     <lastmod>2018-06-12T01:12:19-04:00</lastmod>
     <priority>0</priority>
