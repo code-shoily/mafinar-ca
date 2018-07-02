@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
-    <lastBuildDate>Sat, 02 Jun 2018 01:23:42 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 02:00:13 -0400</lastBuildDate>
     
 	<atom:link href="http://mafinar.ca/bn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Admin</title>
+      <link>http://mafinar.ca/bn/tags/admin/</link>
+      <pubDate>Fri, 01 Jun 2018 02:00:13 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/admin/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Django</title>
@@ -27,6 +36,15 @@
       <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Orm</title>
+      <link>http://mafinar.ca/bn/tags/orm/</link>
+      <pubDate>Fri, 01 Jun 2018 02:00:13 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/orm/</guid>
       <description></description>
     </item>
     
