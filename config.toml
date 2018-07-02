@@ -24,4 +24,5 @@ publishDir = "docs"
   themecolor = "#34495e"
 
   [taxonomies]
+  pages = "pages"
   tag = "tags"

@@ -1,7 +1,6 @@
 ---
 title: "about.ex"
 date: 2018-07-01T21:42:43-04:00
-nonPostPage: true
 ---
 ```elixir
 defmodule AboutMe do
