@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Day 2 - Diving in... &middot;  learn ▷ play ▷ write" />
+  
+  <meta name="theme-color" content="#34495e" />
+ 
+  <meta property="og:site_name" content="learn ▷ play ▷ write" />
+  <meta property="og:url" content="http://mafinar.ca/posts/day-2/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:author" content="https://facebook.com/mafinar" />
+  
+  <meta property="og:article:published_time" content="2016-07-05T01:54:13&#43;06:00" />
+  
+  <meta property="og:article:tag" content="elixir" />
+  
+  <meta property="og:article:tag" content="elixir-diary" />
+  
+  <meta property="og:article:tag" content="enum" />
+  
+  <meta property="og:article:tag" content="tuple" />
+  
+  
+
+  <title>
+     Day 2 - Diving in... &middot;  learn ▷ play ▷ write
+  </title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://mafinar.ca/css/main.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css">
+  <link rel="shortcut icon" href="http://mafinar.ca/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://mafinar.ca/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    
+    <header class="global-header"  style="background:#34495e">
+    
+    <section class="header-text">
+      <h1><a href="http://mafinar.ca/">learn ▷ play ▷ write</a></h1>
+      
+      <div class="tag-line">
+        <a class='about-link' href='/pages/about/'>Mafinar</a> writes about <strike>Elixir and Python</strike> things
+      </div>
+      
+      
+      <a href="http://mafinar.ca/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  <a href="https://medium.com/@mafinar" target="_blank">
+    <i class="fab fa-medium-m"></i>
+  </a>
+  
+  
+  
+</div>
+
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header class="hidden-xs" style="margin-bottom: 20px">
+    <h1 class="text-primary">Day 2 - Diving in...</h1>
+    <div class="post-meta clearfix">
+    
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2016-07-05T01:54:13&#43;06:00">
+          Jul 5, 2016
+        </time>
+      </div>
+    
+      <div class="pull-right">
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir">elixir</a></span>
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir-diary">elixir-diary</a></span>
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/enum">enum</a></span>
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/tuple">tuple</a></span>
+        
+      </div>
+    </div>
+  </header>
+  <header class="visible-xs-block">
+    <div class="text-center">
+      <h1 class="text-primary">Day 2 - Diving in...</h1>
+      <div class="post-meta clearfix">
+      
+        <div class="post-date text-center">
+          Posted on
+          <time datetime="2016-07-05T01:54:13&#43;06:00">
+            Jul 5, 2016
+          </time>
+        </div>
+      
+        <div class="text-center" style="padding-top: 10px">
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir">elixir</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir-diary">elixir-diary</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/enum">enum</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/tuple">tuple</a></span>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <section>
+    
+
+<p>Since last night I&rsquo;ve been playing with some of Elixir&rsquo;s data structures, mostly lists, tuples and maps. While I&rsquo;m not new to these data structures, the way Elixir&rsquo;s API is laid out is a little different and took awhile to get used to. The syntaxes for list and tuple seemed intuitive enough, <code>[1, 2, [3, 4]]</code> is a list, <code>{91, 23}</code> is a tuple. With maps it was a little different, <code>%{&quot;key&quot; =&gt; &quot;value&quot;}</code> or <code>%{keyThatsAtom: &quot;value&quot;}</code>. Actually, this is me remembering the feeling I had few days ago when I actually started Elixir. I already played a little, today I&rsquo;ll just get a better feeling of them since I&rsquo;ve more or less grokked pattern matching (hopefully).</p>
+
+<h2 id="tuple">Tuple</h2>
+
+<p>I&rsquo;ll start with tuples. I first heard the term tuple when learning Python. In Elixir, a tuple is wrapped with curly braces and the syntax is like: <code>white = {255, 255, 255}</code>. The elements are place contiguously in memory. So it is faster for accessing by index. There&rsquo;s a function for that too, <code>Kernel.elem/2</code>. <code>elem(white, 0)</code> will yield <code>255</code> (I should&rsquo;ve picked another color). Since data is placed contiguously on memory, finding the length of the tuple is also easy, which is done with the <code>Kernel.tuple_length/1</code> function. <code>Kernel.is_tuple/1</code> tests for tuple, a pattern which we will see for other types as well.</p>
+
+<p>Tuples are fit for use cases that leverages its find-by-index performance issue and do not need the structure to grow, tuples don&rsquo;t like to grow or shrink, they did give a function for it that returns a grown up or shrunk down copy, they just don&rsquo;t like it. They are awesome for patterns, for example; or arguments to functions or as return values.</p>
+
+<p>There is this pattern I&rsquo;ve seen a lot in Elixir. You use tuples as return values and put the status as the first element, as an atom. It&rsquo;s kindof like the <code>(result, err)</code> pattern of <code>Golang</code>, with the <code>err</code> part positioned first, and also as <code>keyword</code>. They are also good candidates as function arguments and replacing if-s. For instance:</p>
+
+<pre><code class="language-elixir">defmodule Area do
+    @pi 3.1416
+
+    def compute({:square, side}) do
+        side * side
+    end
+
+    def compute({:rectangle, length, breadth}) do
+        length * breadth
+    end
+
+    def compute({:circle, radius}) do
+        @pi * radius * radius
+    end
+end
+</code></pre>
+
+<p>By the way, the <code>@pi</code> thing was <em>module attribute</em>, it has many purposes, one of them is to store module owned constants, and <code>@pi</code> was exactly that (I&rsquo;ll learn more on <em>module attributes</em> later).</p>
+
+<h2 id="lists">Lists</h2>
+
+<p>Lists in Elixir are linked lists. Each element has a value and a pointer to the next element. A list is of the type <code>[first_element | nextElementsAsList]</code> all the way till <code>nextElementsAsList</code> becomes <code>[]</code>. From this behavior it is clear that prepending to an Elixir list should be easier since it would mean getting the new element and putting the current list in the <em>tail section</em> (obviously, returning the new structure, not modifying the old list in anyway, immutate all the things!).</p>
+
+<p>If I got a nickel everytime I tried to access an element of a list by <code>list[element_index]</code> :( That doesn&rsquo;t work. If you want to access an element at a particular index, then you&rsquo;ll have to use the <code>Enum</code> module and use the <code>Enum.at/2</code> or <code>Enum.at/3</code> functions. Like I&rsquo;ve mentioned earlier and I&rsquo;ll mention again as long as I don&rsquo;t get fully comfy with the pattern: &ldquo;Elixir module functions are called like static methods, you do a <code>Module.function</code> call, put the data structure in question as the first argument, others as rest, there&rsquo;s no <code>x.y</code> where <code>x</code> is not a module (or as we&rsquo;ll see later, a map?)&ldquo;. So, <code>Enum.at [1,2,4], 1</code> yields <code>2</code> and <code>Enum.at [1,2,3], 10</code> yields <code>nil</code>. If you want to put a default value instead, then use the <code>Enum.at/3</code> function and the third argument is the default argument in case there&rsquo;s a <code>nil</code>.</p>
+
+<blockquote>
+<p><em>What if my list is <code>[1, nil, 3]</code> and I do a <code>Enum.at lst, 1</code>? Wouldn&rsquo;t it be better to raise an error instead of just <code>nil</code>? Or at least an <code>Enum.at!</code> alternative?</em></p>
+</blockquote>
+
+<h3 id="enum">Enum</h3>
+
+<p>So what is this <code>Enum</code> thing? It does all the kung-fu required to play with iterables, want to <code>find</code> something? <code>map</code>, <code>reduce</code>, <code>filter</code>? <code>Enum</code>-s got it all. As an example, let&rsquo;s say we have a list of latitudes and longitudes of the path of a certain locomotive and we want to find the total distance travelled. So, the first thing we do is, extract <code>{lat, lng}</code> tuple from the list, then take 2 of each in <code>a-&gt;b, b-&gt;c, c-&gt;d</code> etc format, call the distance function amongst each pair, and then return the sum total of it. The operationset is as follows:</p>
+
+<ul>
+<li>Define the distance function.</li>
+<li>Take a list, form a 2-tuple out of all the elements of the list</li>
+<li>Take chunks of adjacent tuples</li>
+<li>Compute the distance between each tuples of every chunk in the list</li>
+<li>Compute the total of all distances</li>
+</ul>
+
+<pre><code class="language-elixir">defmodule Distance do
+    # Saving me some typings, `import` saves you from 
+    # `&lt;module&gt;.` prefixes. Can be just `map` instead of `Enum.map`
+    import :math # Erlang modules are written like :atoms
+    import Enum
+
+    @radius 6_371_000 # You can use underscores as large number separator. Neat!
+    @pi :math.pi
+
+    def square(x), do: x*x
+    def to_radians(degree), do: degree / (180/@pi)
+
+    def compute_diff {lat1, lng1}, {lat2, lng2} do
+        {lat2 - lat1, lng2 - lng1} 
+    end
+
+    def compute [{lat1, lng1}, {lat2, lng2}] do
+        {lat_diff, lng_diff} = compute_diff {lat1, lng1}, {lat2, lng2}
+ 
+        a = square(sin(lat_diff/2)) + cos(lat1) * cos(lat2) * square(sin(lng_diff/2))
+        c = 2 * asin(sqrt(a))
+        
+        @radius * c
+    end
+
+    def total(points \\ []) do
+        points |&gt; map(&amp;to_radians/1)
+               |&gt; chunk(2)
+               |&gt; map(&amp;List.to_tuple/1) 
+               |&gt; chunk(2, 1)
+               |&gt; map(&amp;compute/1) 
+               |&gt; reduce(&amp;+/2)
+               |&gt; (&amp;//2).(1000)
+    end
+end
+</code></pre>
+
+<p>The <code>|&gt;</code> is a super fun operator. Its work is simple, you take an expression, and pipe it through several <code>partial functions</code> through it, the expression result in question will be the first (missing) argument of the partial function, the result will be fed to the second one, and so on&hellip; the snippet of <code>Distance.total/1</code> is actually the equivalent of <code>reduce(map(chunk(map(chunk(map(points, &amp;to_radius/1), 2), &amp;List.to_tuple), 2, 1), &amp;compute/1), &amp;+/2))/1000</code>. Phew! Each of the functions following the pipe command is actually missing a first argument&hellip; for instance, the <code>map(&amp;List.to_tuple/1)</code> is really <code>map(?, &amp;List.to_tuple/1)</code> where the <code>?</code> is to be filled up by the expression preceding it, the expressions keep evaulating and pillow passing the result to the next pipe until there&rsquo;s no more left, and that&rsquo;s when the combined result is expressed. It is a more <code>threaded together</code> approach at processing and is very handy when it comes to transforming collections. No wonder the Clojure equivalent is called the threaded macro.</p>
+
+<blockquote>
+<p><em>One thing though</em> functions <em>must</em> be called with parentheses when inside the pipe operator. No poetry there :(</p>
+</blockquote>
+
+<p>By the way, in the code above I have used <code>import</code>s and it saves me from repetitively typing <code>Enum.map</code>, or <code>:math.sin</code>. I will look more into these later.</p>
+
+<p>The <code>&amp;</code> preceding what should&rsquo;ve been a function body does exactly that. Expresses the function body. In <code>Elixir</code>, <code>f</code>, if not a variable, means call to the <code>f</code> function. So, had we written <code>map(list, List.to_tuple)</code>, the Elixir will attempt to call the <code>List.to_tuple/0</code> function, for which Elixir didn&rsquo;t define any. Also, it is important to mention the arity as well otherwise the compiler will get confused.</p>
+
+<p>So we see that, (Linked)Lists of Elixir are recursively defined in a head/tail format and are best suited for data that require prepending growth. They can be heterogenous or homogenous. They are iterable via the <code>Enum</code> module are promote an immutable attitude. Through combinations of <code>Enum</code> functions, we can traverse, project, filter or commit reductions on lists and the pipe operator does a beautiful job of keeping code readable, fluid, and concise.</p>
+
+<h3 id="keyword-lists">Keyword Lists</h3>
+
+<p>Keywords lists are special lists in which all elements are 2-tuples in which first element&rsquo;s an atom. They have special syntax privileges. <code>[{:x, 10}, {:y, 20}]</code> can be conveniently typed as <code>[x: 10, y: 10]</code> and accessed as <code>kwl[:x]</code>.</p>
+
+<p>Keyword lists add an additional syntactic benefit. If a named functions last argument is expected to be a keyword list, then the enclosing <code>[]</code> can be stripped off.</p>
+
+<pre><code class="language-elixir">defmodule StrippedKW do
+    def example name: name, id: id do
+        {:info, &quot;#{name} - #{id}&quot;}
+    end
+end
+
+# And when calling...
+StrippedKW.example name: name, id: id
+</code></pre>
+
+<p>The sugar of omitting the <code>[</code> and <code>]</code> allows us to create fluent and beautiful APIs. For example, we can do stuff like:</p>
+
+<pre><code class="language-elixir">Assets.all(  
+  from vehicle in Assets.Vehicles,
+      where: vehicle.truck? == true,
+  select: vehicle
+)
+</code></pre>
+
+<p>Omission of parentheses or brackets make a set of function call seem like a totally new <strong>L</strong>anguage tailored <strong>S</strong>pecifically for the <strong>D</strong>omain.</p>
+
+<h3 id="sets">Sets</h3>
+
+<p><code>Set</code> structure is similar to its mathematical equivalent and is depicted by the <code>%MapSet{}</code> struct and created with the <code>new/1</code> function. For example <code>MapSet.new [1, 2, 3]</code> is equivalent of the mathematical <code>{1, 2, 3}</code>. All set operations such as <code>MapSet.union/2</code>, <code>MapSet.intersection/2</code>, <code>MapSet.difference/2</code> etc are defined under the <code>MapSet</code> module along with predicates such as <code>MapSet.member?/2</code>, <code>MapSet.disjoint?/2</code>.</p>
+
+<pre><code class="language-elixir">u = MapSet.new [1, 2, 3, 4, 5, 6]
+a = MapSet.new [1, 3, 5]
+b = MapSet.new [2, 4, 6]
+c = MapSet.new [3, 6, 9]
+
+MapSet.union a, b # {1, 2, 3, 4, 5, 6}
+MapSet.intersection a, c # {3}
+Mapset.member? a, 3 # true 
+</code></pre>
+
+<p>We can leverage the <code>Enum</code> functions on MapSets as well.</p>
+
+<h3 id="comprehensions">Comprehensions</h3>
+
+<p>List comprehension is one of my favorite language features and I&rsquo;m glad Elixir allows it smoothly. It is quite close to the mathematical treatment of it too. For example, if we want to find all numbers that are between <code>1</code> and <code>100</code> and are divisible by 3 or 5, we can write: <code>for i &lt;- 1..100, rem(i, 3) == 0 || rem(i, 5) == 0, do: i</code>, or, if we want to find all Pythagorean triples maxing 10 unit: <code>for i &lt;- 1..10, j &lt;- 1..i, k &lt;- 1..j, i*i == j*j + k*k, do: {i, j, k}</code>. The comprehension syntax is simple: <code>for</code> starts the expression, which is followed by several comma separated expressions, which can either be iterations, depicted by the <code>&lt;-</code> operator, or conditions which are, well, condition expressions. Finally, the <code>do:</code> clause allows the yielded expression to give out.</p>
+
+<p>What if we want to do a comprehension but yield the result into a different structure? For example, we iterate through a list and want to return a set? The <code>into:</code> is there for this (I will have to read more on this). <code>for i &lt;- [1, 1, 5, 7, 8, 8, 16, 32, 32], into: %MapSet{}, do: i*i</code> does the trick!</p>
+
+<h2 id="playing-on">Playing on&hellip;</h2>
+
+<p>The <code>Enum</code> contains a good load of function to play with iterable structures. All I need to do is push <code>Enum.</code> and then the <code>&lt;TAB&gt;</code> button to see the list of possibilities and <code>h Enum.&lt;function&gt;</code> to see what it does in the <code>iex</code>. The documentation is fantastic and it&rsquo;s a piece of cake to know which function does what. The <code>|&gt;</code> operator can compose multiple expressions and still be readable and feel fluent. This is especially due to the consistancy of first argument being the structure that the pipe operator can function. Some of the functions here reside in <code>Kernel</code> instead of their respective modules, which I need to dig further to grok the reason why.</p>
+
+<p>Let&rsquo;s play a little more with <code>Enum</code>s (Will write the first few minutes&rsquo; ones here)</p>
+
+<pre><code class="language-elixir">[10, 34, 32, 12, 11, 19, 20] # Le list 
+    |&gt; Enum.with_index # Get indexed tuple at {value, index} formation 
+    |&gt; Enum.filter(fn {v, idx} -&gt; rem(idx, 2) == 1 end) # Find odd-indexed tuples
+    |&gt; Enum.map(fn {v, idx} -&gt; v end) # Extract the values as value-list
+    |&gt; Enum.reduce(1, &amp;*/2) # Multiply all the things
+
+1..1000 # 1 to one thousand
+    |&gt; Enum.take_random(10) # Take any random 10 element 
+    |&gt; Enum.find(-1, fn v -&gt; rem(v, 13) == 0) # Pluck ones whom 13 divides or -1
+
+1..100 |&gt; Enum.scan(&amp;+/2) # Like reduce, but all intermediate results are enlisted!
+
+# split_while, uniq, sort_by, zip, intersperse... my my!
+</code></pre>
+
+<blockquote>
+<p>Wow!</p>
+</blockquote>
+
+<p>Tomorrow I&rsquo;ll be playing with <code>Map</code> and <code>Stream</code>, and do some more <code>Enum</code> tricks, which I&rsquo;m finding to be superfun! It&rsquo;s Eid festival today and I&rsquo;m wishing everyone a great one!</p>
+
+  </section>
+  <footer>
+    
+    
+    
+
+    
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://mafinar.ca/posts/day-1/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next"><a href="http://mafinar.ca/posts/day-3/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+    
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer hidden-xs">
+    <div class="copyright-note pull-left">
+      &copy; Copyright 2018 Mafinar K.
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  <a href="https://medium.com/@mafinar" target="_blank">
+    <i class="fab fa-medium-m"></i>
+  </a>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <footer class="container global-footer visible-xs-block">
+      <div class="copyright-note text-center">
+        &copy; Copyright 2018 Mafinar K.
+      </div>
+    </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-112774615-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+</body>
+</html>
+

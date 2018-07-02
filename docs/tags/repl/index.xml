@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Repl on learn ▷ play ▷ write</title>
+    <link>http://mafinar.ca/tags/repl/</link>
+    <description>Recent content in Repl on learn ▷ play ▷ write</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
+    <lastBuildDate>Mon, 27 Jun 2016 10:29:32 +0600</lastBuildDate>
+    
+	<atom:link href="http://mafinar.ca/tags/repl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Day 0 - Unboxing and Exploration</title>
+      <link>http://mafinar.ca/posts/day-0/</link>
+      <pubDate>Mon, 27 Jun 2016 10:29:32 +0600</pubDate>
+      
+      <guid>http://mafinar.ca/posts/day-0/</guid>
+      <description>Get, Set, Go!!! Obviously the first thing I need to do is, to unbox the goodies. For me, it&amp;rsquo;s just brew install elixir and that&amp;rsquo;s it. I will try out my Linux machine tomorrow. Moving on&amp;hellip;
+The Editor Vim&amp;rsquo;s been good to me for the past decade and I see no reason why I should not use it. A quick googling introduced me to alchemist.vim and vim-elixir. I&amp;rsquo;m guessing the former does autocompletion and stuff while the latter is for syntax highlighting.</description>
+    </item>
+    
+  </channel>
+</rss>

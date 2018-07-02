@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Day 0 - Unboxing and Exploration &middot;  learn ▷ play ▷ write" />
+  
+  <meta name="theme-color" content="#34495e" />
+ 
+  <meta property="og:site_name" content="learn ▷ play ▷ write" />
+  <meta property="og:url" content="http://mafinar.ca/posts/day-0/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:author" content="https://facebook.com/mafinar" />
+  
+  <meta property="og:article:published_time" content="2016-06-27T10:29:32&#43;06:00" />
+  
+  <meta property="og:article:tag" content="elixir" />
+  
+  <meta property="og:article:tag" content="elixir-diary" />
+  
+  <meta property="og:article:tag" content="repl" />
+  
+  
+
+  <title>
+     Day 0 - Unboxing and Exploration &middot;  learn ▷ play ▷ write
+  </title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://mafinar.ca/css/main.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css">
+  <link rel="shortcut icon" href="http://mafinar.ca/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://mafinar.ca/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    
+    <header class="global-header"  style="background:#34495e">
+    
+    <section class="header-text">
+      <h1><a href="http://mafinar.ca/">learn ▷ play ▷ write</a></h1>
+      
+      <div class="tag-line">
+        <a class='about-link' href='/pages/about/'>Mafinar</a> writes about <strike>Elixir and Python</strike> things
+      </div>
+      
+      
+      <a href="http://mafinar.ca/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  <a href="https://medium.com/@mafinar" target="_blank">
+    <i class="fab fa-medium-m"></i>
+  </a>
+  
+  
+  
+</div>
+
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header class="hidden-xs" style="margin-bottom: 20px">
+    <h1 class="text-primary">Day 0 - Unboxing and Exploration</h1>
+    <div class="post-meta clearfix">
+    
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2016-06-27T10:29:32&#43;06:00">
+          Jun 27, 2016
+        </time>
+      </div>
+    
+      <div class="pull-right">
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir">elixir</a></span>
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir-diary">elixir-diary</a></span>
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/repl">repl</a></span>
+        
+      </div>
+    </div>
+  </header>
+  <header class="visible-xs-block">
+    <div class="text-center">
+      <h1 class="text-primary">Day 0 - Unboxing and Exploration</h1>
+      <div class="post-meta clearfix">
+      
+        <div class="post-date text-center">
+          Posted on
+          <time datetime="2016-06-27T10:29:32&#43;06:00">
+            Jun 27, 2016
+          </time>
+        </div>
+      
+        <div class="text-center" style="padding-top: 10px">
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir">elixir</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir-diary">elixir-diary</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/repl">repl</a></span>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <section>
+    
+
+<h2 id="get-set-go">Get, Set, Go!!!</h2>
+
+<p>Obviously the first thing I need to do is, to unbox the goodies. For me, it&rsquo;s just <code>brew install elixir</code> and that&rsquo;s it. I will try out my Linux machine tomorrow. Moving on&hellip;</p>
+
+<h2 id="the-editor">The Editor</h2>
+
+<p>Vim&rsquo;s been good to me for the past decade and I see no reason why I should not use it. A quick googling introduced me to <a href="https://github.com/slashmili/alchemist.vim">alchemist.vim</a> and <a href="https://github.com/elixir-lang/vim-elixir">vim-elixir</a>. I&rsquo;m guessing the former does autocompletion and stuff while the latter is for syntax highlighting.</p>
+
+<p>I&rsquo;m also liking Visual Studio Code a lot these days so might as well go and set it up too. I think the command I&rsquo;m looking for is <code>ext install vscode-elixir</code>. Done. Though I don&rsquo;t think I&rsquo;ll be using the editor much today.</p>
+
+<h2 id="the-shell">The Shell</h2>
+
+<p>Here&rsquo;s the fun part. I like languages with REPLs, and those that encourage the use of it by giving some nice helpers built-in. After firing up the <code>iex</code> command, it seems to me that Elixir has awesome support for it. Just go ahead and try typing <code>h()</code> in the shell and you&rsquo;ll see what I mean.</p>
+
+<p>One thing I noticed is the naming of the form <code>xxx/n</code> (i.e. <code>pwd/0</code>, <code>r/1</code>). A quick googling later, I see it&rsquo;s a function/arity pair Erlang guys use. <strong>Does that mean no variadic argument for Elixir?</strong></p>
+
+<p>Anyway, one of the things we Pythonistas are used to is the <code>help()</code> and <code>dir()</code> functions. Is there a way to do it in Elixir? The <code>h/0</code> and <code>h/1</code> are your friends for the former, and <em>dot(.) + TAB</em> for the latter. So, if I do a <code>h(List)</code> (or <code>h List</code>) in the shell, then I&rsquo;d see good old documentation of <code>List</code>. Parentheses are optional for function calls, a little Ruby envy I always had. Awesome! But I still need to explore if I can get a list of methods of a particular module (That&rsquo;s what they call it?) like Python does with <code>dir()</code>. I can get it by <code>&lt;module&gt;.__info__(:functions)</code> expression. Let&rsquo;s try: <code>List.__info__(:functions)</code>. Like a charm.</p>
+
+<p>How do I get out? <code>CTRL+C</code> does it for Elixir shell. That&rsquo;s exit!</p>
+
+<h2 id="exploration">Exploration</h2>
+
+<p>This is where I fire up the shell and start playing. The first thing I need to see is how I get to assign stuff. That&rsquo;s easy, just do a <code>variable_name = value</code>. No <code>let</code>, <code>var</code>, <code>val</code> etc. Since Elixir is a functional programming language, the first thing I&rsquo;d look for is, well, functions? Let&rsquo;s see,</p>
+
+<pre><code class="language-elixir">odd? = fn(n) -&gt; rem(n, 2) == 1 end
+even? = fn n -&gt; not odd?.(n) end
+
+IO.puts odd?.(11) #=&gt; true
+IO.puts even?.(11) #=&gt; false
+</code></pre>
+
+<p>Despite knowing it, I did end up calling the function as <code>odd?(11)</code>. It seems that Elixir anonymous functions need a <code>.()</code> for the arguments to be applied. True and False are just true/false. There&rsquo;s a convenient shortcut for it too:</p>
+
+<pre><code class="language-elixir">odd? = &amp;(rem(&amp;1, 2) == 1)
+event? = &amp;(not odd?.(&amp;1))
+right_triangle? = &amp;(&amp;1*&amp;1 == &amp;2*&amp;2 + &amp;3*&amp;3)
+</code></pre>
+
+<p>Sort of like Clojure&rsquo;s <code>#(odd? %1)</code>. Convenient. But how do I make stuff that I can call without the parenthesis? Define a named function inside a module:</p>
+
+<pre><code class="language-elixir">defmodule OddEven do
+    def odd? n do
+        rem(n, 2) == 1
+    end
+
+    def even? n do
+        not odd? n
+    end
+end
+</code></pre>
+
+<p>Oh, and comments begin <code># with a hash</code></p>
+
+<p>It is a common syntax pattern of Elixir to have constructs like <code>&lt;something&gt; &lt;expression&gt; do &lt;body&gt; end</code> it seems. Let&rsquo;s take a look at <code>if</code>:</p>
+
+<pre><code class="language-elixir">defmodule LeapYear do
+    def leap_year? year do
+        if rem(n, 400) == 0 do
+            return true
+        end
+        if rem(n, 100) == 0 do
+            return false
+        end
+        if rem(n, 4) == 0 do
+            return true
+        end
+
+        false
+    end
+end
+</code></pre>
+
+<p>See what I mean? But Elixir is a very pattern-happy language, so there&rsquo;s another way of doing it:</p>
+
+<pre><code class="language-elixir">defmodule LeapYear do
+    def leap_year?(year) when rem(year, 400) == 0 do
+        true
+    end
+    def leap_year?(year) when rem(year, 100) == 0 do
+        false
+    end
+    def leap_year?(year) when rem(year, 4) == 0 do
+        true
+    end
+    def leap_year? year do
+        false
+    end
+end
+</code></pre>
+
+<p>It&rsquo;s like those piecewise defined functions we did at school.</p>
+
+<p>We skimmed <code>conditions</code>, let&rsquo;s <code>loop</code>. I didn&rsquo;t see any C-style <code>for</code> equivalent yet. And I&rsquo;m not supposed to since Elixir doesn&rsquo;t mutate things. Instead I get recursion:</p>
+
+<pre><code class="language-elixir">defmodule Fibonacci do
+    def compute n do
+        if n &lt;= 1 do
+            n
+        else
+            compute(n - 1) + compute(n - 2)
+        end
+    end
+
+    def range n do
+        for i &lt;- 1..n do
+            compute(i)
+        end
+    end
+end
+</code></pre>
+
+<p>So we have a <code>foreach</code>-ish construct. It&rsquo;s called comprehension and is better viewed as <code>for i &lt;- &lt;range&gt; do: ...</code>. The <code>something do body end</code>-s have a short form of <code>something, do: ...</code> it seems. And instead of the <code>if</code> as base case in <code>compute</code>, could we instead use that piecewise defined thingy?</p>
+
+<pre><code class="language-elixir">defmodule Fibonacci do
+    def compute(n) when n &lt;= 1 do
+        n
+    end
+
+    def compute(n) do
+        compute(n - 1) + compute(n - 2)
+    end
+
+    def range(n) do
+        for i &lt;- 1..n, do: compute i
+    end
+end
+</code></pre>
+
+<p>An interesting thing about for comprehensions is that you can put conditions in the comma separated values, or multiple iterations too, take for example, this one:</p>
+
+<pre><code class="language-elixir"># Can you tell me what this yields?
+triplets = for a &lt;- 1..10, b &lt;- 1..10, c &lt;- 1..10, c*c = a*a + b*b, do: {a, b, c}
+</code></pre>
+
+<p>This brings us to composite types. It&rsquo;s safe to assume that List and Map types exist. And there&rsquo;s a Tuple too. There&rsquo;s more, obviously.</p>
+
+<pre><code class="language-elixir"># Lists
+lost_numbers = [4, 8, 15, 16, 23, 42]
+Enum.at(lost_numbers, 0) #=&gt; 4
+Enum.map(lost_numbers, fn n -&gt; n*n end) #=&gt; Square each of lost numbers
+Enum.reduce(lost_numbers, &amp;(&amp;1 + &amp;2)) #=&gt; Find the sum of lost numbers
+42 in lost_numbers #=&gt; true
+
+# MAPS
+lost_candidates = %{
+    4 =&gt; &quot;Locke&quot;,
+    8 =&gt; &quot;Hugo&quot;,
+    15 =&gt; &quot;Sawyer&quot;,
+    16 =&gt; &quot;Sayid&quot;,
+    23 =&gt; &quot;Jack&quot;,
+    42 =&gt; &quot;Kwon&quot;,
+}
+
+Dict.keys(lost_candidates) == lost_numbers #=&gt; true
+Dict.values(lost_candidates) #=&gt; [&quot;Locke&quot;, &quot;Hugo&quot;, &quot;Sawyer&quot;, &quot;Sayid&quot;, &quot;Jack&quot;, &quot;Kwon&quot;]
+Dict.put(lost_candidates, 47, &quot;Mafinar&quot;) #=&gt; Returns a new Dict with me with number 47
+Dict.get(lost_candidates, 4) #=&gt; &quot;Locke&quot;
+lost_candidates[23] #=&gt; &quot;Jack&quot;
+</code></pre>
+
+<p>Looks to me like Elixir calls module functions a lot. It&rsquo;s not <code>lost_candidates.keys</code> but <code>Dict.keys lost_candidates</code>, not <code>lost_numbers.at(0)</code> but <code>Enum.at lost_numbers, 0</code>. The first argument being lost_numbers can have an important impact:</p>
+
+<pre><code class="language-elixir"># Square the lost_numbers, then find the odd ones, then spit out the product.
+square = fn n -&gt; n*n end
+odd? = fn n -&gt; rem(n, 2) == 1 end
+product = fn a, b -&gt; a * b end
+
+Enum.reduce(Enum.filter(Enum.map(lost_numbers, square), odd?), product)
+</code></pre>
+
+<p>So, the <code>map</code> gives out the squared numbers, and feeds it as the first argument to the <code>filter</code>, which in turn spits the odd numbers and becomes the first argument of the <code>reduce</code> function. Instead, why not do a pipe? Remember those UNIX <code>|</code> constructs?</p>
+
+<pre><code class="language-elixir">square = fn n -&gt; n*n end
+odd? = fn n -&gt; rem(n, 2) == 1 end
+product = fn a, b -&gt; a * b end
+
+lost_numbers |&gt; Enum.map(square) |&gt; Enum.filter(odd?) |&gt; Enum.reduce(product)
+</code></pre>
+
+<p>I have always loved Clojure&rsquo;s threading macros. Looks like Elixir has one too. And it looks awesome with Firacode ligatures!</p>
+
+<p>I must admit, I was a little confused with some of the Map examples I saw, <code>%{ 2 =&gt; &quot;Two&quot;}</code> works but <code>%{2: &quot;Two&quot;}</code> spits out an error. And what&rsquo;s with this <code>[:x 25, :y 30]</code> thingy? Looks like I need to inspect the APIs better and get a good understanding of Atoms and Tuples.</p>
+
+<h2 id="okay-then">Okay then</h2>
+
+<p>This was just random scribbles on my part, hence the <em>day 0</em> bit. I just wanted to do a quick run down on Elixir and see how things fall and write-up whatever came out. And I must say, Elixir seems to have potential of being a super fun language. So far, it seemed braing and sanity friendly to me. And I find the code beautiful too. I&rsquo;m glad I took it.</p>
+
+<p>I am tired right now. That&rsquo;s all exploration for me that I&rsquo;d write about. I&rsquo;ll just go and explore more (i.e string, structs etc) on my own and share it tomorrow?</p>
+
+  </section>
+  <footer>
+    
+    
+    
+
+    
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://mafinar.ca/pages/about/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next"><a href="http://mafinar.ca/posts/day-1/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+    
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer hidden-xs">
+    <div class="copyright-note pull-left">
+      &copy; Copyright 2018 Mafinar K.
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  <a href="https://medium.com/@mafinar" target="_blank">
+    <i class="fab fa-medium-m"></i>
+  </a>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <footer class="container global-footer visible-xs-block">
+      <div class="copyright-note text-center">
+        &copy; Copyright 2018 Mafinar K.
+      </div>
+    </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-112774615-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+</body>
+</html>
+

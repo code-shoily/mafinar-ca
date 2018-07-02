@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" about.ex &middot;  learn ▷ play ▷ write" />
+  
+  <meta name="theme-color" content="#34495e" />
+ 
+  <meta property="og:site_name" content="learn ▷ play ▷ write" />
+  <meta property="og:url" content="http://mafinar.ca/pages/about/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:author" content="https://facebook.com/mafinar" />
+  
+  <meta property="og:article:published_time" content="2018-07-01T21:42:43-04:00" />
+  
+  
+
+  <title>
+     about.ex &middot;  learn ▷ play ▷ write
+  </title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://mafinar.ca/css/main.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css">
+  <link rel="shortcut icon" href="http://mafinar.ca/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://mafinar.ca/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    
+    <header class="global-header"  style="background:#34495e">
+    
+    <section class="header-text">
+      <h1><a href="http://mafinar.ca/">learn ▷ play ▷ write</a></h1>
+      
+      <div class="tag-line">
+        <a class='about-link' href='/pages/about/'>Mafinar</a> writes about <strike>Elixir and Python</strike> things
+      </div>
+      
+      
+      <a href="http://mafinar.ca/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  <a href="https://medium.com/@mafinar" target="_blank">
+    <i class="fab fa-medium-m"></i>
+  </a>
+  
+  
+  
+</div>
+
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header class="hidden-xs" style="margin-bottom: 20px">
+    <h1 class="text-primary">about.ex</h1>
+    <div class="post-meta clearfix">
+    
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2018-07-01T21:42:43-04:00">
+          Jul 1, 2018
+        </time>
+      </div>
+    
+      <div class="pull-right">
+        
+      </div>
+    </div>
+  </header>
+  <header class="visible-xs-block">
+    <div class="text-center">
+      <h1 class="text-primary">about.ex</h1>
+      <div class="post-meta clearfix">
+      
+        <div class="post-date text-center">
+          Posted on
+          <time datetime="2018-07-01T21:42:43-04:00">
+            Jul 1, 2018
+          </time>
+        </div>
+      
+        <div class="text-center" style="padding-top: 10px">
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <section>
+    <pre><code class="language-elixir">defmodule AboutMe do
+  defstruct name: &quot;Mafinar Khan&quot;,
+            tagline: &quot;Pythonista. Djangonaut. Alchemist&quot;,
+            date_of_birth: ~D[1982-12-07],
+            location: %{
+              city: &quot;Toronto&quot;,
+              province: &quot;ON&quot;,
+              country: &quot;Canada&quot;
+            },
+            work: %{
+              company_name: &quot;Tread Inc&quot;,
+              designation: &quot;Senior Software Engineer&quot;,
+              email: &quot;mafinar@tread.io&quot;,
+              tags: ~w/golang graphql java android python django apollo react/
+            },
+            skills: %{
+              programming_languages: [
+                python: %{since: 2001, love: 9 / 10, score: 8 / 10},
+                elixir: %{since: 2016, love: 10 / 10, score: 7 / 10},
+                clojure: %{since: 2011, love: 9 / 10, score: 5 / 10},
+                javascript: %{since: 2002, love: 1 / 10, score: 6 / 10},
+                golang: %{since: 2017, love: 5 / 10, score: 6 / 10},
+                java: %{since: 2001, love: 7 / 10, score: 7 / 10}
+              ],
+              frameworks: %{
+                django: %{since: 2009, love: 9 / 10, score: 8 / 10},
+                phoenix: %{since: 2018, love: 9 / 10, score: 5 / 10},
+                react: %{since: 2015, love: 3 / 10, score: 6 / 10},
+                mobx: %{since: 2015, love: 5 / 10, score: 6 / 10},
+                vue: %{since: 2016, love: 1 / 10, score: 6 / 10}
+              },
+              databases: %{
+                postgres: %{since: 2002, love: 10 / 10, score: 6 / 10}
+              },
+              others: %{
+                functional_programming: %{
+                  since: 2003,
+                  love: 10 / 10,
+                  score: 7 / 10,
+                  continue?: true
+                },
+                gis: %{since: 2009, love: 7 / 10, score: 5 / 10}
+              }
+            },
+            interests: ~w/gis graph_theory lambda_calculus nlp/,
+            random_facts: %{
+              editors: ~w/vscode vi/,
+              os: ~w/*nix android/,
+              envies: ~w/haskell elm c/,
+              movie: ~w/mystery thriller horror/,
+              music: &quot;*/**&quot;,
+              superheroes: ~w/batman lobo/,
+              food: ~w/curry vietnamese middle-eastern/,
+              languages_can_speak: ~w/bengali english hindi urdu esperanto/,
+              languages_can_write: ~w/bengali english/
+            }
+
+  # --- TO BE CONTINUED
+end
+</code></pre>
+
+  </section>
+  <footer>
+    
+    
+    
+
+    
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer hidden-xs">
+    <div class="copyright-note pull-left">
+      &copy; Copyright 2018 Mafinar K.
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  <a href="https://medium.com/@mafinar" target="_blank">
+    <i class="fab fa-medium-m"></i>
+  </a>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <footer class="container global-footer visible-xs-block">
+      <div class="copyright-note text-center">
+        &copy; Copyright 2018 Mafinar K.
+      </div>
+    </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-112774615-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+</body>
+</html>
+

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Day 1 - Tabula Rasa &middot;  learn ▷ play ▷ write" />
+  
+  <meta name="theme-color" content="#34495e" />
+ 
+  <meta property="og:site_name" content="learn ▷ play ▷ write" />
+  <meta property="og:url" content="http://mafinar.ca/posts/day-1/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:author" content="https://facebook.com/mafinar" />
+  
+  <meta property="og:article:published_time" content="2016-07-02T01:54:13&#43;06:00" />
+  
+  <meta property="og:article:tag" content="elixir" />
+  
+  <meta property="og:article:tag" content="elixir-diary" />
+  
+  <meta property="og:article:tag" content="basic" />
+  
+  <meta property="og:article:tag" content="error-handling" />
+  
+  <meta property="og:article:tag" content="pattern-matching" />
+  
+  
+
+  <title>
+     Day 1 - Tabula Rasa &middot;  learn ▷ play ▷ write
+  </title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://mafinar.ca/css/main.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css">
+  <link rel="shortcut icon" href="http://mafinar.ca/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://mafinar.ca/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    
+    <header class="global-header"  style="background:#34495e">
+    
+    <section class="header-text">
+      <h1><a href="http://mafinar.ca/">learn ▷ play ▷ write</a></h1>
+      
+      <div class="tag-line">
+        <a class='about-link' href='/pages/about/'>Mafinar</a> writes about <strike>Elixir and Python</strike> things
+      </div>
+      
+      
+      <a href="http://mafinar.ca/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  <a href="https://medium.com/@mafinar" target="_blank">
+    <i class="fab fa-medium-m"></i>
+  </a>
+  
+  
+  
+</div>
+
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header class="hidden-xs" style="margin-bottom: 20px">
+    <h1 class="text-primary">Day 1 - Tabula Rasa</h1>
+    <div class="post-meta clearfix">
+    
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2016-07-02T01:54:13&#43;06:00">
+          Jul 2, 2016
+        </time>
+      </div>
+    
+      <div class="pull-right">
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir">elixir</a></span>
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir-diary">elixir-diary</a></span>
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/basic">basic</a></span>
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/error-handling">error-handling</a></span>
+        
+        <span class="post-tag small"><a href="http://mafinar.ca//tags/pattern-matching">pattern-matching</a></span>
+        
+      </div>
+    </div>
+  </header>
+  <header class="visible-xs-block">
+    <div class="text-center">
+      <h1 class="text-primary">Day 1 - Tabula Rasa</h1>
+      <div class="post-meta clearfix">
+      
+        <div class="post-date text-center">
+          Posted on
+          <time datetime="2016-07-02T01:54:13&#43;06:00">
+            Jul 2, 2016
+          </time>
+        </div>
+      
+        <div class="text-center" style="padding-top: 10px">
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir">elixir</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/elixir-diary">elixir-diary</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/basic">basic</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/error-handling">error-handling</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca//tags/pattern-matching">pattern-matching</a></span>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <section>
+    
+
+<p>I did enough explorations the past few days and it&rsquo;s time I emptied my cup and proceeded as a total newcomer to the language. Not a Python programmer trying to translate Python idioms into Elixir nor a Clojure programmer checking the language out, but starting with a clean slate and learning from zero. It is not an easy thing to do. Most of the time I would fight the urge to skip a line of the documentation with the assumption that &ldquo;I already know&rdquo;. I don&rsquo;t. My exposure to Elixir is that of a pre-noob&rsquo;s and I should act like it.</p>
+
+<p>Although it&rsquo;s entitled <em>&ldquo;Day 1&rdquo;</em>, I had spent the past <sup>2</sup>&frasl;<sub>3</sub> days reading through the documentation and browsing through some source codes and snippets, I needed to get a feel for the language before I started documenting my experiences with it. While from a distance, Elixir seemed to have a familiar face but in reality, the way it makes you think and the way your code becomes art through it is quite different. The same is true for Python, or Golang, or Clojure. Every language boasts their own personality and it is important that their coders respect that. Writing Fortran in any language never did any good.</p>
+
+<p>So, assuming zero knowledge of the language, I proceed with the rest of my days with Elixir.</p>
+
+<h2 id="running-a-file">Running a File</h2>
+
+<p>How do I run a file? I know <code>iex</code> is the magical shell that let&rsquo;s me insta-code, but what if I want to write a program, a script of sorts with Elixir? Easy, I write a <code>.exs</code> file and do an <code>elixir &lt;my_file_name&gt;.exs</code>.</p>
+
+<pre><code class="language-elixir"># hello_world.exs
+defmodule HelloWorld do
+    def play do
+        IO.puts &quot;Hello World&quot;
+    end
+end
+
+HelloWorld.play
+</code></pre>
+
+<p>There you go, my first super sophisticated Elixir program. A quick <code>elixir hello_world.exs</code> printed the legendary &ldquo;Hello World&rdquo; to my console. I could go to the <code>iex</code> and type <code>c(&quot;hello_world.exs&quot;)</code> and enable it for a <code>HelloWorld.run</code> too if I want.</p>
+
+<p>What if I am in the shell, compiled the code and then I change it and want to see the results? Just make the <code>c</code> call again.</p>
+
+<h2 id="a-little-on-modules">A little on Modules</h2>
+
+<p><em>Modules</em> in Elixir contain functions. There are anonymous functions which are of the <code>fn(&lt;arg1&gt;,&lt;arg2&gt;...) -&gt; &lt;body&gt; end</code> syntax and can be bound with a var, but for the named functions to exist, they have to reside under a module.</p>
+
+<pre><code class="language-elixir"># Anonymous function
+square_area = fn(n) -&gt; n*n end
+
+# Inside a module
+defmodule Area do
+    def square(side) do
+        side * side
+    end
+end
+</code></pre>
+
+<h3 id="default-arguments">Default Arguments</h3>
+
+<p>We can add more functions to the module, for instance, the ability to compute the area of a rectangle, given <code>height</code> and <code>width</code>:</p>
+
+<pre><code class="language-elixir">defmodule Area do
+    def square(side \\ 0) do
+        side * side
+    end
+
+    def rectangle(height \\ 0, width \\ 0) do
+        height * width
+    end
+end
+</code></pre>
+
+<p>What were those <code>\\ 0</code> about? That&rsquo;s how Elixir shows default arguments. <code>height \\ 0</code> and <code>width \\ 0</code> meant that if any of those parameters were missing during the function call, they&rsquo;d be replaced with <code>0</code>s. I think I will typo <code>//</code> instead of <code>\\</code> a lot.</p>
+
+<h3 id="match-operator">Match Operator</h3>
+
+<p>The <code>=</code> in Elixir is called the <em>match operator</em>. It doesn&rsquo;t seem like other languages&rsquo; <code>=</code>-s in a sense that it doesn&rsquo;t assign anything to a variable, it matches, and binds the right hand side expression with the left hand side one.</p>
+
+<pre><code class="language-elixir">x = 1 # We all know what happens here
+x = 2 # `x` now refers to someone else
+3 = x # 3 does *not* match with `x`, so we get a `MatchError`
+2 = x # There it is, RHS matches with LHS, so it works!
+</code></pre>
+
+<h2 id="error-handling">Error Handling</h2>
+
+<p>I always make sure I familiar myself with error messages of a programing language. <code>2 = x</code> yielded no error but <code>3 = x</code> did spit up a <code>MatchError</code> and naturally, so should <code>3 = z</code>, as <code>z</code> doesn&rsquo;t exist to be matched in the first place. However, this will yield a completely different error- the <code>CompileError</code>. It&rsquo;s because the compiler expect the right hand side to be an expression which the left hand side will match with. <code>x</code> is an expression, it didn&rsquo;t match with <code>3</code>. <code>z</code> isn&rsquo;t, so it took it for a function (it looks like a no-args function since parentheses are optional in Elixir), so the error message is, <code>undefined function, z/0</code>.</p>
+
+<h3 id="try-rescue-and-after">try &hellip; rescue and after</h3>
+
+<p>This brings us to exception handling. I know it&rsquo;s too early to be handling exceptions but well, I had dived in there early for all but my first and second languages. Let&rsquo;s start with everybody&rsquo;s favorite example:</p>
+
+<pre><code class="language-elixir"># Let's 1/0 and see what the error is called, ArithmeticError eh?
+defmodule BadMath do
+    def divide(a, b) do
+        try do
+            a / b
+        rescue
+            e in ArithmeticError -&gt; IO.puts(&quot;An error occured: &quot; &lt;&gt; e.message)
+        after
+            IO.puts &quot;I just print this message for no reason at all&quot;
+        end
+    end
+
+    def play do
+        IO.puts divide(10, 0)
+    end
+end
+</code></pre>
+
+<blockquote>
+<p><strong>Question</strong> What does the <code>&lt;&gt;</code> operator do?</p>
+
+<p><strong>Answer</strong> That&rsquo;s Elixir string concatenation operator. (I felt kinda weird to me at first)</p>
+</blockquote>
+
+<p>When we either run the script or call <code>BadMath.play</code> from <code>iex</code> we get the error message and the <del>finally</del> <code>after</code> message. So I guess we can tell that <code>after</code> puts a piece of code that gets executed regardless whether we made an error or not.</p>
+
+<p>How do you <del>throw</del> <code>raise</code> an exception? The <code>raise</code> macro, of course. Just put <code>raise</code> with the ErrorName as the first argument and message as the second. Call it from within <code>try</code>-s scope and it&rsquo;ll <del>catch</del> <code>rescue</code> it.</p>
+
+<h3 id="throw-and-catch">throw and catch</h3>
+
+<p><del>Speaking of striking out things,</del> looks like Elixir has <code>throw</code> and <code>catch</code> as well (See what I mean by starting with <em>No knowlege at all?</em>). <code>throw</code> is <em>not</em> like <code>raise</code>. It just does it&rsquo;s namesake, takes a value, and throws it into the <code>catch</code>ers pitch, anything that is thrown gets handled. Like the following:</p>
+
+<pre><code class="language-elixir">tct = fn a,b -&gt;
+    try do
+        c = a/b
+        throw c
+    rescue
+        e in ArithmeticException -&gt; IO.puts &quot;Know thy Arithmetic&quot;
+    catch
+        v when v &lt;= 10 -&gt; IO.puts &quot;Small result: #{v}&quot;; v
+        v when v &gt; 10 == 1 -&gt; IO.puts &quot;Large result: #{v}&quot;; v
+        v -&gt; IO.puts &quot;Is it even possible to get here?&quot;
+end
+</code></pre>
+
+<blockquote>
+<p><strong>Question</strong> <code>#{v}</code>? Does it do what I think it does?</p>
+
+<p><strong>Answer</strong> Yes. The braces take Elixir expression, evaluates, stringifies, and replaces the <code>#{}</code> with it. It&rsquo;s called <em>String Interpolation</em>.</p>
+
+<p><strong>Question</strong> What&rsquo;s with the <code>-&gt;</code> and the <code>when</code>?</p>
+
+<p><strong>Answer</strong> Bare with me, I&rsquo;ll get there <del>tomorrow?</del> right after this. It&rsquo;s readable though, right?</p>
+</blockquote>
+
+<h3 id="rescuing-a-function">Rescuing a Function</h3>
+
+<p>One thing we notice is, a lot of functions demand to be wrapped inside a <code>try</code>. And there&rsquo;s sugar for it too:</p>
+
+<pre><code class="language-elixir">defmodule BadMath do
+    def divide(a, b) do
+        a/b
+    rescue
+        e in ArithmeticError -&gt; IO.puts(&quot;Oops: #{e.message}&quot;)
+    after
+        IO.puts(&quot;I get printed regardless of whether you screwed up&quot;)
+    end
+end
+</code></pre>
+
+<p>So a named function can be an implicit <code>try</code> too.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Here&rsquo;s the takeaway:</p>
+
+<ul>
+<li><code>try</code> creates somewhat of a protected zone around your code. Any <del>Exception</del> errors occuring or <code>raise</code>d becomes a candidate for <code>rescue</code>.</li>
+<li>The <code>rescue</code> clause takes the error in question and matches it with a list of patterns (We&rsquo;re getting there soon). Whenever a pattern is matched, the associated expression is run.</li>
+<li>The <code>catch</code> clause deals with stuff that <code>try</code> threw at it via the <code>throw</code> function. It too, has it&rsquo;s own set of pattern against which the thrown value is matched with, it is better for the patterns to be exhaustive here.</li>
+<li>The difference between <code>raise</code> and <code>catch</code> is that <code>raise</code> is activated when an error occures, it knows the <code>error</code> and its <code>message</code>. <code>catch</code> on the other hand is activated when something is <code>throw</code>n at it. It can be <em>any</em> value the author chooses it to be. And the value will be matched against a series of pattern, just like the <code>rescue</code> clause.</li>
+<li>Named functions can act as an <em>implicit</em> try. If the whole body of the function is to be probed for error, then the try wouldn&rsquo;t be required.</li>
+<li><code>after</code> takes place regardless of whether error was made</li>
+<li><code>else</code> takes place when no errors were raised or values were thrown. It also matches the value with a series of patterns just like <code>raise</code> and <code>catch</code>, it just takes on the good guys. (I had forgotten about it earlier and am too lazy to be showing an example now :()</li>
+</ul>
+
+<h2 id="patterns-and-guards">Patterns and Guards</h2>
+
+<p>Now, let&rsquo;s focus on the patterns we were talking about earlier. Patterns are one of the coolest things I liked about Elixir. It is actually quite simple, just take two parts, the left one will contain variables to be bound, wrapped in its data structure while the right side will be an expression. Now, mentally superimpose the right part on top of the left. If they make a complete one-to-one match (including the data structure), then you got your variables bound.</p>
+
+<p>Let&rsquo;s take an example here, <code>[1, 2, 3]</code> is a list, right? And what of <code>[x, y, z]</code>? A list too. But whether or not you will be slapped with a <code>CompilerError</code> or not is totally upto the context and declaration conditions of the variables. Now, what happens if you place <code>[1, 2, 3]</code> on top of <code>[x, y, z]</code>? You see, <code>1</code> will sit on top of <code>x</code>, <code>2</code> on <code>y</code>, and <code>3</code> on <code>z</code>. Bring the match operator in the mix and you have <code>[x, y, z] = [1, 2, 3]</code> binding <code>x</code>, <code>y</code>, and <code>z</code>, to <code>1</code>, <code>2</code>, and <code>3</code>. However, if we place <code>{x, y, z} = [1, 2, 3]</code> they won&rsquo;t really match, <code>{</code> will reject the <code>[</code> and we get our favorite <code>MatchError</code>, and neither would <code>[1, x] = [2, 6]</code> because 1 ain&rsquo;t 2. The pattern has to match completely.</p>
+
+<blockquote>
+<p><strong>Question</strong> What one earth is a <code>{1, 2, 3}</code>?</p>
+
+<p><strong>Answer</strong> They&rsquo;re <code>tuples</code>. They are like <code>Lists</code>, but with different agenda and performance profile. Use them when you have a fixed number of elements. I&rsquo;m sure I&rsquo;ll talk about them in a day or two.</p>
+</blockquote>
+
+<p>So, let&rsquo;s do some pattern matchings based on whatever we know:</p>
+
+<pre><code class="language-elixir">[a, 2, [c, d], 5] = [1, 2, [3, 4], 5]
+#[a, 2, [c, d], 5]
+#[1, 2, [3, 4], 5]
+# Variables on top, values on bottom, you tell me who's what?
+
+%{lat: lat, lng: lng} = %{lat: 23, lng: 90}
+#%{lat: lat, lng: lng}
+#%{lat: 23,  lng: 90}
+# You get the picture...
+
+{:circle, 10} = {:square, 10}
+#{:circle, 10}
+#{:square, 10}
+#:circle ain't :square... MatchError!!!
+</code></pre>
+
+<p>As I&rsquo;ve mentioned in <em>Day-0</em>, <code>%{x: 0, y: 0}</code> refers to a <code>Map</code>. A special case of it too because in here, keys are atoms. If no keys were atoms, we&rsquo;d do a <code>%{&quot;x&quot; =&gt; 0, &quot;y&quot; =&gt; 0}</code> instead.</p>
+
+<h3 id="lists-maps-tuples">Lists, Maps, Tuples</h3>
+
+<p>I have briefly mentioned <code>List</code>, <code>Tuple</code> and <code>Map</code> without talking about it much, I know I will some day but here are some quickies:</p>
+
+<ul>
+<li><code>Atom</code>s are like constants where their names and values are the same.</li>
+<li><code>List</code>s can be written in the form <code>[1, 2, 3]</code>. However, they are recursively constructed. For example, <code>[0 | []]</code> is <code>[0,1]</code>, <code>[0 | [1 | []]]</code> is <code>[0, 1]</code> and so on. This construction is of the form <code>[h|t]</code> where <code>h</code> refers to the first element and <code>t</code> refers to the rest. This can be used as a pattern too.</li>
+<li><code>Map</code>s are written like <code>%{&quot;a&quot; =&gt; 10, &quot;b&quot; =&gt; 20}</code> but if all of its keys are atoms, then it can be of the type <code>%{a: 10, b: 20}</code>. Normally, maps are accessed via the indexing operator but in case of keyword maps, <code>.</code> operator can be used. <code>m = %{x: 0, y: 0}</code> can be accessed like either <code>m[:a]</code> or <code>m.a</code>. For keyword maps only.</li>
+<li>A <code>List</code> whose elements are all tuples of two elements and the first of whom are atoms, then they are called keywords and have a special sugar as well. <code>[{:a, 2}, {:b, 3}]</code> can also be written as <code>[a: 2, b: 3]</code> and queried like <code>lst[:a]</code>.</li>
+</ul>
+
+<h3 id="functions-and-patterns">Functions and Patterns</h3>
+
+<p>Back to patterns. And here&rsquo;s something interesting, function arguments are pattern-ready. Which means if we define a function definition like <code>def f(0, 1, x)</code> and put <code>0, 1, 2</code> as the actual parameters, then the function will be activated and <code>x</code> will be bound with <code>2</code>. This eliminates a lot of conditions and logics and makes the programs look declarative. Modules match all definitions of the functions from top to bottom and activates the first match. Here&rsquo;s an example:</p>
+
+<pre><code class="language-elixir">defmodule BadMath do
+    def factorial(0), do: 1
+    def factorial(n), do: n * factorial(n-1)
+end
+</code></pre>
+
+<p>In the snippet above, when we call <code>BadMath.factorial(4)</code>, then it first matches with <code>factorial(0)</code> signature, it doesn&rsquo;t find it, so it matches the second one. This stops when <code>n</code> is finally <code>0</code> due to the decrements and first one (non-recursive) is matched.</p>
+
+<p>Here&rsquo;s one with the head rest pattern.</p>
+
+<pre><code class="language-elixir">defmodule Sort do
+    def quicksort([]), do: []
+    def quicksort([h|t]) do
+        center = (for x &lt;- t, x == h, do: x) ++ [h]
+        quicksort(for x &lt;- t, x &lt; h, do: x) ++ center ++ quicksort(for x &lt;- t, x &gt; h, do: x) 
+    end
+end
+</code></pre>
+
+<blockquote>
+<p><strong>Question</strong> ++ what&rsquo;s that?</p>
+
+<p><strong>Answer</strong> You concatenate two lists with the ++ function. Or the <code>++/2</code></p>
+</blockquote>
+
+<p>This is fun&hellip; let&rsquo;s write some more of these.</p>
+
+<pre><code class="language-elixir">defmodule List do
+    def len([]), do: 0
+    def len([h|t]), do: 1 + len(t)
+
+    def map(f, []), do: []
+    def map(f, [h|t]), do: [f.(h)] ++ map(f, t)
+
+    def filter(f, []), do: []
+    def filter(f, [h|t]), do: (if f.(h), do: [h], else: []) ++ filter(f, t)
+end
+</code></pre>
+
+<h3 id="and-guards">And Guards</h3>
+
+<p>Then there are guards. Guards are basically the <code>when</code> clauses that were mentioned in the <code>Exception</code> zone.</p>
+
+<p>Guards guard their patterns, a guard starts with <code>when</code> and is followed by a condition expression. Boolean functions can be called too but predicates that guards allow are very few in number and user-custom functions cannot be used.</p>
+
+<pre><code class="language-elixir">defmodule Grade do
+    def show(n) when n &lt;= 100 and n &gt;= 90, do: &quot;A&quot;
+    def show(n) when n &lt; 90 and n &gt; 80, do: &quot;B&quot;
+    def show(n) when n &lt; 80 and n &gt;= 70, do: &quot;C&quot;
+    def show(n) when n &lt; 70 and n &gt;= 60, do: &quot;D&quot;
+    def show(n) when n &lt; 60 and n &gt;= 0, do: &quot;F&quot;
+    def show(_), do: &quot;What were they smoking?&quot;
+end
+</code></pre>
+
+<p>This brings us to the <code>case</code> macro. The <code>case</code> macro takes an expression and matches it with a set of patterns. The grade above could be <code>case</code>d like:</p>
+
+<pre><code class="language-elixir">pass_or_fail = fn marks -&gt;
+    case marks do
+        m when m &lt; 33 -&gt; :fail
+        m when m &gt;= 33 -&gt; :pass
+        m when m &gt; 100 or m &lt; 0 -&gt; :wrong
+    end
+end
+</code></pre>
+
+<p>See when we call the function above, the <code>:wrong</code> never appears. This is because when we assign an impossible value like <code>-10</code> or <code>110</code>, then they get matched with the top two clauses, hence the last clause is never met. We should either put the final clause on top, or add a high/low value checking bound in the <code>when</code> clauses.</p>
+
+<p>Similar is <code>cond</code> macro. Instead of taking a value and matching a set of patterns, it dictates a set of conditions and expression that is associated with them.</p>
+
+<pre><code class="language-elixir">pass_or_fail = fn marks -&gt;
+    cond do
+        marks &lt;= 100 and marks &gt;= 33 -&gt; :pass
+        marks &gt;= 0 and marks &lt; 33 -&gt; :fail
+        :else -&gt; :wrong
+    end
+end
+</code></pre>
+
+<p>That&rsquo;s with the guards. There are a few things though:</p>
+
+<p>Firstly, Guards know limited functions. Not all functions can be used in guards, no matter how boolean they are.</p>
+
+<p>Guards don&rsquo;t throw exceptions. I had understood it the hard way. The following piece of code, for example:</p>
+
+<pre><code class="language-elixir">defmodule WeirdMath do
+    # def division_even(a, 0), do: raise ArithmeticError, &quot;Division by zero&quot;
+    def division_even(a, b) when rem(a/b, 2) == 1, do: false
+    def division_even(a, b) when rem(a/b, 2) == 0, do: true
+end
+</code></pre>
+
+<p>When I call <code>WeirdMath.division_even(10, 2)</code> it sends me a <code>FunctionClauseError</code>, saying, there&rsquo;s no function clause that matches it. Then when I separately do a <code>rem(10, 2)</code> then I get an <code>ArithmeticError</code> that tells me I have bad argument in my expression. This didn&rsquo;t get handled in the guard.</p>
+
+<p>Now, if we go back to the error handling section, we would have an easier time understanding it and be more creative while handling errors.</p>
+
+<h2 id="phew">PHEW</h2>
+
+<p>That was a long post. And a fun one too. I will be writing on data structures tomorrow. It&rsquo;s holiday season here so I&rsquo;ll be able to write more.</p>
+
+<blockquote>
+<p><strong>Question</strong> What&rsquo;s this <code>macro</code> you talk about?</p>
+
+<p><strong>Answer</strong> Pure awesomeness. I can&rsquo;t wait to know Elixir&rsquo;s version of it.</p>
+</blockquote>
+
+  </section>
+  <footer>
+    
+    
+    
+
+    
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://mafinar.ca/posts/day-0/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next"><a href="http://mafinar.ca/posts/day-2/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+    
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer hidden-xs">
+    <div class="copyright-note pull-left">
+      &copy; Copyright 2018 Mafinar K.
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  <a href="https://medium.com/@mafinar" target="_blank">
+    <i class="fab fa-medium-m"></i>
+  </a>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <footer class="container global-footer visible-xs-block">
+      <div class="copyright-note text-center">
+        &copy; Copyright 2018 Mafinar K.
+      </div>
+    </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-112774615-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+</body>
+</html>
+
