@@ -94,6 +94,16 @@
     <loc>http://mafinar.ca/posts/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="http://mafinar.ca/bn/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://mafinar.ca/posts/"
+                />
   </url>
   
   <url>

@@ -7,9 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
+    <lastBuildDate>Sat, 02 Jun 2018 01:23:42 -0400</lastBuildDate>
     
 	<atom:link href="http://mafinar.ca/bn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Django</title>
+      <link>http://mafinar.ca/bn/tags/django/</link>
+      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graphql</title>
+      <link>http://mafinar.ca/bn/tags/graphql/</link>
+      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://mafinar.ca/bn/tags/python/</link>
+      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>পাইথন</title>
+      <link>http://mafinar.ca/bn/tags/%E0%A6%AA%E0%A6%BE%E0%A6%87%E0%A6%A5%E0%A6%A8/</link>
+      <pubDate>Tue, 12 Jun 2018 01:12:19 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/%E0%A6%AA%E0%A6%BE%E0%A6%87%E0%A6%A5%E0%A6%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>বাংলাদেশ</title>
+      <link>http://mafinar.ca/bn/tags/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6/</link>
+      <pubDate>Tue, 12 Jun 2018 01:12:19 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

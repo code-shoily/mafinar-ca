@@ -3,6 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://mafinar.ca/bn/posts/python-bd/</loc>
+    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/posts/graphql/</loc>
+    <lastmod>2018-06-02T01:23:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/tags/django/</loc>
+    <lastmod>2018-06-02T01:23:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/tags/graphql/</loc>
+    <lastmod>2018-06-02T01:23:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/pages/</loc>
     <priority>0</priority>
     <xhtml:link
@@ -18,7 +40,30 @@
   </url>
   
   <url>
+    <loc>http://mafinar.ca/bn/posts/</loc>
+    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://mafinar.ca/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="http://mafinar.ca/bn/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/tags/python/</loc>
+    <lastmod>2018-06-02T01:23:42-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/tags/</loc>
+    <lastmod>2018-06-02T01:23:42-04:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -34,6 +79,7 @@
   
   <url>
     <loc>http://mafinar.ca/bn/</loc>
+    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -45,6 +91,18 @@
                 hreflang="bn"
                 href="http://mafinar.ca/bn/"
                 />
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/tags/%E0%A6%AA%E0%A6%BE%E0%A6%87%E0%A6%A5%E0%A6%A8/</loc>
+    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/tags/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6/</loc>
+    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

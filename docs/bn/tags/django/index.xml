@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on learn ▷ play ▷ write</title>
+    <link>http://mafinar.ca/bn/tags/django/</link>
+    <description>Recent content in Django on learn ▷ play ▷ write</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
+    <lastBuildDate>Sat, 02 Jun 2018 01:23:42 -0400</lastBuildDate>
+    
+	<atom:link href="http://mafinar.ca/bn/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ফুল স্ট্যাক গ্রাফকিউএল শূন্য থেকে স্বয়ংসম্পূর্ণ - বেসিক ও কোডবিহীন আলোচনা</title>
+      <link>http://mafinar.ca/bn/posts/graphql/</link>
+      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/posts/graphql/</guid>
+      <description>গতবছর পাইকন ক্যানাডাতে গ্রাফকিউএল নিয়ে একটা টিউটোরিয়াল নিয়েছিলাম। অফিসের কলিগদের সাথে আড্ডা/ইন্টারনাল টেকটক বহির্ভুত সেটিই ছিল আমার কমিউনিটির সাথে গ্রাফকিউএল নিয়ে প্রথম কথোপকথন। সেখানে অনেক প্রশ্ন করা হয় আমাকে, আর আমার সেশানে বেশিরভাগই ছিলেন গ্রাফকিউএলে নতুন। আমি সবচেয়ে অবাক হই যে বিষয়ে সেটি হল কত তাড়াতাড়ি তারা কনসেপ্ট বুঝে নিয়েছেন। এমন না যে আমার বোঝানোর ক্ষমতা অসাধারণ, তা মোটেও সত্য নয়, আসলটা ছিল যে গ্রাফকিউএল খুবই কনসেপ্ট বান্ধব একটা কনসেপ্ট যার পিছনে কিছুটা ধৈর্য ধরে সময় ব্যয় করলে এপিআই নিয়ে সম্পূর্ণ ভিন্নভাবে চিন্তা করতে শিখবেন। আর এটি &amp;ldquo;ভাল&amp;rdquo; ভিন্ন, &amp;ldquo;খারাপ&amp;rdquo; ভিন্ন নয়। তো আমি চিন্তা করলাম, বাংলাতে একটা সিরিজের মত চালু করতে পারি গ্রাফকিউএল নিয়ে। আর সেটি নিয়েই হবে আজকের এই আপাত-ইউসলেস ও অগোছাল এই পোস্ট।</description>
+    </item>
+    
+  </channel>
+</rss>
