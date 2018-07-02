@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://mafinar.ca/bn/posts/jupyter-links-1/</loc>
+    <lastmod>2018-07-02T15:39:06-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/posts/python-bd/</loc>
     <lastmod>2018-06-12T01:12:19-04:00</lastmod>
   </url>
@@ -41,14 +46,38 @@
   </url>
   
   <url>
+    <loc>http://mafinar.ca/bn/tags/jupyter/</loc>
+    <lastmod>2018-07-02T15:39:06-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/tags/notebook/</loc>
+    <lastmod>2018-07-02T15:39:06-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://mafinar.ca/bn/tags/numpy/</loc>
+    <lastmod>2018-07-02T15:39:06-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/tags/orm/</loc>
     <lastmod>2018-06-01T02:00:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>http://mafinar.ca/bn/tags/pandas/</loc>
+    <lastmod>2018-07-02T15:39:06-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/posts/</loc>
-    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
+    <lastmod>2018-07-02T15:39:06-04:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -86,7 +115,7 @@
   
   <url>
     <loc>http://mafinar.ca/bn/</loc>
-    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
+    <lastmod>2018-07-02T15:39:06-04:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"

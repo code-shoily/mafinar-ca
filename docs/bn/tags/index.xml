@@ -40,11 +40,47 @@
     </item>
     
     <item>
+      <title>Jupyter</title>
+      <link>http://mafinar.ca/bn/tags/jupyter/</link>
+      <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Notebook</title>
+      <link>http://mafinar.ca/bn/tags/notebook/</link>
+      <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/notebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Numpy</title>
+      <link>http://mafinar.ca/bn/tags/numpy/</link>
+      <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/numpy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Orm</title>
       <link>http://mafinar.ca/bn/tags/orm/</link>
       <pubDate>Fri, 01 Jun 2018 02:00:13 -0400</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/orm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandas</title>
+      <link>http://mafinar.ca/bn/tags/pandas/</link>
+      <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/pandas/</guid>
       <description></description>
     </item>
     
