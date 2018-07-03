@@ -3,7 +3,7 @@ title: "about.ex"
 date: 2018-07-01T21:42:43-04:00
 ---
 ```elixir
-defmodule AboutMe do
+defmodule MafinarCa.About do
   defstruct name: "Mafinar Khan",
             tagline: "Pythonista. Djangonaut. Alchemist",
             date_of_birth: ~D[1982-12-07],
@@ -47,19 +47,10 @@ defmodule AboutMe do
                 gis: %{since: 2009, love: 7 / 10, score: 5 / 10}
               }
             },
-            interests: ~w/gis graph_theory lambda_calculus nlp/,
+            interests: ~w/gis graph_theory domain_driven_design lambda_calculus nlp/,
             random_facts: %{
-              editors: ~w/vscode vi/,
-              os: ~w/*nix android/,
-              envies: ~w/haskell elm c/,
-              movie: ~w/mystery thriller horror/,
-              music: "*/**",
-              superheroes: ~w/batman lobo/,
-              food: ~w/curry vietnamese middle-eastern/,
-              languages_can_speak: ~w/bengali english hindi urdu esperanto/,
-              languages_can_write: ~w/bengali english/
+              # --- Write on me
             }
-
   # --- TO BE CONTINUED
 end
 ```
