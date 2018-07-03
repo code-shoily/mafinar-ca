@@ -12,6 +12,7 @@ tags = [
 ]
 weight = 10
 description = "OMG It's over six months and I'm at day 3! Let's mix in some tooling today"
+summary = "OMG It's over six months and I'm at day 3! Let's mix in some tooling today"
 +++
 
 ## Hello Again

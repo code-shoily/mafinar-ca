@@ -12,6 +12,7 @@ tags = [
 ]
 weight = 10
 description = "I did enough exploration the past few days and it's time I clean slate and proceed as someone learning Elixir. Not a Python programmer trying to translate Python idioms into Elixir or a Clojure programmer's view of the language, but starting with a clean slate and learning from zero."
+summary = "I did enough exploration the past few days and it's time I clean slate and proceed as someone learning Elixir. Not a Python programmer trying to translate Python idioms into Elixir or a Clojure programmer's view of the language, but starting with a clean slate and learning from zero."
 +++
 
 I did enough explorations the past few days and it's time I emptied my cup and proceeded as a total newcomer to the language. Not a Python programmer trying to translate Python idioms into Elixir nor a Clojure programmer checking the language out, but starting with a clean slate and learning from zero. It is not an easy thing to do. Most of the time I would fight the urge to skip a line of the documentation with the assumption that "I already know". I don't. My exposure to Elixir is that of a pre-noob's and I should act like it.

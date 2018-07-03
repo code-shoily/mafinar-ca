@@ -11,6 +11,7 @@ tags = [
 ]
 weight = 10
 description = "Since last night I've been playing with some of the data structures of Elixir, mostly lists, tuples and maps. While I'm not new to these data structures, the way Elixir's API is laid out is a little different and took awhile to get used to"
+summary = "Since last night I've been playing with some of the data structures of Elixir, mostly lists, tuples and maps. While I'm not new to these data structures, the way Elixir's API is laid out is a little different and took awhile to get used to"
 +++
 
 Since last night I've been playing with some of Elixir's data structures, mostly lists, tuples and maps. While I'm not new to these data structures, the way Elixir's API is laid out is a little different and took awhile to get used to. The syntaxes for list and tuple seemed intuitive enough, `[1, 2, [3, 4]]` is a list, `{91, 23}` is a tuple. With maps it was a little different, `%{"key" => "value"}` or `%{keyThatsAtom: "value"}`. Actually, this is me remembering the feeling I had few days ago when I actually started Elixir. I already played a little, today I'll just get a better feeling of them since I've more or less grokked pattern matching (hopefully). 

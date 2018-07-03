@@ -10,6 +10,7 @@ tags = [
 ]
 weight = 10
 description = "Let's install this thing and do some explorations. This is a totally random, unplanned, whatever-may-come-into-your-mind post where I just query syntactic constructs and map it with Elixir's. Going to be full of misinformations and bloopers, I assume"
+summary = "Let's install this thing and do some explorations. This is a totally random, unplanned, whatever-may-come-into-your-mind post where I just query syntactic constructs and map it with Elixir's. Going to be full of misinformations and bloopers, I assume"
 +++
 
 ## Get, Set, Go!!!
