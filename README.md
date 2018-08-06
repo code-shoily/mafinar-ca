@@ -1,3 +1,5 @@
 # mafinar-ca
 
-Source code for my personal [website](http://mafinar.ca). [Get started with Hugo](https://gohugo.io/getting-started/) to make one of your own.
+Source code for my personal [website](http://mafinar.ca). 
+
+[Get started with Hugo](https://gohugo.io/getting-started/) to make one of your own.
