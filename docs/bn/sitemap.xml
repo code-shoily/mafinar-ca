@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://mafinar.ca/bn/posts/dart-101-2-installation/</loc>
+    <lastmod>2018-12-08T09:00:22-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/posts/dart-101-1/</loc>
     <lastmod>2018-12-06T21:24:50-05:00</lastmod>
   </url>
@@ -40,7 +45,7 @@
   
   <url>
     <loc>http://mafinar.ca/bn/tags/dart-101/</loc>
-    <lastmod>2018-12-06T21:24:50-05:00</lastmod>
+    <lastmod>2018-12-08T09:00:22-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,6 +92,12 @@
   </url>
   
   <url>
+    <loc>http://mafinar.ca/bn/tags/p-002/</loc>
+    <lastmod>2018-12-08T09:00:22-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/tags/pandas/</loc>
     <lastmod>2018-07-02T15:39:06-04:00</lastmod>
     <priority>0</priority>
@@ -94,7 +105,7 @@
   
   <url>
     <loc>http://mafinar.ca/bn/posts/</loc>
-    <lastmod>2018-12-06T21:24:50-05:00</lastmod>
+    <lastmod>2018-12-08T09:00:22-05:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -116,7 +127,7 @@
   
   <url>
     <loc>http://mafinar.ca/bn/tags/series/</loc>
-    <lastmod>2018-12-06T21:24:50-05:00</lastmod>
+    <lastmod>2018-12-08T09:00:22-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -138,7 +149,7 @@
   
   <url>
     <loc>http://mafinar.ca/bn/</loc>
-    <lastmod>2018-12-06T21:24:50-05:00</lastmod>
+    <lastmod>2018-12-08T09:00:22-05:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
