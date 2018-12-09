@@ -24,7 +24,7 @@
     <item>
       <title>Dart 101</title>
       <link>http://mafinar.ca/bn/tags/dart-101/</link>
-      <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
+      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/dart-101/</guid>
       <description></description>
@@ -45,6 +45,15 @@
       <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>http://mafinar.ca/bn/tags/installation/</link>
+      <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/installation/</guid>
       <description></description>
     </item>
     
@@ -103,11 +112,29 @@
     </item>
     
     <item>
+      <title>P 003</title>
+      <link>http://mafinar.ca/bn/tags/p-003/</link>
+      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/p-003/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Pandas</title>
       <link>http://mafinar.ca/bn/tags/pandas/</link>
       <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pub</title>
+      <link>http://mafinar.ca/bn/tags/pub/</link>
+      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/pub/</guid>
       <description></description>
     </item>
     
@@ -123,7 +150,7 @@
     <item>
       <title>Series</title>
       <link>http://mafinar.ca/bn/tags/series/</link>
-      <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
+      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/series/</guid>
       <description></description>
