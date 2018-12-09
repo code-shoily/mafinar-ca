@@ -49,11 +49,11 @@
     </item>
     
     <item>
-      <title>Installation</title>
-      <link>http://mafinar.ca/bn/tags/installation/</link>
-      <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
+      <title>Introduction</title>
+      <link>http://mafinar.ca/bn/tags/introduction/</link>
+      <pubDate>Thu, 06 Dec 2018 21:24:50 -0500</pubDate>
       
-      <guid>http://mafinar.ca/bn/tags/installation/</guid>
+      <guid>http://mafinar.ca/bn/tags/introduction/</guid>
       <description></description>
     </item>
     
@@ -63,6 +63,15 @@
       <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meta</title>
+      <link>http://mafinar.ca/bn/tags/meta/</link>
+      <pubDate>Thu, 06 Dec 2018 21:24:50 -0500</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/meta/</guid>
       <description></description>
     </item>
     
@@ -94,38 +103,20 @@
     </item>
     
     <item>
-      <title>P 001</title>
-      <link>http://mafinar.ca/bn/tags/p-001/</link>
-      <pubDate>Thu, 06 Dec 2018 21:24:50 -0500</pubDate>
-      
-      <guid>http://mafinar.ca/bn/tags/p-001/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>P 002</title>
-      <link>http://mafinar.ca/bn/tags/p-002/</link>
-      <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
-      
-      <guid>http://mafinar.ca/bn/tags/p-002/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>P 003</title>
-      <link>http://mafinar.ca/bn/tags/p-003/</link>
-      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
-      
-      <guid>http://mafinar.ca/bn/tags/p-003/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Pandas</title>
       <link>http://mafinar.ca/bn/tags/pandas/</link>
       <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project Structure</title>
+      <link>http://mafinar.ca/bn/tags/project-structure/</link>
+      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/project-structure/</guid>
       <description></description>
     </item>
     
@@ -153,6 +144,15 @@
       <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>http://mafinar.ca/bn/tags/setup/</link>
+      <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/setup/</guid>
       <description></description>
     </item>
     
