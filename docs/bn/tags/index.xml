@@ -22,9 +22,18 @@
     </item>
     
     <item>
+      <title>Control Flow</title>
+      <link>http://mafinar.ca/bn/tags/control-flow/</link>
+      <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/control-flow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Dart 101</title>
       <link>http://mafinar.ca/bn/tags/dart-101/</link>
-      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
+      <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/dart-101/</guid>
       <description></description>
@@ -141,7 +150,7 @@
     <item>
       <title>Series</title>
       <link>http://mafinar.ca/bn/tags/series/</link>
-      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
+      <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/series/</guid>
       <description></description>
@@ -153,6 +162,15 @@
       <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
       
       <guid>http://mafinar.ca/bn/tags/setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Types</title>
+      <link>http://mafinar.ca/bn/tags/types/</link>
+      <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
+      
+      <guid>http://mafinar.ca/bn/tags/types/</guid>
       <description></description>
     </item>
     

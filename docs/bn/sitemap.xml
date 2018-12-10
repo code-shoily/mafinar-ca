@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://mafinar.ca/bn/posts/dart-101-4-variables-and-flow/</loc>
+    <lastmod>2018-12-09T13:23:36-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/posts/dart-101-3-pub/</loc>
     <lastmod>2018-12-08T13:30:57-05:00</lastmod>
   </url>
@@ -49,8 +54,14 @@
   </url>
   
   <url>
+    <loc>http://mafinar.ca/bn/tags/control-flow/</loc>
+    <lastmod>2018-12-09T13:23:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/tags/dart-101/</loc>
-    <lastmod>2018-12-08T13:30:57-05:00</lastmod>
+    <lastmod>2018-12-09T13:23:36-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -110,7 +121,7 @@
   
   <url>
     <loc>http://mafinar.ca/bn/posts/</loc>
-    <lastmod>2018-12-08T13:30:57-05:00</lastmod>
+    <lastmod>2018-12-09T13:23:36-05:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -144,7 +155,7 @@
   
   <url>
     <loc>http://mafinar.ca/bn/tags/series/</loc>
-    <lastmod>2018-12-08T13:30:57-05:00</lastmod>
+    <lastmod>2018-12-09T13:23:36-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -171,8 +182,14 @@
   </url>
   
   <url>
+    <loc>http://mafinar.ca/bn/tags/types/</loc>
+    <lastmod>2018-12-09T13:23:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://mafinar.ca/bn/</loc>
-    <lastmod>2018-12-08T13:30:57-05:00</lastmod>
+    <lastmod>2018-12-09T13:23:36-05:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
