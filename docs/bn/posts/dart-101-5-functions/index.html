@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" ডার্ট ১০১  - ফাংশন &middot;  learn ▷ play ▷ write" />
+  
+  <meta name="theme-color" content="#34495e" />
+ 
+  <meta property="og:site_name" content="learn ▷ play ▷ write" />
+  <meta property="og:url" content="http://mafinar.ca/bn/posts/dart-101-5-functions/" />
+  <meta property="og:image" content="http://mafinar.ca/images/logo.png" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:author" content="https://facebook.com/mafinar" />
+  
+  <meta property="og:article:published_time" content="2018-12-12T13:23:53-05:00" />
+  
+  <meta property="og:article:tag" content="series" />
+  
+  <meta property="og:article:tag" content="dart-101" />
+  
+  <meta property="og:article:tag" content="function" />
+  
+  
+  <meta property="og:description" content="আজকের বিষয় ফাংশন এবং এর খুটিনাটি যেমন- প্যারামিটার, স্কোপিং, ক্লোজার ইত্যাদি।" />
+
+  <title>
+     ডার্ট ১০১  - ফাংশন &middot;  learn ▷ play ▷ write
+  </title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://mafinar.ca/css/main.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css">
+  <link rel="shortcut icon" href="http://mafinar.ca/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://mafinar.ca/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    
+    <header class="global-header"  style="background:#34495e">
+    
+    <section class="header-text">
+      <h1><a href="http://mafinar.ca/">learn ▷ play ▷ write</a></h1>
+      
+      <div class="tag-line">
+        <a class='about-link' href='/pages/about/'>Mafinar</a> writes about <strike>Elixir and Python</strike> things
+      </div>
+      
+      
+      <a href="http://mafinar.ca/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="mailto:mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  
+  
+</div>
+
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header class="hidden-xs" style="margin-bottom: 20px">
+    <h1 class="text-primary">ডার্ট ১০১  - ফাংশন</h1>
+    <div class="post-meta clearfix">
+    
+      <div class="post-date pull-left">
+        <time datetime="2018-12-12T13:23:53-05:00">
+          Dec 12, 2018
+        </time>
+      </div>
+    
+      <div class="pull-right">
+        
+          
+          <span class="post-tag small"><a href="http://mafinar.ca/bn/tags/series">series</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca/bn/tags/dart-101">dart-101</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca/bn/tags/function">function</a></span>
+          
+                
+      </div>
+    </div>
+  </header>
+  <header class="visible-xs-block">
+    <div class="text-center">
+      <h1 class="text-primary">ডার্ট ১০১  - ফাংশন</h1>
+      <div class="post-meta clearfix">
+      
+        <div class="post-date text-center">
+          Posted on
+          <time datetime="2018-12-12T13:23:53-05:00">
+            Dec 12, 2018
+          </time>
+        </div>
+      
+        <div class="text-center" style="padding-top: 10px">
+          
+          <span class="post-tag small"><a href="http://mafinar.ca/tags/series">series</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca/tags/dart-101">dart-101</a></span>
+          
+          <span class="post-tag small"><a href="http://mafinar.ca/tags/function">function</a></span>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <section>
+    <p>আজকের টপিক- ফাংশন। এবং আজকের পর থেকে আমরা অন্তত প্রোগ্রামিং চ্যালেঞ্জ টাইপ প্রব্লেম সল্ভ করতে পারব ফ্লাটার দিয়ে।</p>
+
+<p>তবে এর আগে হালকা ঘোষণা। আজকে অফিস থেকে আসার পথে হাসিন হায়দার ভাইয়ের সাথে কথা হচ্ছিল। তো উনি আমাকে বললেন ভিডিও বানাতে। তাহলে সময়ও বাঁচবে, টপিকও অনেক বেশি দেওয়া যাবে। হাসিন ভাইয়ের টিউটোরিয়াল স্কিল সম্পর্কে কে না জানে, কাজেই আমি বাসায় আসামাত্র বসে পড়লাম ভিডিও বানাতে, বানিয়ে ফেললাম ফাংশন এর উপর একটা ভিডিও, ১০/১৫ মিনিট লাগলো! কিন্তু, ওনার শেষের দিকের একটা উপদেশ নেয়া হয়নি আর তা হল, ভালো একটা মাইক্রোফোন! তাই যখন শুনতে গেলাম নিজের রেকর্ডেড কণ্ঠ, বুঝলাম না ঠিক তা কি আমি নাকি শিলা বৃষ্টি হচ্ছে টিনের বাড়ির নিচে! কাজেই, ভিডিও ডিলিট, আইডিয়া আমাজন (ভাই কিন্তু লিংক দিয়েছিলেন!) এর উপর নির্ভরশীল এবং ফিরে এলাম লিখার দিকে!</p>
+
+<p>ব্যাকরণ ও কোডিং এর সস্পর্ক অনেক ইন্টারেস্টিং। আর তার জন্য আমাদের ন্যাচারাল ল্যাঙ্গুয়েজে প্রসেসিং পর্যন্তও যাওয়া লাগবে না। &ldquo;পদ&rdquo; থেকে প্রোগ্রামিং যে খুব দূরে না তা সামনের প্যারাগ্রাফ পরেই জানতে পারবেন।</p>
+
+<p>কয়েকটা বাক্য বলি-</p>
+
+<pre><code>আমি আজকে মাইক্রোফোন ছাড়া ভিডিও বানিয়েছিলাম।
+
+আমি ভিডিওটি ডিলিট করে ফেলেছি
+
+আমি এখন বাংলা টাইপ করছি
+</code></pre>
+
+<p>উপরের বাক্যগুচ্ছের ক্রিয়াপদগুলি লক্ষ্য করা যাক- &ldquo;বানিয়েছিলাম&rdquo;, &ldquo;ডিলিট করে ফেলেছি&rdquo;, &ldquo;টাইপ করছি&rdquo;, এরা বুঝাচ্ছে যে আমি কিছু একটা  করছিলাম, আমার কর্মকাণ্ডের ফলশ্রুতিতে কোনো একটা পরিবর্তন এসেছিল আমার পরিবেশে, হয়ত কিছু উদ্দেশ্য সফল হয়েছিল? আমার উদ্দেশ্য ছিল আজকের টপিক নিয়ে কাজ করার এবং উপরের বাক্য গুলি আমার সেই কার্যসিদ্ধির অংশমাত্র। তবে, আজকের টপিকের শুরু থেকে শেষ পর্যন্ত যদি আমরা প্রত্যেকটা গুরুত্বপূর্ণ কাজকে যদি বাক্যে পরিণত করে গল্পের মতো বলি, তাহলে কিন্তু আমার পুরো কাজটার একটা রেকর্ড পাব।</p>
+
+<p>তো আমি যদি কম্পিউটার হতাম এবং এই টপিক লিখাটা যদি একটা প্রোগ্রামের মাধ্যমে হতো তাহলে কিন্তু, বাক্যগুলি হত কোডের মূল উপাদান, &ldquo;লিখছি&rdquo; যখন &ldquo;লিখেছি&rdquo; তে পরিণত হত তখনি কিন্তু বেড়িয়ে আসত আস্ত একটা পোস্ট। যদি বাক্যগুলিকে সময়ের ক্রমানুযায়ী সাজাই এবং অনুজ্ঞাসূচক বাক্যে পরিণত করে শুধু ক্রিয়াগুলিকে রাখি তাহলে তা দাঁড়াবে-</p>
+
+<p>ভিডিও বানাও
+ডিলিট করো
+ওপেন করো
+টাইপ করো
+সেভ করো
+পাবলিশ করো</p>
+
+<p>জানি &ldquo;পাবলিশ করো&rdquo; না বলে &ldquo;ছাপাও&rdquo; লিখলেও হত, তবে &ldquo;সেভ করো&rdquo; না বলে কি বাচাও বলতাম? ব্যাকরণিক খাঁটিত্বকে বিসর্জন দিয়ে আমি একটুও গর্বিত না, তবে এর প্রোগ্রামিয় কানেকশন বুঝানো আমার মূল উদ্দেশ্য এখানে। বাংলা দ্বিতীয় পত্রে আমি কখনোই ভাল ছিলাম না!</p>
+
+<p>ফাংশন হল প্রোগ্রামিংয়ের ক্রিয়াপদ। যে কোন প্রোগ্রামই কোন না কোন গল্প বলে, এবং সেই গল্পের প্রতিটা বাক্যের প্রতিটা পদ প্রোগ্রামিং এর কোন না কোন আর্র্টিফ্যাক্ট। সর্বনাম- ভ্যারিয়েবল এসাইনমেন্ট, ক্রিয়াপদ- ফাংশন, অকর্মক ক্রিয়া- প্যারামিটার বিহীন ফাংশন, সমষ্টিবাচক বিশেষ্য- কালেকশন ক্লাস, নামবাচক/বস্তুবাচক বিশেষ্য- অবজেক্ট, জাতিবাচক বিশেষ্য- ক্লাস ইত্যাদি। অব্যয় পদ হয়ত সেসব গালি যা প্রোগ্রামারের মুখ থেকে বের হয় প্রব্লেম সলভিং এ আটকে গেলে (আমার ক্ষেত্রে, জাভাস্ক্রিপ্টে কাজ করতে গেলে (সমাধান হোক আর না হোক))। বলতে পারবেন প্রমিস/ফিউচার, ক্লোজার অথবা জেনেরিক্স এর ব্যাকরনিয় প্রতিস্থাপক কে কে?</p>
+
+<p>যে কোন প্রব্লেম স্টেটমেন্টকে যদি সুন্দরভাবে লিখে, সেগুলোর কারক, পদ (মূলত বিশেষ্য অথবা ক্রিয়াপদ), অথবা কাল/ভাব ইত্যাদির সাথে এক-এক সম্পর্ক স্থাপন করতে পারি আমরা প্রোগ্রামিং এর বিভিন্ন টার্মকে, তবে আমরা কিন্তু মোটামোটি একটা বয়েলারপ্লেট পাব আমাদের সমাধানের। ভাষা থেকে প্রোগ্রামিং ভাষার প্রতিস্থাপন কিরূপ হবে তা নির্ভর করবে প্রোগ্রামিং ল্যাঙ্গুয়েজটি ফাংশনাল, অবজেক্ট ওরিয়েন্টেড নাকি লজিকাল, তার উপর।</p>
+
+<p>তবে আজকে আমি ফাংশন নিয়ে কথা বলব, এবং ডার্ট ফাংশনের সিনট্যাক্স এবং এর প্রয়োগ নিয়ে আলোচনা করবো। আমার হাতে এই পোস্টটি লিখার জন্য সময় তেমন একটা ছিল না, তার উপর অফিসের কাজ, বাসার কাজ, মুভি দেখা ইত্যাদি, কাজেই সুন্দর উদাহরণ হয়ত চিন্তা করে বের করতে পারিনি, আপনাদের সাহায্য পেলে খুশি হব এইক্ষেত্রে। অগ্রিম ধন্যবাদ।</p>
+
+<p>&ldquo;আমি দাবা খেলছি&rdquo; বাক্যটিতে &ldquo;খেলা&rdquo; হল (সকর্মক) ক্রিয়া, &ldquo;দাবা&rdquo; কর্ম। অর্থাৎ &ldquo;খেলা&rdquo; হতে পারে কোন &ldquo;কিছু&rdquo;-র, তা দাবা হোক, বল হোক, &ldquo;আমি গতকাল ব্যাডমিন্টন খেলছিলাম&rdquo; কিন্তু ওই একই খেলা-র কথা বলে, তবে এর প্রসঙ্গ প্রথম খেলা থেকে ভিন্ন, বুঝা যাচ্ছে, &ldquo;খেলা&rdquo; দিয়ে আমরা বাক্য গঠন করতে পারি, আবার এর বর্ণনা দিতে পারি। খেলা-র সংজ্ঞাকে বিস্তৃত করে কিন্তু আমরা শব্দটির প্রতিস্থাপন করতে পারতাম, তবে তা শ্রুতিকটু হত।</p>
+
+<p>ডার্ট ফাংশন কিন্তু সেরকমই, এর সংজ্ঞা এবং ব্যবহার দুটোই রয়েছে। উপরের বাক্যগুলিকে আরেকটু প্রোগ্রামিং এর ধরণে লিখি-</p>
+
+<pre><code class="language-dart">&quot;ক&quot; খেলা হল- পর বাইরের জগৎ &quot;খেলা&quot; হিসেবেই তাকে চিনবে
+   &quot;ক&quot; যদি হয় &quot;ব্যাডমিন্টন&quot; তাহলে- (ব্যাডমিনটনের নিয়ম)
+   &quot;ক&quot; যদি হয় &quot;দাবা&quot; তাহলে- (দাবা খেলার নিয়ম)
+
+মাফিনার - খেলে &quot;দাবা&quot; // এখানে &quot;ক&quot; হল দাবা
+মারুফ - খেলে ব্যাডমিন্টন // এখানে &quot;ক&quot; হল ব্যাডমিন্টন
+</code></pre>
+
+<p>দেখতে পাচ্ছি যে, খেলার সংজ্ঞা দেবার সময় আমাদের কিছু জায়গা ও সময় নিতে হয়েছে এদের কলকব্জা ব্যাখ্যা করতে, তবে ওই কলকব্জা কিন্তু সেই সংজ্ঞা পর্যন্তই, আমাদের বর্ণনা শেষ হবার পর কিন্তু, আমরা &ldquo;খেলা&rdquo; বলতেই বুঝে যাবো কি বলা হচ্ছে, অনেকটা ভ্যারিয়েবল এসাইনমেন্টের মতো, শুধু এখানে আমরা একটা কর্ম-কে এসাইন করেছি।</p>
+
+<p>১, ২, ৩ ইত্যাদিকে ভ্যারিয়েবলভুক্ত করা এবং একটি ক্রিয়াকে ভ্যারিয়েবলভুক্ত করার মধ্যে তফাৎ রয়েছে। আমাদের প্রেক্ষাপটের এই &ldquo;খেলা&rdquo; কিন্তু একটা কর্ম নেয়, অর্থাৎ, কি খেলছে? এবং এর বর্ণনা দেবার সময়ে কিন্তু আমাদের &ldquo;ক&rdquo; হিসেবে চিহ্নিত করতে হয়েছে ওই &ldquo;কর্ম&rdquo; টিকে, প্রোগ্রামিং এর ভাষায় তা হয়ে যায় প্যারামিটার, যা বর্ণনা কালীন সময়ে &ldquo;ফর্মাল পারমিটার&rdquo; এবং ব্যবহারকালীন সময়ে &ldquo;অ্যাকচুয়াল প্যারামিটার&rdquo; হিসেবে চিহ্নিত হয়। প্রতিটি ফাংশন এর বর্ণনা তে, কিছু সাময়িক ভ্যারিয়েবল, ফাংশন ইত্যাদির দরকার পরতে পারে (ওই যে, কলকব্জার কথা বলেছিলাম যে), কিন্তু সেগুলোর সাথে বাইরের জগতের কোন লেনদেন নেই, প্রতিটি ফাংশন একেকটা সিস্টেম যা খুবই সীমিত বহিরাগত গ্রহণ করে। ফর্মাল প্যারামিটার একটা বহিরাগত (আরও রয়েছে, যা অবজেক্ট/ক্লাস নিয়ে পোস্ট দেওয়ার সময়ে বলব)। ফাংশনকে বর্ণনা করার সময়েই তা বাইরে থেকে কি নিবে, এবং কি ফেরত দেবে তা বলে রাখতে হবে। কি দেবে বলতে? ধরুন বাক্যটি, &ldquo;১ কাপ পানিকে ফুটিয়ে তার উপর ১ চা চামচ কায়েন মরিচের গুঁড়া দিন এবং একে ঢেকে রাখুন দিন ৫ মিনিট, এরপর অর্ধেক লেবুর রস দিয়ে মিলিয়ে তা একটা কাপে রাখুন ও পরিবেশন করুন&rdquo; বাক্যটিতে, যদি আমরা ক্রিয়াগুলি দেখি, তাহলে বলতে পাব- &ldquo;ধরি ক হল ফুটান(১ কাপ পানি)&rdquo;, &ldquo;খ হল মিশান(ক, ১ চা চামচ, মরিচের গুঁড়া)&rdquo;, &ldquo;গ হল মিশান(খ, চিপরান(অর্ধলেবু))&rdquo;, &ldquo;ঘ হল ঢালুন(গ, কাপ)&rdquo;, &ldquo;খান(ঘ)&rdquo;, অর্থাৎ প্রতিটা ক্রিয়ার একটা প্রতিক্রিয়া রয়েছে যা বাইরের জগত দেখতে পায়।</p>
+
+<p>এবার আসা যাক ডার্ট এর জগতে।</p>
+
+<ul>
+<li>ডার্ট যেহেতু একটি স্ট্যাটিক্যালি টাইপড ল্যাঙ্গুয়েজ তাই এর প্যারামিটার ও রিটার্ন টাইপ দুটোরি ডিক্লারেশন লাগবে।</li>
+<li>ডার্ট ফাংশনের বর্ণনা <code>{}</code> এর মধ্যে হয়, এর ভেতরকার যত ভ্যারিয়েবল, এসাইনমেন্ট সব <code>{</code> এবং <code>}</code> এর মধ্যেই সীমাবদ্ধ থাকে, এর বাইরে না কেউ তাদের চিনে আর না তাদের কোন অস্তিত্ব রয়েছে।</li>
+<li><code>return</code> কিওয়ার্ডের মাধ্যমে আমরা ফাংশনের রিটার্ন ভ্যালু দিয়ে থাকি।</li>
+<li><code>&lt;রিটার্ন টাইপ&gt; ফাংশনের নাম(প্যারামিটার ১, প্যারামিটার ২, প্যারামিটার ৩) { &lt;ফাংশনের বর্ণনা&gt; }</code> হল ডার্ট ফাংশনের টেমপ্লেট। যেমন- আমরা যদি ইনসার্শন সর্টিং ফাংশন দেখি-</li>
+</ul>
+
+<pre><code class="language-dart">List insertionSort(List list) {
+  for (var i = 1; i &lt; list.length; i++) {
+    var key = list[i];
+    var j = i - 1;
+    while (j &gt;= 0 &amp;&amp; list[j] &lt;= key) {
+      list[j + 1] = list[j];
+      j--;
+    }
+
+    list[j + 1] = key;
+  }
+  return list;
+}
+</code></pre>
+
+<ul>
+<li>এই যে  <code>i</code>, <code>j</code>, <code>key</code> ইত্যাদি বর্ণনাতে রয়েছে, এদের কারও কিন্ত ফাংশন বহির্ভুত অস্তিত্ব নেই। যদি <code>i</code>, <code>j</code>, <code>key</code> নামক কোন কিছু থাকেও ফাংশনের বাইরে, এরা তাদের থেকে ফেলে।</li>
+
+<li><p>ডার্টে <code>{</code> এর ভেতর সৃষ্ট ভ্যারিয়েবল তার <code>}</code> পর্যন্ত বেঁচে থাকে। একে স্কোপিং বলে।</p></li>
+
+<li><p>যদি এক এক্সপ্রেশনের ফাংশন হয়, তাহলে <code>{}</code> ও রিটার্ন না লিখলেও চলবে। <code>=&gt;</code> এর মাধ্যমে আমরা এক এক্সপ্রেশনের ফাংশন বর্ণনা করতে পারি।</p></li>
+</ul>
+
+<pre><code class="language-dart">bool isOdd1(int n) =&gt; n%2 == 1;
+
+bool isOdd2(int n) {
+  return n%2 == 1;
+}
+</code></pre>
+
+<p>দুটি ফাংশন কিন্তু একই উপরের কোডটিতে।</p>
+
+<ul>
+<li><p>ফাংশনে টাইপ না লিখলেও চলবে। তাহলে প্যারামিটার ও রিটার্ন  টাইপ সব হবে ডাইনামিক। তবে তা না করাই ভাল।</p></li>
+
+<li><p>তবে এক্সপ্লোরেটোরী প্রোগ্রামিং এর সময়ে, যখন আমরা ঠিক জানি না আমরা কিরূপ ডাটা আশা করছি, তখন কিন্তু আমরা একটা টাইপ-বিহীন ফাংশন তৈরী করে, এর উপর বিভিন্ন ডাটা ও এলগোরিদম প্রয়োগ করতে পারি এবং ম্যান সম্মত সল্যুশন পেলে টাইপ নির্ধারণ করতে পারি।</p></li>
+
+<li><p>ফাংশন যখন কল করি, তখন তার সিনট্যাক্স হল <code>functionName(parameter_1, parameter_2)</code>, যদি তা কিছু রিটার্ন করে, তাহলে আমরা <code>var r = functionName(parameter_1, parameter_2)</code> যেখানে <code>r</code> এর টাইপ ইনফার্ড হবে ফাংশনের রিটার্ন টাইপের মাধ্যমে।</p></li>
+
+<li><p>নিচের ফাংশনটি দেখি-</p></li>
+</ul>
+
+<pre><code class="language-dart">bool isRightTriangle(int hypotenuse, int leg_1, int leg_2) {
+  return hypotenuse * hypotenuse == leg_1*leg_1 + leg_2*leg_2;
+}
+</code></pre>
+
+<p>পিথাগোরাসের কথা মনে আছে (নাকি আর্কিমিডিস? আমার তো গণিত মনে নাই কিছু)? ফাংশনকে কল করি যদি- <code>isRightTriangle(5, 3, 4)</code> তাহলে তা <code>true</code> দেখাবে। তবে, যদি আমাদের খেয়াল না থাকে কে ভুজ, কে কোটি, আর কে অতিভুজ? ভাল হতো না যদি আমরা- <code>isRightTriangle(hypotenuse: 5, leg_1: 3, leg_2: 4)</code> হিসেবে কল করতে পারতাম? তাহলে অর্ডার এদিক ওদিক হলেও কিছু হতো না। এমনটা ডার্টে করা যায়, এদের বলে নেইমড প্যারামিটার এবং এহেন করতে হলে আমাদের কোড দাঁড়াবে-</p>
+
+<pre><code class="language-dart">bool isRightTriangle({int hypotenuse, int leg_1, int leg_2}) {
+  return hypotenuse * hypotenuse == leg_1 * leg_1 + leg_2 * leg_2;
+}
+</code></pre>
+
+<p>প্যারামিটার লিস্ট যখন <code>{}</code> দ্বারা আবদ্ধ থাকে তখন তাদেরকে নাম ধরে ডাকা যাবে।</p>
+
+<ul>
+<li>তবে নেইমড প্যারামিটারের পুরা নাম কিন্তু &ldquo;অপশনাল নেইমড প্যারামিটার&rdquo;, অর্থাৎ, আমরা যদি <code>isRightTriangle()</code> লিখি তাহলে এরর কিন্তু রানটাইম হবে (<code>null</code> গুন্  করতে না পারার), এ থেকে বাঁচতে হলে আমাদের ডিফল্ট প্যারামিটার ভ্যালু দিতে হবে, যেমন-</li>
+</ul>
+
+<pre><code class="language-dart">bool isRightTriangle({int hypotenuse = 0, int leg_1 = 0, int leg_2 = 0}) {
+  return hypotenuse * hypotenuse == leg_1*leg_1 + leg_2*leg_2;
+}
+</code></pre>
+
+<ul>
+<li>তবে ডিফল্ট ভ্যালু শুধু দেওয়া যাবে নেইমড অথবা পজিশনাল প্যারামিটারের ক্ষেত্রে যার কথা আমরা এখন বলবো।</li>
+<li>তবে ডিফল্ট ভ্যালু শুধু দেওয়া যাবে নেইমড অথবা পজিশনাল প্যারামিটারের ক্ষেত্রে যার কথা আমরা এখন বলবো।</li>
+<li>পজিশনাল প্যারামিটার হল নামবিহীন প্যারামিটার (প্রথম উদাহরণের মতো), তবে তাদের কল করার সময়ে না দিলেও চলবে, আবার তাদের ডিফল্ট ভ্যালুও দেওয়া যাবে। যেমন-</li>
+</ul>
+
+<pre><code class="language-dart">String greet([name]) {
+  if (name == null) return &quot;Hello, Stranger&quot;;
+  return &quot;Hello, $name&quot;;
+}
+</code></pre>
+
+<p>এইখানে <code>greet()</code> কল করলে পাবেন- <code>&quot;Hello, Stranger&quot;</code>, <code>greet(&quot;Dart&quot;)</code> লিখলে পাবেন- <code>&quot;Hello, Dart&quot;</code>।</p>
+
+<ul>
+<li><p>ডিফল্ট ভ্যালু দিয়ে দেখুনতো কি হয়?</p></li>
+
+<li><p>বাধ্যতামূলক প্যারামিটারের সাথে শুধু নেইমড অথবা পজিশনাল এর মিশ্রণ চলে! নেইমড ও পজিশনাল কখনোই একত্রে ব্যবহৃত হয় না।</p></li>
+
+<li><p>গত পোস্টে আমি প্রশ্ন করেছিলাম এক্সপ্রেশন ও স্টেটমেন্টের পার্থক্য নিয়ে, তাহলে বলুনতো, <code>bool isOdd1(int n) =&gt; n%2 == 1;</code> কি এক্সপ্রেশন না স্টেটমেন্ট? এক কাজ করুন, <code>var isOdd = (bool isOdd1(int n) =&gt; n%2 == 1);</code> লিখে দেখুন এরর পান নাকি? এটি স্টেটমেন্ট তাই না? এবার <code>isOdd1</code> সরিয়ে দেখুন তো? এক্সপ্রেশান তাই না?</p></li>
+
+<li><p>বেনামি (অ্যানোনিমাস) ফাংশন ডার্টে এক্সপ্রেশান, যা কিনা অন্য ফাংশনের প্যারামিটার অথবা এসাইনমেন্টের ডান দিকে থাকতে পারে। বেনামি ফাংশন লিখার সিনট্যাক্স সাধারণ ফাংশনের মতোই, শুধু নামটা সরিয়ে দেওয়া- <code>int twice(int n) =&gt; n * n;</code> হয়ে দাঁড়াবে <code>(int n) =&gt; n * n;</code>। আরো বড় উদাহরণ দিতে গেলে-</p></li>
+</ul>
+
+<pre><code class="language-dart">List insertionSort(List list, bool compare(int a, int b)) {
+  for (var i = 1; i &lt; list.length; i++) {
+    var key = list[i];
+    var j = i - 1;
+    while (j &gt;= 0 &amp;&amp; compare(list[j], key)) {
+      list[j + 1] = list[j];
+      j--;
+    }
+
+    list[j + 1] = key;
+  }
+  return list;
+}
+</code></pre>
+
+<p>এখানে সর্টিং শুধুমাত্র উর্ধক্রম অথবা নিম্নক্রমে না হয়ে, জিয়া ফাংশন দিব, সেই অনুযায়ী সর্টেড হবে। অর্থাৎ <code>insertionSort([12, 24, -3, 204, 15], (a, b) =&gt; a &gt; b)</code> দিলে তা হবে ছোট থেকে বড় এবং <code>insertionSort([12, 24, -3, 204, 15], (a, b) =&gt; a &lt; b)</code> দিলে তা হবে বড় থেকে ছোট।</p>
+
+<ul>
+<li>তো আমরা স্কোপ সম্পর্কে জেনেছি, আবার বেনামি ফাংশন বিষয়েও জানালাম। যেহেতু বেনামি ফাংশন এক্সপ্রেশান, তাই তা আরেকটা ফাংশনের রিটার্ন টাইপ হিসেবেও ব্যবহৃত হতে পারে? অর্থাৎ নিচের ফাংশনটি ভ্যালিড?</li>
+</ul>
+
+<pre><code class="language-dart">Function wrapWithHTML(tag) {
+  // এইখানে `tag` এর অস্তিত্ব আছে।
+  return (String s) =&gt; &quot;&lt;$tag&gt;$s&lt;/$tag&gt;&quot;;
+} // এইখানে `tag` এর অস্তিত্ব নেই।
+
+main() {
+  var link = wrapWithHTML(&quot;a&quot;); // `tag` কে কিন্তু `link` ধরে রেখেছে।
+  var bold = wrapWithHTML(&quot;b&quot;); // `tag` কে কিন্তু `bold` ধরে রেখেছে।
+  print(link(bold(&quot;DART&quot;)));
+}
+</code></pre>
+
+<p><code>wrapWithHTML</code> একটি ফাংশন রিটার্ন করে, তাই, এর রিটার্ন ভ্যালুর উপর আমরা <code>()</code> দিয়ে ফাংশন ডাকতে করতে পারব। কিন্তু, ফাংশনগুলি (link, bold) যখন তৈরী হয়েছে, তারা কিন্তু তাদের পূর্বের ফাংশনের মানকে মনে রেখেছে, অর্থাৎ <code>link</code> কিন্তু, <code>&quot;a&quot;</code> কে মনে রেখেছে যা ছিল এর জন্মকালীন সময়ে এর বর্ণনার বাইরের স্কোপের বাসিন্দা। (কমেন্টে তা-ই কিন্তু বলা হয়েছে)</p>
+
+<p>উপরের স্কোপের ভ্যারিয়েবলকে বাঁচিয়ে রাখার আরেকটি উদাহরণ দেখি-</p>
+
+<pre><code class="language-dart">/// Returns a function that adds [addBy] to the
+/// function's argument.
+Function makeAdder(num addBy) {
+  return (num i) =&gt; addBy + i;
+}
+
+void main() {
+  // Create a function that adds 2.
+  var add2 = makeAdder(2);
+
+  // Create a function that adds 4.
+  var add4 = makeAdder(4);
+
+  assert(add2(3) == 5);
+  assert(add4(3) == 7);
+}
+</code></pre>
+
+<ul>
+<li>তো আমরা স্কোপ সম্পর্কে জেনেছি, আবার বেনামি ফাংশন বিষয়েও জানালাম। যেহেতু বেনামি ফাংশন এক্সপ্রেশান, তাই তা আরেকটা ফাংশনের রিটার্ন টাইপ হিসেবেও ব্যবহৃত হতে পারে? অর্থাৎ নিচের ফাংশনটি ভ্যালিড?</li>
+</ul>
+
+<pre><code class="language-dart">Function wrapWithHTML(tag) {
+  // এইখানে `tag` এর অস্তিত্ব আছে।
+  return (String s) =&gt; &quot;&lt;$tag&gt;$s&lt;/$tag&gt;&quot;;
+} // এইখানে `tag` এর অস্তিত্ব নেই।
+
+main() {
+  var link = wrapWithHTML(&quot;a&quot;); // `tag` কে কিন্তু `link` ধরে রেখেছে।
+  var bold = wrapWithHTML(&quot;b&quot;); // `tag` কে কিন্তু `bold` ধরে রেখেছে।
+  print(link(bold(&quot;DART&quot;)));
+}
+</code></pre>
+
+<p><code>wrapWithHTML</code> একটি ফাংশন রিটার্ন করে, তাই, এর রিটার্ন ভ্যালুর উপর আমরা <code>()</code> দিয়ে ফাংশন ডাকতে করতে পারব। কিন্তু, ফাংশনগুলি (link, bold) যখন তৈরী হয়েছে, তারা কিন্তু তাদের পূর্বের ফাংশনের মানকে মনে রেখেছে, অর্থাৎ <code>link</code> কিন্তু, <code>&quot;a&quot;</code> কে মনে রেখেছে যা ছিল এর জন্মকালীন সময়ে এর বর্ণনার বাইরের স্কোপের বাসিন্দা। (কমেন্টে তা-ই কিন্তু বলা হয়েছে)</p>
+
+<p>উপরের স্কোপের ভ্যারিয়েবলকে বাঁচিয়ে রাখার আরেকটি উদাহরণ দেখি-</p>
+
+<pre><code class="language-dart">// `addBy` কে ধরে রেখেছে রিটার্নকৃত ফাংশন
+Function makeAdder(num addBy) {
+  return (num i) =&gt; addBy + i;
+}
+
+void main() {
+  // এখানে `addBy` 2 ছিল, স্কোপের বাইরে হলেও তা-ই কিন্তু বাড়তে থাকবে।
+  var add2 = makeAdder(2);
+
+  // এখানে `addBy` 4 ছিল, স্কোপের বাইরে হলেও তা-ই কিন্তু বাড়তে থাকবে।
+  var add4 = makeAdder(4);
+
+  assert(add2(3) == 5);
+  assert(add4(3) == 7);
+}
+</code></pre>
+
+<p>দেখতে পাচ্ছি, এক ফাংশনের ভেতরে নির্মিত ফাংশন যদি রিটার্ন্ড হয়, তাহলে সদ্য সৃষ্ট এই ফাংশনটি কিন্তু তার সৃষ্টিকারী ফাংশনের ভ্যারিয়েবল ধরে রাখতে পারে, এবং ওই ভ্যারিয়েবলদের জীবন তাদের নিজস্ব স্কোপের বাইরে থেকে যায়, তাদের বন্ধ (ক্লোজ) করার দায়িত্ব থাকে নবনিযুক্ত ফাংশনটির! এই ধরণের আচরণ যে অভ্যন্তরীণ বেনামি  ফাংশন করে তাদের ক্লোজার বলে।</p>
+
+<ul>
+<li>স্কোপ টেস্ট! এই ফাংশনটি পড়ুন এবং এর ভ্যারিয়েবলদের জীবন/মরণ সম্পর্কে চিন্তা করুন-</li>
+</ul>
+
+<pre><code class="language-dart">bool topLevel = true;
+
+void main() {
+  var insideMain = true;
+
+  void myFunction() {
+    var insideFunction = true;
+
+    void nestedFunction() {
+      var insideNestedFunction = true;
+
+      assert(topLevel);
+      assert(insideMain);
+      assert(insideFunction);
+      assert(insideNestedFunction);
+    }
+  }
+}
+</code></pre>
+
+<p>আজকের পর্ব ছোট হওয়ার কথা ছিল কিন্তু মনে হয় না তা করতে পেরেছি, কাজেই আগামী দিনের ব্যাপারে কিছু বলতে চাইছি না।</p>
+
+<p>ফাংশন এখানেই কিন্তু শেষ না, ফাংশন নিয়ে আরো অনেক কথা হবে, এ তো কেবল শুরু, তবে, ফাংশন হোক আর মেথড (আগামী পোস্টে), সিনট্যাক্স এবং ফিলোসোফি দুটোই কিন্তু একই রকম থাকবে, শুধু, আমাদের ক্রিয়ার সাথে যুক্ত হবে বিশেষ্য (উদ্দেশ্য ও বিধেয় দুই-ই কাজ করবে) আগামী পোস্টে!</p>
+
+<p>আশা করি পোস্টটি ভাল লেগেছিল এবং পুরোটা পড়তে পেরেছিলেন। ধন্যবাদ!!</p>
+
+  </section>
+  <footer>
+    
+    
+    
+
+    
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://mafinar.ca/bn/posts/dart-101-4-variables-and-flow/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+    
+  </footer>
+</article>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+      
+      
+      if (window.location.hostname == "localhost")
+                return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'mafinar-dot-ca';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </main>
+  <footer class="container global-footer hidden-xs">
+    <div class="copyright-note pull-left">
+      &copy; Copyright 2018 Mafinar K.
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="mailto:mafinar@gmail.com">
+    <i class="far fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://facebook.com/mafinar" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/mafinar" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  
+  <a href="https://linkedin.com/in/mafinar-khan" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  
+  
+  <a href="https://youtube.com/mafinar" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+  
+  
+  <a href="https://angel.co/mafinar-khan" target="_blank">
+    <i class="fab fa-angellist"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://reddit.com/user/code-shoily" target="_blank">
+    <i class="fab fa-reddit-alien"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://github.com/code-shoily" target="_blank">
+    <i class="fab fa-github-alt"></i>
+  </a>
+  
+  
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <footer class="container global-footer visible-xs-block">
+      <div class="copyright-note text-center">
+        &copy; Copyright 2018 Mafinar K.
+      </div>
+    </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dart.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-112774615-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+
+  <script src="//www.powr.io/powr.js?external-type=html"></script>
+  
+  <div class="powr-hit-counter" id="9fb2ce72_1531159982"></div>
+  
+</body>
+</html>
+
