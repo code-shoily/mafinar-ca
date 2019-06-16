@@ -1,4 +1,4 @@
-baseurl = "http://mafinar.ca/"
+baseurl = "//mafinar.ca/"
 title = "learn ▷ play ▷ write"
 theme = "vienna"
 languageCode = "en-us"
