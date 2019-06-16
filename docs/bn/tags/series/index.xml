@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on learn ▷ play ▷ write</title>
-    <link>http://mafinar.ca/bn/tags/series/</link>
+    <link>//mafinar.ca/bn/tags/series/</link>
     <description>Recent content in Series on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
     <lastBuildDate>Sun, 16 Dec 2018 13:24:01 -0500</lastBuildDate>
     
-	<atom:link href="http://mafinar.ca/bn/tags/series/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//mafinar.ca/bn/tags/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ডার্ট ১০১ - অবজেক্ট ধারণা</title>
-      <link>http://mafinar.ca/bn/posts/dart-101-6-classes/</link>
+      <link>//mafinar.ca/bn/posts/dart-101-6-classes/</link>
       <pubDate>Sun, 16 Dec 2018 13:24:01 -0500</pubDate>
       
-      <guid>http://mafinar.ca/bn/posts/dart-101-6-classes/</guid>
+      <guid>//mafinar.ca/bn/posts/dart-101-6-classes/</guid>
       <description>আজকের টপিক- অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং এবং প্রবাসে দেশি নাস্তা। অবজেক্ট ওরিটিন্টেড প্রোগ্রামিং কারণ লজিক্যালি এটাই হয় উচিত আমাদের এই ধাপের আলোচ্য বিষয়, আর দেশি নাস্তা কারণ আজ রবিবার এবং সকাল সকাল আমার ছেলেকে নিয়ে এসেছি &amp;ldquo;ক্যাফে ডি তাজ&amp;rdquo; নামে এক রেস্তোরায়, আরসালান খুব পছন্দ করে এখানকার লুচি (অথবা, হয়ত খেলতে পছন্দ করে ওদের প্লেরুমে)। সে যা-ই হোক, আশা করছি আপনাদের সবার পেট ভরা অন্যথায় খিদা লাগতে পারে এই পোস্ট পড়ে।</description>
     </item>
     
     <item>
       <title>ডার্ট ১০১  - ফাংশন</title>
-      <link>http://mafinar.ca/bn/posts/dart-101-5-functions/</link>
+      <link>//mafinar.ca/bn/posts/dart-101-5-functions/</link>
       <pubDate>Wed, 12 Dec 2018 13:23:53 -0500</pubDate>
       
-      <guid>http://mafinar.ca/bn/posts/dart-101-5-functions/</guid>
+      <guid>//mafinar.ca/bn/posts/dart-101-5-functions/</guid>
       <description>আজকের টপিক- ফাংশন। এবং আজকের পর থেকে আমরা অন্তত প্রোগ্রামিং চ্যালেঞ্জ টাইপ প্রব্লেম সল্ভ করতে পারব ফ্লাটার দিয়ে।
 তবে এর আগে হালকা ঘোষণা। আজকে অফিস থেকে আসার পথে হাসিন হায়দার ভাইয়ের সাথে কথা হচ্ছিল। তো উনি আমাকে বললেন ভিডিও বানাতে। তাহলে সময়ও বাঁচবে, টপিকও অনেক বেশি দেওয়া যাবে। হাসিন ভাইয়ের টিউটোরিয়াল স্কিল সম্পর্কে কে না জানে, কাজেই আমি বাসায় আসামাত্র বসে পড়লাম ভিডিও বানাতে, বানিয়ে ফেললাম ফাংশন এর উপর একটা ভিডিও, ১০/১৫ মিনিট লাগলো!</description>
     </item>
     
     <item>
       <title>ডার্ট ১০১ - ভ্যারিয়েবল ও কন্ট্রোল-ফ্লো</title>
-      <link>http://mafinar.ca/bn/posts/dart-101-4-variables-and-flow/</link>
+      <link>//mafinar.ca/bn/posts/dart-101-4-variables-and-flow/</link>
       <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
       
-      <guid>http://mafinar.ca/bn/posts/dart-101-4-variables-and-flow/</guid>
+      <guid>//mafinar.ca/bn/posts/dart-101-4-variables-and-flow/</guid>
       <description>এই পোস্টে আমরা কথা বলব ডার্ট টাইপ, ভ্যারিয়েবল ডিক্লারেশন, কন্ট্রোল ফ্লো নিয়ে। অনেকের কাছেই হয়ত আজকের পোস্ট অনেক সহজেবোধ্য হবে কারণ ডার্ট ও সি (ও তার পরিবারবর্গের) যথেষ্ট মিল রয়েছে, এমনকি একের কোড ওপরের ভেতর কপি/পেস্ট করলেও খুব অল্প পরিবর্তনেই রান করবে।
 ভ্যারিয়েবল ও এসাইনমেন্ট টাইপ ডার্ট একটি টাইপসেফ ল্যাঙ্গুয়েজ। প্রতিটি ভ্যারিয়েবলের টাইপ থাকবে এবং এটি যেমন আপনার কোডকে করে সেলফ ডকুমেন্টেড, আবার স্ট্যাটিক এনালাইসিসের মাধ্যমে আপনি অনেক ধরণের এরর থেকে মুক্তি পেতে পারেন। আবার এডিটর অনেকটাই উপকারী হয়ে ওঠে টাইপ থাকার ফলে, যেমন রিফ্যাক্টরিং, ইন্টেলিজেন্স, অটোকমপ্লিট ইত্যাদি টাইপড ল্যাঙ্গুয়েজে অনেক শক্তিশালী ডাইনামিকালি টাইপড ল্যাঙ্গুয়েজ থেকে। তবে আমরা নিম্নের বুলেট পয়েন্ট থেকে বুঝতে পারব যে ডার্টের টাইপ অতটা দীর্ঘ করবে না আপনার কোডকে বরং এর টাইপ সিস্টেম কিছুটা স্মার্ট। এবং যদিও তা স্ক্যালা অথবা কটলিনের মত পাওয়ারফুল না, বোধগম্যতা ও শক্তির মাঝে বেশ ভালো সামঞ্জস্য স্থাপন করতে পেরেছে ডার্ট।</description>
     </item>
     
     <item>
       <title>ডার্ট ১০১ - প্রজেক্ট কাঠামো</title>
-      <link>http://mafinar.ca/bn/posts/dart-101-3-pub/</link>
+      <link>//mafinar.ca/bn/posts/dart-101-3-pub/</link>
       <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
       
-      <guid>http://mafinar.ca/bn/posts/dart-101-3-pub/</guid>
+      <guid>//mafinar.ca/bn/posts/dart-101-3-pub/</guid>
       <description>আশা করি গত পোস্টটির দেওয়া টাস্ক সফলভাবে সম্পন্ন করতে পেরেছেন সবাই। আজকের পোস্টটি হবে তার একটি ছোট এক্সটেন্সান যেখানে আমরা আরেকটু বড় প্রজেক্টে হাত দিব (বড় বলতে একের পরিবর্তে ২ তা ফাইল আর কিছু ডিপেন্ডেন্সি, টেস্ট ইত্যাদি)। কিন্তু সেটা নিয়ে কথা বলার পূর্বে এডিটর নিয়ে একটু জানিয়ে রাখি।
 স্ট্যাটিকালি টাইপড ল্যাংগুয়েজ হওয়ার ফলে ডার্ট অনেক ভাল এডিটর সাপোর্ট দিয়ে থাকে। ইন ফ্যাক্ট, ২০১১ এর দিকে যখন প্রথম ডার্ট (~ভার্সন ১) বের হয়, তা এডিটর সমেত বের হয় যা ছিল এক্লিপ্স-ভিত্তিক কিছু একটা, পরে তা বাদ দিয়ে অন্যান্য এডিটরকে খাওয়ানোর মতো এপিআই সংযুক্ত করে গুগল। সে যা-ই হোক, আমার পছন্দের এডিটর ডার্ট এর জন্যে হল ভিজুয়াল ষ্টুডিও কোড, এর ডার্ট প্লাগিন অনেক ম্যাচুর। মূল প্লাগিন ছাড়াও আমি যা আরো দুটি প্লাগিন ব্যবহার করি- ডার্ট ইম্পোর্ট ও পাবস্পেক এসিস্ট (ফ্লাটার প্লাগিন নিয়ে কথা আজকের জন্য না), সাথে বেটার কমেন্টিং প্লাগিন থাকলে আরো ভালো।</description>
     </item>
     
     <item>
       <title>ডার্ট ১০১ - ইনস্টলেশন</title>
-      <link>http://mafinar.ca/bn/posts/dart-101-2-installation/</link>
+      <link>//mafinar.ca/bn/posts/dart-101-2-installation/</link>
       <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
       
-      <guid>http://mafinar.ca/bn/posts/dart-101-2-installation/</guid>
+      <guid>//mafinar.ca/bn/posts/dart-101-2-installation/</guid>
       <description>আজকের পোস্ট হবে ডার্ট ইনস্টলেশন নিয়ে। ডার্ট ইনস্টলেশন পেজে গেলে আমরা দেখতে পাব যে তিন ধরণের ইনস্টলেশনের কথা বলা হয়েছে। আমরা যেহেতু সামনের কিছুদিন ভেনিলা ডার্ট প্রোগ্রামিং নিয়ে আলোচনা করব তাই ডার্ট SDK ইনস্টলেশন এই পোস্টের স্কোপভুক্ত।
 যদি আপনি এই মুহূর্তে ইনস্টল করতে না চান তাহলে ডার্টপ্যাডে কোড টাইপ করে দেখতে পারেন যদিও তা খুবই ছোট স্ক্রিপ্ট টাইপ স্নিপেটের জন্য।
 এবার আসা যাক আসল কোথায়। SDK ইনস্টলেশন পেজ এ আপনার অপারেটিং সিস্টেমের জন্য ইন্স্টলেশন প্রক্রিয়া ফলো করলে সহজেই ডার্ট ইনস্টল করতে পারবেন। ডার্ট ইনস্টলেশন যদিও কঠিন কিছু না, তবে বেশ কিছু ছোট বিষয় রয়েছে যা, বলে রাখলে হয়ত আপনার ডার্ট নিয়ে প্রাথমিক অভিজ্ঞতা ভাল হতে পারে।</description>

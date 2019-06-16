@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tuple on learn ▷ play ▷ write</title>
-    <link>http://mafinar.ca/tags/tuple/</link>
+    <link>//mafinar.ca/tags/tuple/</link>
     <description>Recent content in Tuple on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
     <lastBuildDate>Tue, 05 Jul 2016 01:54:13 +0600</lastBuildDate>
     
-	<atom:link href="http://mafinar.ca/tags/tuple/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//mafinar.ca/tags/tuple/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Day 2 - Diving in...</title>
-      <link>http://mafinar.ca/posts/day-2/</link>
+      <link>//mafinar.ca/posts/day-2/</link>
       <pubDate>Tue, 05 Jul 2016 01:54:13 +0600</pubDate>
       
-      <guid>http://mafinar.ca/posts/day-2/</guid>
+      <guid>//mafinar.ca/posts/day-2/</guid>
       <description>Since last night I&amp;rsquo;ve been playing with some of Elixir&amp;rsquo;s data structures, mostly lists, tuples and maps. While I&amp;rsquo;m not new to these data structures, the way Elixir&amp;rsquo;s API is laid out is a little different and took awhile to get used to. The syntaxes for list and tuple seemed intuitive enough, [1, 2, [3, 4]] is a list, {91, 23} is a tuple. With maps it was a little different, %{&amp;quot;key&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;} or %{keyThatsAtom: &amp;quot;value&amp;quot;}.</description>
     </item>
     

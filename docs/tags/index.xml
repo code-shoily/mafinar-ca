@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on learn ▷ play ▷ write</title>
-    <link>http://mafinar.ca/tags/</link>
+    <link>//mafinar.ca/tags/</link>
     <description>Recent content in Tags on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
     <lastBuildDate>Sat, 02 Jul 2016 01:54:13 +0600</lastBuildDate>
     
-	<atom:link href="http://mafinar.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//mafinar.ca/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Basic</title>
-      <link>http://mafinar.ca/tags/basic/</link>
+      <link>//mafinar.ca/tags/basic/</link>
       <pubDate>Sat, 02 Jul 2016 01:54:13 +0600</pubDate>
       
-      <guid>http://mafinar.ca/tags/basic/</guid>
+      <guid>//mafinar.ca/tags/basic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Elixir</title>
-      <link>http://mafinar.ca/tags/elixir/</link>
+      <link>//mafinar.ca/tags/elixir/</link>
       <pubDate>Mon, 16 Jan 2017 23:14:07 +0600</pubDate>
       
-      <guid>http://mafinar.ca/tags/elixir/</guid>
+      <guid>//mafinar.ca/tags/elixir/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Elixir Diary</title>
-      <link>http://mafinar.ca/tags/elixir-diary/</link>
+      <link>//mafinar.ca/tags/elixir-diary/</link>
       <pubDate>Mon, 16 Jan 2017 23:14:07 +0600</pubDate>
       
-      <guid>http://mafinar.ca/tags/elixir-diary/</guid>
+      <guid>//mafinar.ca/tags/elixir-diary/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Enum</title>
-      <link>http://mafinar.ca/tags/enum/</link>
+      <link>//mafinar.ca/tags/enum/</link>
       <pubDate>Tue, 05 Jul 2016 01:54:13 +0600</pubDate>
       
-      <guid>http://mafinar.ca/tags/enum/</guid>
+      <guid>//mafinar.ca/tags/enum/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Error Handling</title>
-      <link>http://mafinar.ca/tags/error-handling/</link>
+      <link>//mafinar.ca/tags/error-handling/</link>
       <pubDate>Sat, 02 Jul 2016 01:54:13 +0600</pubDate>
       
-      <guid>http://mafinar.ca/tags/error-handling/</guid>
+      <guid>//mafinar.ca/tags/error-handling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mix</title>
-      <link>http://mafinar.ca/tags/mix/</link>
+      <link>//mafinar.ca/tags/mix/</link>
       <pubDate>Mon, 16 Jan 2017 23:14:07 +0600</pubDate>
       
-      <guid>http://mafinar.ca/tags/mix/</guid>
+      <guid>//mafinar.ca/tags/mix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pattern Matching</title>
-      <link>http://mafinar.ca/tags/pattern-matching/</link>
+      <link>//mafinar.ca/tags/pattern-matching/</link>
       <pubDate>Sat, 02 Jul 2016 01:54:13 +0600</pubDate>
       
-      <guid>http://mafinar.ca/tags/pattern-matching/</guid>
+      <guid>//mafinar.ca/tags/pattern-matching/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Repl</title>
-      <link>http://mafinar.ca/tags/repl/</link>
+      <link>//mafinar.ca/tags/repl/</link>
       <pubDate>Mon, 27 Jun 2016 10:29:32 +0600</pubDate>
       
-      <guid>http://mafinar.ca/tags/repl/</guid>
+      <guid>//mafinar.ca/tags/repl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tuple</title>
-      <link>http://mafinar.ca/tags/tuple/</link>
+      <link>//mafinar.ca/tags/tuple/</link>
       <pubDate>Tue, 05 Jul 2016 01:54:13 +0600</pubDate>
       
-      <guid>http://mafinar.ca/tags/tuple/</guid>
+      <guid>//mafinar.ca/tags/tuple/</guid>
       <description></description>
     </item>
     

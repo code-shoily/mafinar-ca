@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on learn ▷ play ▷ write</title>
-    <link>http://mafinar.ca/posts/</link>
+    <link>//mafinar.ca/posts/</link>
     <description>Recent content in Posts on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
     <lastBuildDate>Mon, 16 Jan 2017 23:14:07 +0600</lastBuildDate>
     
-	<atom:link href="http://mafinar.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//mafinar.ca/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Day 3 - Mix</title>
-      <link>http://mafinar.ca/posts/day-3/</link>
+      <link>//mafinar.ca/posts/day-3/</link>
       <pubDate>Mon, 16 Jan 2017 23:14:07 +0600</pubDate>
       
-      <guid>http://mafinar.ca/posts/day-3/</guid>
+      <guid>//mafinar.ca/posts/day-3/</guid>
       <description>Hello Again The past six month&amp;rsquo;s been hectic at work and it&amp;rsquo;s a pity I had little time for Elixir. And now version 1.4 is out, shame on me. This may not be the case anymore since I&amp;rsquo;m planning on hijacking some of Elixir greatness to my work mix.
 And that&amp;rsquo;s what I&amp;rsquo;m starting off after the hiatus&amp;hellip; Mix
 Tools! Every language comes encapsulated with a system of culture, tools and idioms.</description>
@@ -25,28 +25,28 @@ Tools! Every language comes encapsulated with a system of culture, tools and idi
     
     <item>
       <title>Day 2 - Diving in...</title>
-      <link>http://mafinar.ca/posts/day-2/</link>
+      <link>//mafinar.ca/posts/day-2/</link>
       <pubDate>Tue, 05 Jul 2016 01:54:13 +0600</pubDate>
       
-      <guid>http://mafinar.ca/posts/day-2/</guid>
+      <guid>//mafinar.ca/posts/day-2/</guid>
       <description>Since last night I&amp;rsquo;ve been playing with some of Elixir&amp;rsquo;s data structures, mostly lists, tuples and maps. While I&amp;rsquo;m not new to these data structures, the way Elixir&amp;rsquo;s API is laid out is a little different and took awhile to get used to. The syntaxes for list and tuple seemed intuitive enough, [1, 2, [3, 4]] is a list, {91, 23} is a tuple. With maps it was a little different, %{&amp;quot;key&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;} or %{keyThatsAtom: &amp;quot;value&amp;quot;}.</description>
     </item>
     
     <item>
       <title>Day 1 - Tabula Rasa</title>
-      <link>http://mafinar.ca/posts/day-1/</link>
+      <link>//mafinar.ca/posts/day-1/</link>
       <pubDate>Sat, 02 Jul 2016 01:54:13 +0600</pubDate>
       
-      <guid>http://mafinar.ca/posts/day-1/</guid>
+      <guid>//mafinar.ca/posts/day-1/</guid>
       <description>I did enough explorations the past few days and it&amp;rsquo;s time I emptied my cup and proceeded as a total newcomer to the language. Not a Python programmer trying to translate Python idioms into Elixir nor a Clojure programmer checking the language out, but starting with a clean slate and learning from zero. It is not an easy thing to do. Most of the time I would fight the urge to skip a line of the documentation with the assumption that &amp;ldquo;I already know&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>Day 0 - Unboxing and Exploration</title>
-      <link>http://mafinar.ca/posts/day-0/</link>
+      <link>//mafinar.ca/posts/day-0/</link>
       <pubDate>Mon, 27 Jun 2016 10:29:32 +0600</pubDate>
       
-      <guid>http://mafinar.ca/posts/day-0/</guid>
+      <guid>//mafinar.ca/posts/day-0/</guid>
       <description>Get, Set, Go!!! Obviously the first thing I need to do is, to unbox the goodies. For me, it&amp;rsquo;s just brew install elixir and that&amp;rsquo;s it. I will try out my Linux machine tomorrow. Moving on&amp;hellip;
 The Editor Vim&amp;rsquo;s been good to me for the past decade and I see no reason why I should not use it. A quick googling introduced me to alchemist.vim and vim-elixir. I&amp;rsquo;m guessing the former does autocompletion and stuff while the latter is for syntax highlighting.</description>
     </item>

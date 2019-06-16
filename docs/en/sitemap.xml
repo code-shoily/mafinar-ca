@@ -3,140 +3,140 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://mafinar.ca/posts/day-3/</loc>
+    <loc>//mafinar.ca/posts/day-3/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/posts/day-2/</loc>
+    <loc>//mafinar.ca/posts/day-2/</loc>
     <lastmod>2016-07-05T01:54:13+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/posts/day-1/</loc>
+    <loc>//mafinar.ca/posts/day-1/</loc>
     <lastmod>2016-07-02T01:54:13+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/posts/day-0/</loc>
+    <loc>//mafinar.ca/posts/day-0/</loc>
     <lastmod>2016-06-27T10:29:32+06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/pages/about/</loc>
+    <loc>//mafinar.ca/pages/about/</loc>
     <lastmod>2018-07-01T21:42:43-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/basic/</loc>
+    <loc>//mafinar.ca/tags/basic/</loc>
     <lastmod>2016-07-02T01:54:13+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/elixir/</loc>
+    <loc>//mafinar.ca/tags/elixir/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/elixir-diary/</loc>
+    <loc>//mafinar.ca/tags/elixir-diary/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/enum/</loc>
+    <loc>//mafinar.ca/tags/enum/</loc>
     <lastmod>2016-07-05T01:54:13+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/error-handling/</loc>
+    <loc>//mafinar.ca/tags/error-handling/</loc>
     <lastmod>2016-07-02T01:54:13+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/mix/</loc>
+    <loc>//mafinar.ca/tags/mix/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/pages/</loc>
+    <loc>//mafinar.ca/pages/</loc>
     <lastmod>2018-07-01T21:42:43-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/pages/</loc>
+    <loc>//mafinar.ca/pages/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/pattern-matching/</loc>
+    <loc>//mafinar.ca/tags/pattern-matching/</loc>
     <lastmod>2016-07-02T01:54:13+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/posts/</loc>
+    <loc>//mafinar.ca/posts/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="http://mafinar.ca/bn/posts/"
+                href="//mafinar.ca/bn/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://mafinar.ca/posts/"
+                href="//mafinar.ca/posts/"
                 />
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/repl/</loc>
+    <loc>//mafinar.ca/tags/repl/</loc>
     <lastmod>2016-06-27T10:29:32+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/</loc>
+    <loc>//mafinar.ca/tags/</loc>
     <lastmod>2016-07-02T01:54:13+06:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="http://mafinar.ca/bn/tags/"
+                href="//mafinar.ca/bn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://mafinar.ca/tags/"
+                href="//mafinar.ca/tags/"
                 />
   </url>
   
   <url>
-    <loc>http://mafinar.ca/tags/tuple/</loc>
+    <loc>//mafinar.ca/tags/tuple/</loc>
     <lastmod>2016-07-05T01:54:13+06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://mafinar.ca/</loc>
+    <loc>//mafinar.ca/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
-                href="http://mafinar.ca/bn/"
+                href="//mafinar.ca/bn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://mafinar.ca/"
+                href="//mafinar.ca/"
                 />
   </url>
   

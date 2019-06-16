@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on learn ▷ play ▷ write</title>
-    <link>http://mafinar.ca/pages/</link>
+    <link>//mafinar.ca/pages/</link>
     <description>Recent content in Pages on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
     
-	<atom:link href="http://mafinar.ca/pages/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//mafinar.ca/pages/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

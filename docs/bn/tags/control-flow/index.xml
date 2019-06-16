@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Control Flow on learn ▷ play ▷ write</title>
-    <link>http://mafinar.ca/bn/tags/control-flow/</link>
+    <link>//mafinar.ca/bn/tags/control-flow/</link>
     <description>Recent content in Control Flow on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
     <lastBuildDate>Sun, 09 Dec 2018 13:23:36 -0500</lastBuildDate>
     
-	<atom:link href="http://mafinar.ca/bn/tags/control-flow/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//mafinar.ca/bn/tags/control-flow/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ডার্ট ১০১ - ভ্যারিয়েবল ও কন্ট্রোল-ফ্লো</title>
-      <link>http://mafinar.ca/bn/posts/dart-101-4-variables-and-flow/</link>
+      <link>//mafinar.ca/bn/posts/dart-101-4-variables-and-flow/</link>
       <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
       
-      <guid>http://mafinar.ca/bn/posts/dart-101-4-variables-and-flow/</guid>
+      <guid>//mafinar.ca/bn/posts/dart-101-4-variables-and-flow/</guid>
       <description>এই পোস্টে আমরা কথা বলব ডার্ট টাইপ, ভ্যারিয়েবল ডিক্লারেশন, কন্ট্রোল ফ্লো নিয়ে। অনেকের কাছেই হয়ত আজকের পোস্ট অনেক সহজেবোধ্য হবে কারণ ডার্ট ও সি (ও তার পরিবারবর্গের) যথেষ্ট মিল রয়েছে, এমনকি একের কোড ওপরের ভেতর কপি/পেস্ট করলেও খুব অল্প পরিবর্তনেই রান করবে।
 ভ্যারিয়েবল ও এসাইনমেন্ট টাইপ ডার্ট একটি টাইপসেফ ল্যাঙ্গুয়েজ। প্রতিটি ভ্যারিয়েবলের টাইপ থাকবে এবং এটি যেমন আপনার কোডকে করে সেলফ ডকুমেন্টেড, আবার স্ট্যাটিক এনালাইসিসের মাধ্যমে আপনি অনেক ধরণের এরর থেকে মুক্তি পেতে পারেন। আবার এডিটর অনেকটাই উপকারী হয়ে ওঠে টাইপ থাকার ফলে, যেমন রিফ্যাক্টরিং, ইন্টেলিজেন্স, অটোকমপ্লিট ইত্যাদি টাইপড ল্যাঙ্গুয়েজে অনেক শক্তিশালী ডাইনামিকালি টাইপড ল্যাঙ্গুয়েজ থেকে। তবে আমরা নিম্নের বুলেট পয়েন্ট থেকে বুঝতে পারব যে ডার্টের টাইপ অতটা দীর্ঘ করবে না আপনার কোডকে বরং এর টাইপ সিস্টেম কিছুটা স্মার্ট। এবং যদিও তা স্ক্যালা অথবা কটলিনের মত পাওয়ারফুল না, বোধগম্যতা ও শক্তির মাঝে বেশ ভালো সামঞ্জস্য স্থাপন করতে পেরেছে ডার্ট।</description>
     </item>

@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	<sitemap>
-	   	<loc>http://mafinar.ca/en/sitemap.xml</loc>
+	   	<loc>//mafinar.ca/en/sitemap.xml</loc>
 		
 	   	<lastmod>2018-07-01T21:42:43-04:00</lastmod>
 		
 	</sitemap>
 	
 	<sitemap>
-	   	<loc>http://mafinar.ca/bn/sitemap.xml</loc>
+	   	<loc>//mafinar.ca/bn/sitemap.xml</loc>
 		
 	   	<lastmod>2018-12-16T13:24:01-05:00</lastmod>
 		

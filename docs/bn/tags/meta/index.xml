@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meta on learn ▷ play ▷ write</title>
-    <link>http://mafinar.ca/bn/tags/meta/</link>
+    <link>//mafinar.ca/bn/tags/meta/</link>
     <description>Recent content in Meta on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
     <lastBuildDate>Thu, 06 Dec 2018 21:24:50 -0500</lastBuildDate>
     
-	<atom:link href="http://mafinar.ca/bn/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//mafinar.ca/bn/tags/meta/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ডার্ট ১০১ - সূচনা</title>
-      <link>http://mafinar.ca/bn/posts/dart-101-1/</link>
+      <link>//mafinar.ca/bn/posts/dart-101-1/</link>
       <pubDate>Thu, 06 Dec 2018 21:24:50 -0500</pubDate>
       
-      <guid>http://mafinar.ca/bn/posts/dart-101-1/</guid>
+      <guid>//mafinar.ca/bn/posts/dart-101-1/</guid>
       <description>একটু কাহিনী ২০১১/১২ এর দিকে প্রথম ডার্টের নাম শুনেছিলাম। তেমন একটা আগ্রহ পাইনি তখন কারণ সে সময়ে এটি জাভাস্ক্রীপ্টে কম্পাইল করত আর আমি তখন জাভাস্ক্রিপ্ট থেকে দূরে থাকার চেষ্টা করতাম। এরপর আসে ২০১৫/১৬ আর তখন জাভাস্ক্রিপ্টের সাথে আমার &amp;ldquo;ছাইড়া-দে-মা-কাইন্দা বাঁচি&amp;rdquo; সম্পর্ক, কাজেই ডার্ট কেন, অন্য যে কোন জাভাস্ক্রিপ্ট ল্যাংগুয়েজ, লাইব্রেরী কিংবা ফ্রেমওয়ার্ক যা-ই দেখতাম, উল্টা দিকে দৌড়ানোর চেষ্টা করতাম।
 এই বছরের প্রথম দিকে ফ্লাটার সম্পর্কে জানতে পাই, প্রথম দেখায় ভালই মনে হয়েছিল কিন্তু ডার্ট দেখে তেমন একটা আগ্রহ পাইনি, ওই যে, যে জিনিস জাভাস্ক্রীপ্টে কম্পাইল্ড হইত তা আর কতটুকুই বা মানবিক হতে পারবে সিনট্যাক্স সম্পর্কে। তার উপর গুগুলের আরেকটা ল্যাংগুয়েজ গো নিয়ে তখন কাজ করি আমি আর সেটাও আমার কাছে মনে হয়েছিল নেহায়েত রুচিহীন এক ল্যাঙ্গুয়েজ। ব্রাউজার বন্ধ করতে এবারও বেশি সময় লাগেনি।</description>
     </item>

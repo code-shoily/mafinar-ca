@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pandas on learn ▷ play ▷ write</title>
-    <link>http://mafinar.ca/bn/tags/pandas/</link>
+    <link>//mafinar.ca/bn/tags/pandas/</link>
     <description>Recent content in Pandas on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
     <lastBuildDate>Mon, 02 Jul 2018 15:39:06 -0400</lastBuildDate>
     
-	<atom:link href="http://mafinar.ca/bn/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//mafinar.ca/bn/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>৪/৫ বছর আগের কিছু নোটবুক (জুপিটার)</title>
-      <link>http://mafinar.ca/bn/posts/jupyter-links-1/</link>
+      <link>//mafinar.ca/bn/posts/jupyter-links-1/</link>
       <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
       
-      <guid>http://mafinar.ca/bn/posts/jupyter-links-1/</guid>
+      <guid>//mafinar.ca/bn/posts/jupyter-links-1/</guid>
       <description>আমার গিটহাব অ্যাকাউন্ট ঘাটাঘাটি করতে গিয়ে বেশ কিছু জুপিটার (আসলে আইপাইথন, ২০১৩ এর দিকে জুপিটার অত ব্যবহার করা হত না) নোটবুকের খোজ পেলাম। একটু পড়লাম, নামপাই, ম্যাটপ্লটলিব, পান্ডাস নিয়ে লিখা হয়েছিল, ৪ বছর আগের কাহিনী, বেশ কিছু ফুটবল রেফারেন্স দেখলাম (বিশ্বকাপ ২০১৪?)। সে যাই হোক, নিজের লিখা পড়ে বেশ কিছক্ষণ হাসাহাসি করার পর ভাবলাম এইখানে দিয়ে রাখি, যদি কখনো এইগুলি শিখা লাগে, কিছুটা আইডিয়া নিজের লিখা থেকেও পেতে পারি।
  ডিসেম্বর ২২, ২০১৩ প্রথম এই পোস্টটি লিখেছি আইপাইথন নোটবুকের ব্যবহার নিয়ে। জুলাই ৩০, ২০১৪ দ্বিতীয় পোস্টটি লিখা হয়েছে নামপাই নিয়ে। জুলাই ৩১, ২০১৪ ম্যাটপ্লটলিব অনেক ইউজ করা হত ওই সময়ে, কোন ডেইটা থাকলেই সেটাকে নোটবুকে ম্যাটপ্লটলিবে নিয়ে সবাইকে দেখাতাম। এখনো ওই অভ্যাস রয়ে গেছে, এইতো কিছুদিন আগেও ৪ টা গাড়ির গতিবিধি ও ত্বরণ দেখাচ্ছিলাম জুপিটারল্যাবে। সিকুয়েল থেকে জ্যাংগো আর সরাসরি ল্যাবের প্যানেলে। আগস্ট ৩, ২০১৪ পান্ডাস-১ ডেইটা নিয়ে খেলতে চাইলে পান্ডাস থেকে উপযুক্ত প্রোগ্রামার বান্ধব লাইব্রেরী খুব কম আছে। আর এর প্রয়োগ ও বহুমাত্রিকতা বুঝতে পারবেন যদি আপনি বিভিন্ন পাবলিশড নোটবুক অথবা ব্লগ ঘাঁটেন। আগস্ট ২, ২০১৪ পান্ডাস-২ আমার তো ৩,৪, ৫ ইত্যাদি লিখার নিয়ত ছিল।</description>
     </item>
