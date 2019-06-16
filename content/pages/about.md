@@ -15,10 +15,10 @@ defmodule MafinarCa.About do
               country: "Canada"
             },
             work: %{
-              company_name: "Tread Inc",
-              designation: "Senior Software Engineer",
-              email: "mafinar@tread.io",
-              tags: ~w/golang graphql java android python django apollo react/
+              company_name: "Planswell",
+              designation: "Software Engineer",
+              email: "mkhan@planswell.com",
+              tags: ~w/elixir phoenix absinthe graphql react relay/
             },
             skills: %{
               programming_languages: [
