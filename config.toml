@@ -9,7 +9,7 @@ disqusShortname = "mafinar-dot-ca"
 
 [params]
   bgcolor = "#34495e"
-  subtitle = "<a class='about-link' href='/pages/about/'>Mafinar</a> writes about <strike>Elixir and Python</strike> things"
+  subtitle = "<a class='about-link' href='/about/'>Mafinar</a> writes about <strike>Elixir and Python</strike> things"
   author = "Mafinar Khan"
   bio = "Pythonista.Djangonaut.Alchemist"
   twitter = "mafinar"
@@ -24,15 +24,9 @@ disqusShortname = "mafinar-dot-ca"
   contact = "mafinar@gmail.com"
   themecolor = "#34495e"
 
-[taxonomies]
-  pages = "pages"
-  tag = "tags"
-
 [languages]
   [languages.en]
     weight = 1
 
   [languages.bn]
     weight = 2
-    [languages.bn.taxonomies]
-      tags = "tags"

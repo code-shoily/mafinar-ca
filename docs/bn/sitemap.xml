@@ -158,17 +158,17 @@
   </url>
   
   <url>
+    <loc>//mafinar.ca/bn/tags/bangladesh/</loc>
+    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//mafinar.ca/bn/tags/python/</loc>
+    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>//mafinar.ca/bn/posts/python-bd/</loc>
-    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//mafinar.ca/bn/tags/%E0%A6%AA%E0%A6%BE%E0%A6%87%E0%A6%A5%E0%A6%A8/</loc>
-    <lastmod>2018-06-12T01:12:19-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//mafinar.ca/bn/tags/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6/</loc>
     <lastmod>2018-06-12T01:12:19-04:00</lastmod>
   </url>
   
@@ -179,11 +179,6 @@
   
   <url>
     <loc>//mafinar.ca/bn/tags/graphql/</loc>
-    <lastmod>2018-06-02T01:23:42-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//mafinar.ca/bn/tags/python/</loc>
     <lastmod>2018-06-02T01:23:42-04:00</lastmod>
   </url>
   
@@ -210,6 +205,20 @@
   <url>
     <loc>//mafinar.ca/bn/posts/django-series-1/</loc>
     <lastmod>2018-05-18T01:50:27-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//mafinar.ca/bn/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//mafinar.ca/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="//mafinar.ca/bn/categories/"
+                />
   </url>
   
 </urlset>

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
-    <lastBuildDate>Mon, 16 Jan 2017 23:14:07 +0600</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2020 03:42:43 -0400</lastBuildDate>
     
 	<atom:link href="//mafinar.ca/index.xml" rel="self" type="application/rss+xml" />
     
@@ -46,6 +46,15 @@
       
       <guid>//mafinar.ca/posts/day-0/</guid>
       <description>Let&#39;s install this thing and do some explorations. This is a totally random, unplanned, whatever-may-come-into-your-mind post where I just query syntactic constructs and map it with Elixir&#39;s. Going to be full of misinformations and bloopers, I assume</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>//mafinar.ca/about/</link>
+      <pubDate>Sat, 11 Jan 2020 03:42:43 -0400</pubDate>
+      
+      <guid>//mafinar.ca/about/</guid>
+      <description>[ TODO ]</description>
     </item>
     
   </channel>
