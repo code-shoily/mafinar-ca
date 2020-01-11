@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mix on learn ▷ play ▷ write</title>
+    <title>mix on learn ▷ play ▷ write</title>
     <link>//mafinar.ca/tags/mix/</link>
-    <description>Recent content in Mix on learn ▷ play ▷ write</description>
+    <description>Recent content in mix on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
@@ -18,9 +18,7 @@
       <pubDate>Mon, 16 Jan 2017 23:14:07 +0600</pubDate>
       
       <guid>//mafinar.ca/posts/day-3/</guid>
-      <description>Hello Again The past six month&amp;rsquo;s been hectic at work and it&amp;rsquo;s a pity I had little time for Elixir. And now version 1.4 is out, shame on me. This may not be the case anymore since I&amp;rsquo;m planning on hijacking some of Elixir greatness to my work mix.
-And that&amp;rsquo;s what I&amp;rsquo;m starting off after the hiatus&amp;hellip; Mix
-Tools! Every language comes encapsulated with a system of culture, tools and idioms.</description>
+      <description>OMG It&#39;s over six months and I&#39;m at day 3! Let&#39;s mix in some tooling today</description>
     </item>
     
   </channel>

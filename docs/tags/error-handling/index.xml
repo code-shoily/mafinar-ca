@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Error Handling on learn ▷ play ▷ write</title>
+    <title>error-handling on learn ▷ play ▷ write</title>
     <link>//mafinar.ca/tags/error-handling/</link>
-    <description>Recent content in Error Handling on learn ▷ play ▷ write</description>
+    <description>Recent content in error-handling on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Sat, 02 Jul 2016 01:54:13 +0600</pubDate>
       
       <guid>//mafinar.ca/posts/day-1/</guid>
-      <description>I did enough explorations the past few days and it&amp;rsquo;s time I emptied my cup and proceeded as a total newcomer to the language. Not a Python programmer trying to translate Python idioms into Elixir nor a Clojure programmer checking the language out, but starting with a clean slate and learning from zero. It is not an easy thing to do. Most of the time I would fight the urge to skip a line of the documentation with the assumption that &amp;ldquo;I already know&amp;rdquo;.</description>
+      <description>I did enough exploration the past few days and it&#39;s time I clean slate and proceed as someone learning Elixir. Not a Python programmer trying to translate Python idioms into Elixir or a Clojure programmer&#39;s view of the language, but starting with a clean slate and learning from zero.</description>
     </item>
     
   </channel>

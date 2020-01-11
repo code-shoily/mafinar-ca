@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Enum on learn ▷ play ▷ write</title>
+    <title>enum on learn ▷ play ▷ write</title>
     <link>//mafinar.ca/tags/enum/</link>
-    <description>Recent content in Enum on learn ▷ play ▷ write</description>
+    <description>Recent content in enum on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Tue, 05 Jul 2016 01:54:13 +0600</pubDate>
       
       <guid>//mafinar.ca/posts/day-2/</guid>
-      <description>Since last night I&amp;rsquo;ve been playing with some of Elixir&amp;rsquo;s data structures, mostly lists, tuples and maps. While I&amp;rsquo;m not new to these data structures, the way Elixir&amp;rsquo;s API is laid out is a little different and took awhile to get used to. The syntaxes for list and tuple seemed intuitive enough, [1, 2, [3, 4]] is a list, {91, 23} is a tuple. With maps it was a little different, %{&amp;quot;key&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;} or %{keyThatsAtom: &amp;quot;value&amp;quot;}.</description>
+      <description>Since last night I&#39;ve been playing with some of the data structures of Elixir, mostly lists, tuples and maps. While I&#39;m not new to these data structures, the way Elixir&#39;s API is laid out is a little different and took awhile to get used to</description>
     </item>
     
   </channel>

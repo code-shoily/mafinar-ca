@@ -9,7 +9,7 @@
  
   <meta property="og:site_name" content="learn ▷ play ▷ write" />
   <meta property="og:url" content="//mafinar.ca/bn/posts/django-series-1/" />
-  <meta property="og:image" content="//mafinar.ca/images/logo.png" />
+  <meta property="og:image" content="http://mafinar.ca/images/logo.png" />
   
   
   <meta property="og:type" content="article" />
@@ -171,23 +171,19 @@
   </header>
   <section>
     <p>গতকাল ইফতারির পর কি মনে করে পাইথন বাংলাদেশ গ্রুপে একটা পোস্ট দিলাম, যেখানে বললাম কোন একটা মডেলের অ্যাডমিন লিস্ট ভিউতে সিরিয়াল নাম্বার (রো নাম্বার?) রাখতে। রুল ও রেগুলেশন নীচের স্ক্রিনশট দেখলেই বুঝা যাবে।</p>
-
-<p><img src="/img/django-series.png" alt="Screenshot" /></p>
-
+<p><img src="/img/django-series.png" alt="Screenshot"></p>
 <p>২৪ ঘণ্টা প্রায় পার হতে চলেছে, আর এই পোস্টটি শেষ হবার আগে আমি একটা সলুশান দিব। কিন্তু এর আগে কিছু কথা বলে নেই।</p>
-
 <p>২০০৮ এর দিকে আমি প্রথম জ্যাংগো নিয়ে কাজ করি, তবে আমার প্রথম পদক্ষেপটা ছিল ভুল। আমি শুরুই করি এর অ্যাডমিন প্যানেল দিয়ে। জ্যাংগো অ্যাডমিন জ্যাংগোর একটা কিলার ফিচার, এর মাধ্যমে ক্রাড (CRUD) এর চমৎকার এবং প্রায় প্রোডাকশন-রেডি (যদি লিমিটেশান মেনে নিতে পারেন) সাইট/অ্যাপ তৈরী সম্ভব, কিন্তু এই অ্যাডমিন প্যানেলকে আপনি যোগ্য আপ্প্রিসিয়েশান তখনই দিতে পারবেন যখন আপনি একে নিজের কাজকে ত্বরান্বিত করার মাধ্যম হিসেবে চিন্তা না করে দেখবেন একটা অন্যতম জ্যাংগো অ্যাপ হিসেবে, এবং এর সোর্স-কোড পরে দেখতে পারবেন কিভাবে জ্যাংগো ডেভেলপাররা একে তৈরি করেছে। এর ডকুমেন্টেশান বহির্ভুত ব্যবহার এবং এর অভ্যন্তরীণ প্রকৌশল নিয়ে খেলাধুলা আপনাকে জ্যাংগোর গঠন ও প্র্যাকটিস সম্পর্কে ভাল ধারণা দিবে এবং তার থেকে নেয়া শিক্ষা আপনি আপনার দৈনিক জ্যাংগো প্রোগ্রামিংকে সমৃদ্ধ করতে পারবেন। আমার এই সিরিজে আমি জ্যাংগো অ্যাডমিনের কিছু ডকুমেন্ট বহির্ভুত ফিচার, সোর্স কোড প্যাটার্ন, এবং বেস্ট প্র্যাকটিস নিয়ে কথা বলব। মাঝে মাঝে হয়ত জ্যাংগোর অন্যান্য ফিচার-প্রদর্শনের মাধ্যম হিসেবেও জ্যাংগো অ্যাডমিনকে ব্যবহার করব। কিন্তু এই সিরিজ কোনভাবেই আপনার জ্যাংগো যাত্রা শুরু করার মাধ্যম হবে না, অন্তত ইন্টারমিডিয়েট লেভেলে জ্যাংগো নলেজ না থাকলে যেন আপনার জন্য এই সিরিজ সহজবোধ্য না হয় সেই ব্যবস্থা করার চেষ্টা করব আমি। অ্যাডমিন দিয়ে জ্যাংগো শুরু করে যেই ভুল আমি করেছি (আরেকটা পোস্টে তা তুলে ধরব) আমি চাই না এমনটা অন্য কেউ করুন। যাই হোক, এবার শুরু করছি আমার পোস্ট এর সলুশান ও ব্যাখ্যা।</p>
-
-<p>তো আপনি রো-নাম্বার দেখাতে চাচ্ছেন? প্রথমে চিন্তা করুন কিভাবে এগুবেন? দু&rsquo;ভাবে হতে পারে এই কাজ-</p>
-
+<p>তো আপনি রো-নাম্বার দেখাতে চাচ্ছেন? প্রথমে চিন্তা করুন কিভাবে এগুবেন? দু'ভাবে হতে পারে এই কাজ-</p>
 <ul>
-<li><p>১- চেঞ্জলিস্টের টেম্পলেটকে ওভাররাইড করে আপনি তা করতে পারেন। তা jQuery দিয়েই হোক অথবা ম্যানুয়ালি এক্সট্রা কলাম এবং <code>{{ forloop.counter }}</code>।</p></li>
-
-<li><p>২- কুয়েরিসেট ওভাররাইড করে আপনি রো-নাম্বারকে অ্যানোটেট করে নিয়ে পারেন এবং সেটাকে <code>list_display</code> তে দেখাতে পারেন।</p></li>
+<li>
+<p>১- চেঞ্জলিস্টের টেম্পলেটকে ওভাররাইড করে আপনি তা করতে পারেন। তা jQuery দিয়েই হোক অথবা ম্যানুয়ালি এক্সট্রা কলাম এবং <code>{{ forloop.counter }}</code>।</p>
+</li>
+<li>
+<p>২- কুয়েরিসেট ওভাররাইড করে আপনি রো-নাম্বারকে অ্যানোটেট করে নিয়ে পারেন এবং সেটাকে <code>list_display</code> তে দেখাতে পারেন।</p>
+</li>
 </ul>
-
 <p>প্রথম সলুশান আমার কাছে মনে হয় আগলি। একটা উদাহরণ দেই, (আমি jQuery পারি না, ২/৩ মিনিটে সলুশান দিয়েছি এবং এটা আমাদের আজকের পোস্টের মূল বিষয় না কাজেই বেশি একটা পাত্তা দিতে হবে না)-</p>
-
 <pre><code>{% extends &quot;admin/change_list.html&quot; %}
 {% load i18n admin_static admin_list %}
 
@@ -207,47 +203,32 @@
 })(jQuery);
 &lt;/script&gt;
 {% endblock %}
-</code></pre>
-
-<p>আগেই বলেছি এটার প্রতি আমি জোর দিব না। যার বুঝার বুঝে নিবেন। টেম্পলেট ওভাররাইড আরেকদিনের গল্প।</p>
-
+</code></pre><p>আগেই বলেছি এটার প্রতি আমি জোর দিব না। যার বুঝার বুঝে নিবেন। টেম্পলেট ওভাররাইড আরেকদিনের গল্প।</p>
 <p>এবার ২ নাম্বার সলুশানে আসা যাক। প্রতিটা <code>ModelAdmin</code> এর একটা <code>get_queryset(request)</code> মেথড রয়েছে যাকে কল করে ডেইটা পপুলেটেড হয়ে থাকে। তাকে আপনি যদি ওভাররাইড করে এক্সট্রা ভ্যালু দিন তাহলে অ্যাডমিন লিস্ট-ভিউও সেগুলো পেয়ে নিবে। ফেইসবুক কমেন্টে Tahzib Mashrik (প্রথম ও এই পর্যন্ত একমাত্র কমেন্টদাতা) সঠিকভাবেই বলেছিলেন যে, <code>RowNumber</code> একটা সলুশান হতে পারে এবং উনি সঠিক ছিলেন। তো দেখা যাক একটা কোড স্নিপেট-</p>
-
-<pre><code class="language-python">def get_queryset(self, request):
-    return super().get_queryset(self).annotate(
-        row=Window(
-            expression=RowNumber(),
-            order_by=[F(&quot;name&quot;)]))
-</code></pre>
-
-<p>এখানে মডেল কী তা গুরুত্বপূর্ন না, তবে দেখে বুঝা যাচ্ছে যে, মডেলে name নামে একটা ফিল্ড রয়েছে।</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_queryset</span>(self, request):
+    <span style="color:#66d9ef">return</span> super()<span style="color:#f92672">.</span>get_queryset(self)<span style="color:#f92672">.</span>annotate(
+        row<span style="color:#f92672">=</span>Window(
+            expression<span style="color:#f92672">=</span>RowNumber(),
+            order_by<span style="color:#f92672">=</span>[F(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name</span><span style="color:#e6db74">&#34;</span>)]))
+</code></pre></div><p>এখানে মডেল কী তা গুরুত্বপূর্ন না, তবে দেখে বুঝা যাচ্ছে যে, মডেলে name নামে একটা ফিল্ড রয়েছে।</p>
 <p>তাহলে এখন কি আপনি <code>list_display</code> তে <code>row</code> ব্যবহার করতে পারবেন? এখনো না, কারণ এটি মডেলের ডিক্লেয়ার করা ফিল্ড বহির্ভুত এবং আপনাকে প্রপার্টি (মডেলের) অথবা অ্যাডমিন (<code>ModelAdmin</code>) মেথড হিসেবে একে দেখাতে হবে। এই ক্ষেত্রে দ্বিতীয়টি শ্রেয় কারণ এই কুয়েরীসেট সম্পর্কে মডেলের কোন ধারণা নেই, এটি একান্ত অ্যাডমিনের কুয়েরী।</p>
-
 <p>(এখানে বলে রাখা ভাল, যদি আপনি এই সিরিয়াল নাম্বারের দায়িত্ব মডেলকে দিতে চান তবে আপনাকে মডেল ম্যানেজারকে ওভাররাইড করতে হবে এবং মডেলের প্রপার্টি হিসেবে ডিক্লেয়ার করতে হবে <code>row</code> কে, কিন্তু এটা নির্ভর করে আপনি এই কার্যকারীতা অ্যাডমিন পর্যন্ত রাখতে চান নাকি অন্যান্য জায়গাতেও, কারণ অন্য ক্ষেত্রে আরও অনেক ব্যবস্থা/স্বাধীনতা রয়েছে আপনার, কাজেই অ্যাডমিন পর্যন্ত সীমাবদ্ধ রাখি আজকের কন্টেক্সট)</p>
-
 <p>তো অ্যাডমিন-ফিল্ড সম্পর্কিত মেথডটি দেখানো যাক-</p>
-
-<pre><code class="language-python">def row(self, obj):
-    return obj.row
-</code></pre>
-
-<p>খেয়াল করুন, annotate এর row হয়ে দাঁড়াবে আমাদের ফিল্ড, এবং অ্যাডমিনের <code>list_display</code> তখনই একে ফিল্ড হিসেবে মেনে নিবে যদি তা সংশ্লিষ্ট মডেল অথবা উপরের মেথডের মত ModelAdmin এর মেথড হয়ে থাকে (এটি আরও অন্য অনেক ক্ষেত্রে কাজে আসবে)।</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">row</span>(self, obj):
+    <span style="color:#66d9ef">return</span> obj<span style="color:#f92672">.</span>row
+</code></pre></div><p>খেয়াল করুন, annotate এর row হয়ে দাঁড়াবে আমাদের ফিল্ড, এবং অ্যাডমিনের <code>list_display</code> তখনই একে ফিল্ড হিসেবে মেনে নিবে যদি তা সংশ্লিষ্ট মডেল অথবা উপরের মেথডের মত ModelAdmin এর মেথড হয়ে থাকে (এটি আরও অন্য অনেক ক্ষেত্রে কাজে আসবে)।</p>
 <p>এখন আমরা স্বাচ্ছন্দ্যে একে <code>list_display</code> তে ব্যবহার করতে পারব।</p>
-
 <p>এখানে আমি Window ফাংশনকে কাজে লাগিয়েছি যা জ্যাংগো ২ থেকে শুরু হয়েছে, এর আগের ভার্সন ব্যবহার করলে আপনি ফাংশনকে কিছুটা চেঞ্জ করে নিবেন, <code>annotate</code> এর পরিবর্তে <code>extra(select={“row_number() over (order by name)”})</code> লিখে নিলেই চলবে।</p>
-
 <p>তো কী এই <code>Window</code> অথবা <code>row_number() over</code> …? এই বিষয়ে আমি পরবর্তি পোস্টে বলব, তবে আপনি এই লিঙ্ক থেকে কিছু প্রাক-নলেজ নিয়ে রাখতে পারবেন।</p>
-
 <p>তাহলে আমি কিছুটা সমাধান দিলাম আমার প্রশ্নের। উল্লেখ্য এটি শুধু পোস্টগ্রেসে চলবে (আমার কিছু আসে যায় না কারণ আমি অন্য ডেইটাবেইস ব্যবহার করিনা, তাই সময়ও নষ্ট করব না সেগুলা নিয়ে চিন্তা করে), আর সার্চ, ফিল্টার ইত্যাদিতে রো নাম্বার অটুট থাকবে। কিন্তু যখন সর্ট করবেন তখন? এই কারণেই আমি বলেছি যে &ldquo;কিছুটা&rdquo; সমাধান দিয়েছি এবং আমার ফেইসবুক পোস্টে কিন্তু সর্ট সার্ভাইভালের কথা বলিনি। তাহলে ২ টি হোমওয়ার্ক রইল পাইথন বাংলাদেশ গ্রুপের পাঠকদের জন্য-</p>
-
 <ul>
-<li><p>১- সর্ট কাজ করে না কেন?</p></li>
-
-<li><p>২- কিভাবে সর্টিং এর পরেও রো-নাম্বার ঠিক রাখা যায়?</p></li>
+<li>
+<p>১- সর্ট কাজ করে না কেন?</p>
+</li>
+<li>
+<p>২- কিভাবে সর্টিং এর পরেও রো-নাম্বার ঠিক রাখা যায়?</p>
+</li>
 </ul>
-
 <p>আজ আপাতত এখানেই শেষ করছি। আগামীকাল আরেকটি চ্যালেঞ্জ নিয়ে আসব, এবং Window Function নিয়ে একটা লিখা পাওনা রইল। ধন্যবাদ।</p>
 
   </section>
@@ -259,10 +240,10 @@
     
     <ul class="pager">
       
-      <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+      <li class="previous"><a href="//mafinar.ca/bn/posts/django-series-2/"><span aria-hidden="true">&larr;</span> Older</a></li>
       
       
-      <li class="next"><a href="//mafinar.ca/bn/posts/django-series-2/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
     
@@ -353,7 +334,6 @@
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dart.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script>
     hljs.initHighlightingOnLoad();
@@ -370,7 +350,7 @@
   
   
 
-  <script src="//www.powr.io/powr.js?external-type=html"></script>
+  <script src="//www.powr.io/powr.js?external-type=html"></script> 
   
   <div class="powr-hit-counter" id="9fb2ce72_1531159982"></div>
   

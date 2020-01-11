@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -23,67 +23,38 @@
   </url>
   
   <url>
-    <loc>//mafinar.ca/pages/about/</loc>
-    <lastmod>2018-07-01T21:42:43-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//mafinar.ca/tags/basic/</loc>
-    <lastmod>2016-07-02T01:54:13+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>//mafinar.ca/tags/elixir/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>//mafinar.ca/tags/elixir-diary/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>//mafinar.ca/tags/enum/</loc>
-    <lastmod>2016-07-05T01:54:13+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//mafinar.ca/tags/error-handling/</loc>
-    <lastmod>2016-07-02T01:54:13+06:00</lastmod>
-    <priority>0</priority>
+    <loc>//mafinar.ca/</loc>
+    <lastmod>2017-01-16T23:14:07+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="bn"
+                href="//mafinar.ca/bn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//mafinar.ca/"
+                />
   </url>
   
   <url>
     <loc>//mafinar.ca/tags/mix/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//mafinar.ca/pages/</loc>
-    <lastmod>2018-07-01T21:42:43-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//mafinar.ca/pages/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//mafinar.ca/tags/pattern-matching/</loc>
-    <lastmod>2016-07-02T01:54:13+06:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>//mafinar.ca/posts/</loc>
     <lastmod>2017-01-16T23:14:07+06:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
@@ -97,15 +68,8 @@
   </url>
   
   <url>
-    <loc>//mafinar.ca/tags/repl/</loc>
-    <lastmod>2016-06-27T10:29:32+06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>//mafinar.ca/tags/</loc>
-    <lastmod>2016-07-02T01:54:13+06:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2017-01-16T23:14:07+06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="bn"
@@ -119,25 +83,37 @@
   </url>
   
   <url>
-    <loc>//mafinar.ca/tags/tuple/</loc>
+    <loc>//mafinar.ca/tags/enum/</loc>
     <lastmod>2016-07-05T01:54:13+06:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>//mafinar.ca/</loc>
-    <lastmod>2017-01-16T23:14:07+06:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="bn"
-                href="//mafinar.ca/bn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//mafinar.ca/"
-                />
+    <loc>//mafinar.ca/tags/tuple/</loc>
+    <lastmod>2016-07-05T01:54:13+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//mafinar.ca/tags/basic/</loc>
+    <lastmod>2016-07-02T01:54:13+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//mafinar.ca/tags/error-handling/</loc>
+    <lastmod>2016-07-02T01:54:13+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//mafinar.ca/tags/pattern-matching/</loc>
+    <lastmod>2016-07-02T01:54:13+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//mafinar.ca/tags/repl/</loc>
+    <lastmod>2016-06-27T10:29:32+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//mafinar.ca/pages/</loc>
   </url>
   
 </urlset>

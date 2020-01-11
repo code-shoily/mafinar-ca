@@ -9,7 +9,7 @@
  
   <meta property="og:site_name" content="learn ▷ play ▷ write" />
   <meta property="og:url" content="//mafinar.ca/posts/day-2/" />
-  <meta property="og:image" content="//mafinar.ca/images/logo.png" />
+  <meta property="og:image" content="http://mafinar.ca/images/logo.png" />
   
   
   <meta property="og:type" content="article" />
@@ -176,51 +176,35 @@
     </div>
   </header>
   <section>
-    
-
-<p>Since last night I&rsquo;ve been playing with some of Elixir&rsquo;s data structures, mostly lists, tuples and maps. While I&rsquo;m not new to these data structures, the way Elixir&rsquo;s API is laid out is a little different and took awhile to get used to. The syntaxes for list and tuple seemed intuitive enough, <code>[1, 2, [3, 4]]</code> is a list, <code>{91, 23}</code> is a tuple. With maps it was a little different, <code>%{&quot;key&quot; =&gt; &quot;value&quot;}</code> or <code>%{keyThatsAtom: &quot;value&quot;}</code>. Actually, this is me remembering the feeling I had few days ago when I actually started Elixir. I already played a little, today I&rsquo;ll just get a better feeling of them since I&rsquo;ve more or less grokked pattern matching (hopefully).</p>
-
+    <p>Since last night I've been playing with some of Elixir's data structures, mostly lists, tuples and maps. While I'm not new to these data structures, the way Elixir's API is laid out is a little different and took awhile to get used to. The syntaxes for list and tuple seemed intuitive enough, <code>[1, 2, [3, 4]]</code> is a list, <code>{91, 23}</code> is a tuple. With maps it was a little different, <code>%{&quot;key&quot; =&gt; &quot;value&quot;}</code> or <code>%{keyThatsAtom: &quot;value&quot;}</code>. Actually, this is me remembering the feeling I had few days ago when I actually started Elixir. I already played a little, today I'll just get a better feeling of them since I've more or less grokked pattern matching (hopefully).</p>
 <h2 id="tuple">Tuple</h2>
+<p>I'll start with tuples. I first heard the term tuple when learning Python. In Elixir, a tuple is wrapped with curly braces and the syntax is like: <code>white = {255, 255, 255}</code>. The elements are place contiguously in memory. So it is faster for accessing by index. There's a function for that too, <code>Kernel.elem/2</code>. <code>elem(white, 0)</code> will yield <code>255</code> (I should've picked another color). Since data is placed contiguously on memory, finding the length of the tuple is also easy, which is done with the <code>Kernel.tuple_length/1</code> function. <code>Kernel.is_tuple/1</code> tests for tuple, a pattern which we will see for other types as well.</p>
+<p>Tuples are fit for use cases that leverages its find-by-index performance issue and do not need the structure to grow, tuples don't like to grow or shrink, they did give a function for it that returns a grown up or shrunk down copy, they just don't like it. They are awesome for patterns, for example; or arguments to functions or as return values.</p>
+<p>There is this pattern I've seen a lot in Elixir. You use tuples as return values and put the status as the first element, as an atom. It's kindof like the <code>(result, err)</code> pattern of <code>Golang</code>, with the <code>err</code> part positioned first, and also as <code>keyword</code>. They are also good candidates as function arguments and replacing if-s. For instance:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Area</span> do
+    <span style="color:#a6e22e">@pi</span> <span style="color:#ae81ff">3.1416</span>
 
-<p>I&rsquo;ll start with tuples. I first heard the term tuple when learning Python. In Elixir, a tuple is wrapped with curly braces and the syntax is like: <code>white = {255, 255, 255}</code>. The elements are place contiguously in memory. So it is faster for accessing by index. There&rsquo;s a function for that too, <code>Kernel.elem/2</code>. <code>elem(white, 0)</code> will yield <code>255</code> (I should&rsquo;ve picked another color). Since data is placed contiguously on memory, finding the length of the tuple is also easy, which is done with the <code>Kernel.tuple_length/1</code> function. <code>Kernel.is_tuple/1</code> tests for tuple, a pattern which we will see for other types as well.</p>
-
-<p>Tuples are fit for use cases that leverages its find-by-index performance issue and do not need the structure to grow, tuples don&rsquo;t like to grow or shrink, they did give a function for it that returns a grown up or shrunk down copy, they just don&rsquo;t like it. They are awesome for patterns, for example; or arguments to functions or as return values.</p>
-
-<p>There is this pattern I&rsquo;ve seen a lot in Elixir. You use tuples as return values and put the status as the first element, as an atom. It&rsquo;s kindof like the <code>(result, err)</code> pattern of <code>Golang</code>, with the <code>err</code> part positioned first, and also as <code>keyword</code>. They are also good candidates as function arguments and replacing if-s. For instance:</p>
-
-<pre><code class="language-elixir">defmodule Area do
-    @pi 3.1416
-
-    def compute({:square, side}) do
-        side * side
+    def compute({<span style="color:#e6db74">:square</span>, side}) do
+        side <span style="color:#f92672">*</span> side
     end
 
-    def compute({:rectangle, length, breadth}) do
-        length * breadth
+    def compute({<span style="color:#e6db74">:rectangle</span>, length, breadth}) do
+        length <span style="color:#f92672">*</span> breadth
     end
 
-    def compute({:circle, radius}) do
-        @pi * radius * radius
+    def compute({<span style="color:#e6db74">:circle</span>, radius}) do
+        <span style="color:#a6e22e">@pi</span> <span style="color:#f92672">*</span> radius <span style="color:#f92672">*</span> radius
     end
 end
-</code></pre>
-
-<p>By the way, the <code>@pi</code> thing was <em>module attribute</em>, it has many purposes, one of them is to store module owned constants, and <code>@pi</code> was exactly that (I&rsquo;ll learn more on <em>module attributes</em> later).</p>
-
+</code></pre></div><p>By the way, the <code>@pi</code> thing was <em>module attribute</em>, it has many purposes, one of them is to store module owned constants, and <code>@pi</code> was exactly that (I'll learn more on <em>module attributes</em> later).</p>
 <h2 id="lists">Lists</h2>
-
 <p>Lists in Elixir are linked lists. Each element has a value and a pointer to the next element. A list is of the type <code>[first_element | nextElementsAsList]</code> all the way till <code>nextElementsAsList</code> becomes <code>[]</code>. From this behavior it is clear that prepending to an Elixir list should be easier since it would mean getting the new element and putting the current list in the <em>tail section</em> (obviously, returning the new structure, not modifying the old list in anyway, immutate all the things!).</p>
-
-<p>If I got a nickel everytime I tried to access an element of a list by <code>list[element_index]</code> :( That doesn&rsquo;t work. If you want to access an element at a particular index, then you&rsquo;ll have to use the <code>Enum</code> module and use the <code>Enum.at/2</code> or <code>Enum.at/3</code> functions. Like I&rsquo;ve mentioned earlier and I&rsquo;ll mention again as long as I don&rsquo;t get fully comfy with the pattern: &ldquo;Elixir module functions are called like static methods, you do a <code>Module.function</code> call, put the data structure in question as the first argument, others as rest, there&rsquo;s no <code>x.y</code> where <code>x</code> is not a module (or as we&rsquo;ll see later, a map?)&ldquo;. So, <code>Enum.at [1,2,4], 1</code> yields <code>2</code> and <code>Enum.at [1,2,3], 10</code> yields <code>nil</code>. If you want to put a default value instead, then use the <code>Enum.at/3</code> function and the third argument is the default argument in case there&rsquo;s a <code>nil</code>.</p>
-
+<p>If I got a nickel everytime I tried to access an element of a list by <code>list[element_index]</code> :( That doesn't work. If you want to access an element at a particular index, then you'll have to use the <code>Enum</code> module and use the <code>Enum.at/2</code> or <code>Enum.at/3</code> functions. Like I've mentioned earlier and I'll mention again as long as I don't get fully comfy with the pattern: &ldquo;Elixir module functions are called like static methods, you do a <code>Module.function</code> call, put the data structure in question as the first argument, others as rest, there's no <code>x.y</code> where <code>x</code> is not a module (or as we'll see later, a map?)&quot;. So, <code>Enum.at [1,2,4], 1</code> yields <code>2</code> and <code>Enum.at [1,2,3], 10</code> yields <code>nil</code>. If you want to put a default value instead, then use the <code>Enum.at/3</code> function and the third argument is the default argument in case there's a <code>nil</code>.</p>
 <blockquote>
-<p><em>What if my list is <code>[1, nil, 3]</code> and I do a <code>Enum.at lst, 1</code>? Wouldn&rsquo;t it be better to raise an error instead of just <code>nil</code>? Or at least an <code>Enum.at!</code> alternative?</em></p>
+<p><em>What if my list is <code>[1, nil, 3]</code> and I do a <code>Enum.at lst, 1</code>? Wouldn't it be better to raise an error instead of just <code>nil</code>? Or at least an <code>Enum.at!</code> alternative?</em></p>
 </blockquote>
-
 <h3 id="enum">Enum</h3>
-
-<p>So what is this <code>Enum</code> thing? It does all the kung-fu required to play with iterables, want to <code>find</code> something? <code>map</code>, <code>reduce</code>, <code>filter</code>? <code>Enum</code>-s got it all. As an example, let&rsquo;s say we have a list of latitudes and longitudes of the path of a certain locomotive and we want to find the total distance travelled. So, the first thing we do is, extract <code>{lat, lng}</code> tuple from the list, then take 2 of each in <code>a-&gt;b, b-&gt;c, c-&gt;d</code> etc format, call the distance function amongst each pair, and then return the sum total of it. The operationset is as follows:</p>
-
+<p>So what is this <code>Enum</code> thing? It does all the kung-fu required to play with iterables, want to <code>find</code> something? <code>map</code>, <code>reduce</code>, <code>filter</code>? <code>Enum</code>-s got it all. As an example, let's say we have a list of latitudes and longitudes of the path of a certain locomotive and we want to find the total distance travelled. So, the first thing we do is, extract <code>{lat, lng}</code> tuple from the list, then take 2 of each in <code>a-&gt;b, b-&gt;c, c-&gt;d</code> etc format, call the distance function amongst each pair, and then return the sum total of it. The operationset is as follows:</p>
 <ul>
 <li>Define the distance function.</li>
 <li>Take a list, form a 2-tuple out of all the elements of the list</li>
@@ -228,131 +212,100 @@ end
 <li>Compute the distance between each tuples of every chunk in the list</li>
 <li>Compute the total of all distances</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Distance</span> do
+    <span style="color:#75715e"># Saving me some typings, `import` saves you from </span>
+    <span style="color:#75715e"># `&lt;module&gt;.` prefixes. Can be just `map` instead of `Enum.map`</span>
+    import <span style="color:#e6db74">:math</span> <span style="color:#75715e"># Erlang modules are written like :atoms</span>
+    import <span style="color:#a6e22e">Enum</span>
 
-<pre><code class="language-elixir">defmodule Distance do
-    # Saving me some typings, `import` saves you from 
-    # `&lt;module&gt;.` prefixes. Can be just `map` instead of `Enum.map`
-    import :math # Erlang modules are written like :atoms
-    import Enum
+    <span style="color:#a6e22e">@radius</span> <span style="color:#ae81ff">6_371_000</span> <span style="color:#75715e"># You can use underscores as large number separator. Neat!</span>
+    <span style="color:#a6e22e">@pi</span> <span style="color:#e6db74">:math</span><span style="color:#f92672">.</span>pi
 
-    @radius 6_371_000 # You can use underscores as large number separator. Neat!
-    @pi :math.pi
-
-    def square(x), do: x*x
-    def to_radians(degree), do: degree / (180/@pi)
+    def square(x), <span style="color:#e6db74">do</span>: x<span style="color:#f92672">*</span>x
+    def to_radians(degree), <span style="color:#e6db74">do</span>: degree <span style="color:#f92672">/</span> (<span style="color:#ae81ff">180</span><span style="color:#f92672">/</span><span style="color:#a6e22e">@pi</span>)
 
     def compute_diff {lat1, lng1}, {lat2, lng2} do
-        {lat2 - lat1, lng2 - lng1} 
+        {lat2 <span style="color:#f92672">-</span> lat1, lng2 <span style="color:#f92672">-</span> lng1} 
     end
 
     def compute [{lat1, lng1}, {lat2, lng2}] do
-        {lat_diff, lng_diff} = compute_diff {lat1, lng1}, {lat2, lng2}
+        {lat_diff, lng_diff} <span style="color:#f92672">=</span> compute_diff {lat1, lng1}, {lat2, lng2}
  
-        a = square(sin(lat_diff/2)) + cos(lat1) * cos(lat2) * square(sin(lng_diff/2))
-        c = 2 * asin(sqrt(a))
+        a <span style="color:#f92672">=</span> square(sin(lat_diff<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)) <span style="color:#f92672">+</span> cos(lat1) <span style="color:#f92672">*</span> cos(lat2) <span style="color:#f92672">*</span> square(sin(lng_diff<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>))
+        c <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> asin(sqrt(a))
         
-        @radius * c
+        <span style="color:#a6e22e">@radius</span> <span style="color:#f92672">*</span> c
     end
 
     def total(points \\ []) do
-        points |&gt; map(&amp;to_radians/1)
-               |&gt; chunk(2)
-               |&gt; map(&amp;List.to_tuple/1) 
-               |&gt; chunk(2, 1)
-               |&gt; map(&amp;compute/1) 
-               |&gt; reduce(&amp;+/2)
-               |&gt; (&amp;//2).(1000)
+        points <span style="color:#f92672">|&gt;</span> map(<span style="color:#f92672">&amp;</span>to_radians<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>)
+               <span style="color:#f92672">|&gt;</span> chunk(<span style="color:#ae81ff">2</span>)
+               <span style="color:#f92672">|&gt;</span> map(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">List</span><span style="color:#f92672">.</span>to_tuple<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>) 
+               <span style="color:#f92672">|&gt;</span> chunk(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)
+               <span style="color:#f92672">|&gt;</span> map(<span style="color:#f92672">&amp;</span>compute<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>) 
+               <span style="color:#f92672">|&gt;</span> reduce(<span style="color:#f92672">&amp;</span><span style="color:#f92672">+</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
+               <span style="color:#f92672">|&gt;</span> (<span style="color:#f92672">&amp;</span><span style="color:#f92672">/</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>(<span style="color:#ae81ff">1000</span>)
     end
 end
-</code></pre>
-
-<p>The <code>|&gt;</code> is a super fun operator. Its work is simple, you take an expression, and pipe it through several <code>partial functions</code> through it, the expression result in question will be the first (missing) argument of the partial function, the result will be fed to the second one, and so on&hellip; the snippet of <code>Distance.total/1</code> is actually the equivalent of <code>reduce(map(chunk(map(chunk(map(points, &amp;to_radius/1), 2), &amp;List.to_tuple), 2, 1), &amp;compute/1), &amp;+/2))/1000</code>. Phew! Each of the functions following the pipe command is actually missing a first argument&hellip; for instance, the <code>map(&amp;List.to_tuple/1)</code> is really <code>map(?, &amp;List.to_tuple/1)</code> where the <code>?</code> is to be filled up by the expression preceding it, the expressions keep evaulating and pillow passing the result to the next pipe until there&rsquo;s no more left, and that&rsquo;s when the combined result is expressed. It is a more <code>threaded together</code> approach at processing and is very handy when it comes to transforming collections. No wonder the Clojure equivalent is called the threaded macro.</p>
-
+</code></pre></div><p>The <code>|&gt;</code> is a super fun operator. Its work is simple, you take an expression, and pipe it through several <code>partial functions</code> through it, the expression result in question will be the first (missing) argument of the partial function, the result will be fed to the second one, and so on&hellip; the snippet of <code>Distance.total/1</code> is actually the equivalent of <code>reduce(map(chunk(map(chunk(map(points, &amp;to_radius/1), 2), &amp;List.to_tuple), 2, 1), &amp;compute/1), &amp;+/2))/1000</code>. Phew! Each of the functions following the pipe command is actually missing a first argument&hellip; for instance, the <code>map(&amp;List.to_tuple/1)</code> is really <code>map(?, &amp;List.to_tuple/1)</code> where the <code>?</code> is to be filled up by the expression preceding it, the expressions keep evaulating and pillow passing the result to the next pipe until there's no more left, and that's when the combined result is expressed. It is a more <code>threaded together</code> approach at processing and is very handy when it comes to transforming collections. No wonder the Clojure equivalent is called the threaded macro.</p>
 <blockquote>
 <p><em>One thing though</em> functions <em>must</em> be called with parentheses when inside the pipe operator. No poetry there :(</p>
 </blockquote>
-
 <p>By the way, in the code above I have used <code>import</code>s and it saves me from repetitively typing <code>Enum.map</code>, or <code>:math.sin</code>. I will look more into these later.</p>
-
-<p>The <code>&amp;</code> preceding what should&rsquo;ve been a function body does exactly that. Expresses the function body. In <code>Elixir</code>, <code>f</code>, if not a variable, means call to the <code>f</code> function. So, had we written <code>map(list, List.to_tuple)</code>, the Elixir will attempt to call the <code>List.to_tuple/0</code> function, for which Elixir didn&rsquo;t define any. Also, it is important to mention the arity as well otherwise the compiler will get confused.</p>
-
+<p>The <code>&amp;</code> preceding what should've been a function body does exactly that. Expresses the function body. In <code>Elixir</code>, <code>f</code>, if not a variable, means call to the <code>f</code> function. So, had we written <code>map(list, List.to_tuple)</code>, the Elixir will attempt to call the <code>List.to_tuple/0</code> function, for which Elixir didn't define any. Also, it is important to mention the arity as well otherwise the compiler will get confused.</p>
 <p>So we see that, (Linked)Lists of Elixir are recursively defined in a head/tail format and are best suited for data that require prepending growth. They can be heterogenous or homogenous. They are iterable via the <code>Enum</code> module are promote an immutable attitude. Through combinations of <code>Enum</code> functions, we can traverse, project, filter or commit reductions on lists and the pipe operator does a beautiful job of keeping code readable, fluid, and concise.</p>
-
 <h3 id="keyword-lists">Keyword Lists</h3>
-
-<p>Keywords lists are special lists in which all elements are 2-tuples in which first element&rsquo;s an atom. They have special syntax privileges. <code>[{:x, 10}, {:y, 20}]</code> can be conveniently typed as <code>[x: 10, y: 10]</code> and accessed as <code>kwl[:x]</code>.</p>
-
+<p>Keywords lists are special lists in which all elements are 2-tuples in which first element's an atom. They have special syntax privileges. <code>[{:x, 10}, {:y, 20}]</code> can be conveniently typed as <code>[x: 10, y: 10]</code> and accessed as <code>kwl[:x]</code>.</p>
 <p>Keyword lists add an additional syntactic benefit. If a named functions last argument is expected to be a keyword list, then the enclosing <code>[]</code> can be stripped off.</p>
-
-<pre><code class="language-elixir">defmodule StrippedKW do
-    def example name: name, id: id do
-        {:info, &quot;#{name} - #{id}&quot;}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">StrippedKW</span> do
+    def example <span style="color:#e6db74">name</span>: name, <span style="color:#e6db74">id</span>: id do
+        {<span style="color:#e6db74">:info</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">#{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>}
     end
 end
 
-# And when calling...
-StrippedKW.example name: name, id: id
-</code></pre>
-
-<p>The sugar of omitting the <code>[</code> and <code>]</code> allows us to create fluent and beautiful APIs. For example, we can do stuff like:</p>
-
-<pre><code class="language-elixir">Assets.all(  
-  from vehicle in Assets.Vehicles,
-      where: vehicle.truck? == true,
-  select: vehicle
+<span style="color:#75715e"># And when calling...</span>
+<span style="color:#a6e22e">StrippedKW</span><span style="color:#f92672">.</span>example <span style="color:#e6db74">name</span>: name, <span style="color:#e6db74">id</span>: id
+</code></pre></div><p>The sugar of omitting the <code>[</code> and <code>]</code> allows us to create fluent and beautiful APIs. For example, we can do stuff like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir"><span style="color:#a6e22e">Assets</span><span style="color:#f92672">.</span>all(  
+  from vehicle in <span style="color:#a6e22e">Assets.Vehicles</span>,
+      <span style="color:#e6db74">where</span>: vehicle<span style="color:#f92672">.</span>truck? <span style="color:#f92672">==</span> true,
+  <span style="color:#e6db74">select</span>: vehicle
 )
-</code></pre>
-
-<p>Omission of parentheses or brackets make a set of function call seem like a totally new <strong>L</strong>anguage tailored <strong>S</strong>pecifically for the <strong>D</strong>omain.</p>
-
+</code></pre></div><p>Omission of parentheses or brackets make a set of function call seem like a totally new <strong>L</strong>anguage tailored <strong>S</strong>pecifically for the <strong>D</strong>omain.</p>
 <h3 id="sets">Sets</h3>
-
 <p><code>Set</code> structure is similar to its mathematical equivalent and is depicted by the <code>%MapSet{}</code> struct and created with the <code>new/1</code> function. For example <code>MapSet.new [1, 2, 3]</code> is equivalent of the mathematical <code>{1, 2, 3}</code>. All set operations such as <code>MapSet.union/2</code>, <code>MapSet.intersection/2</code>, <code>MapSet.difference/2</code> etc are defined under the <code>MapSet</code> module along with predicates such as <code>MapSet.member?/2</code>, <code>MapSet.disjoint?/2</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">u <span style="color:#f92672">=</span> <span style="color:#a6e22e">MapSet</span><span style="color:#f92672">.</span>new [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]
+a <span style="color:#f92672">=</span> <span style="color:#a6e22e">MapSet</span><span style="color:#f92672">.</span>new [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>]
+b <span style="color:#f92672">=</span> <span style="color:#a6e22e">MapSet</span><span style="color:#f92672">.</span>new [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>]
+c <span style="color:#f92672">=</span> <span style="color:#a6e22e">MapSet</span><span style="color:#f92672">.</span>new [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">9</span>]
 
-<pre><code class="language-elixir">u = MapSet.new [1, 2, 3, 4, 5, 6]
-a = MapSet.new [1, 3, 5]
-b = MapSet.new [2, 4, 6]
-c = MapSet.new [3, 6, 9]
-
-MapSet.union a, b # {1, 2, 3, 4, 5, 6}
-MapSet.intersection a, c # {3}
-Mapset.member? a, 3 # true 
-</code></pre>
-
-<p>We can leverage the <code>Enum</code> functions on MapSets as well.</p>
-
+<span style="color:#a6e22e">MapSet</span><span style="color:#f92672">.</span>union a, b <span style="color:#75715e"># {1, 2, 3, 4, 5, 6}</span>
+<span style="color:#a6e22e">MapSet</span><span style="color:#f92672">.</span>intersection a, c <span style="color:#75715e"># {3}</span>
+<span style="color:#a6e22e">Mapset</span><span style="color:#f92672">.</span>member? a, <span style="color:#ae81ff">3</span> <span style="color:#75715e"># true </span>
+</code></pre></div><p>We can leverage the <code>Enum</code> functions on MapSets as well.</p>
 <h3 id="comprehensions">Comprehensions</h3>
-
-<p>List comprehension is one of my favorite language features and I&rsquo;m glad Elixir allows it smoothly. It is quite close to the mathematical treatment of it too. For example, if we want to find all numbers that are between <code>1</code> and <code>100</code> and are divisible by 3 or 5, we can write: <code>for i &lt;- 1..100, rem(i, 3) == 0 || rem(i, 5) == 0, do: i</code>, or, if we want to find all Pythagorean triples maxing 10 unit: <code>for i &lt;- 1..10, j &lt;- 1..i, k &lt;- 1..j, i*i == j*j + k*k, do: {i, j, k}</code>. The comprehension syntax is simple: <code>for</code> starts the expression, which is followed by several comma separated expressions, which can either be iterations, depicted by the <code>&lt;-</code> operator, or conditions which are, well, condition expressions. Finally, the <code>do:</code> clause allows the yielded expression to give out.</p>
-
+<p>List comprehension is one of my favorite language features and I'm glad Elixir allows it smoothly. It is quite close to the mathematical treatment of it too. For example, if we want to find all numbers that are between <code>1</code> and <code>100</code> and are divisible by 3 or 5, we can write: <code>for i &lt;- 1..100, rem(i, 3) == 0 || rem(i, 5) == 0, do: i</code>, or, if we want to find all Pythagorean triples maxing 10 unit: <code>for i &lt;- 1..10, j &lt;- 1..i, k &lt;- 1..j, i*i == j*j + k*k, do: {i, j, k}</code>. The comprehension syntax is simple: <code>for</code> starts the expression, which is followed by several comma separated expressions, which can either be iterations, depicted by the <code>&lt;-</code> operator, or conditions which are, well, condition expressions. Finally, the <code>do:</code> clause allows the yielded expression to give out.</p>
 <p>What if we want to do a comprehension but yield the result into a different structure? For example, we iterate through a list and want to return a set? The <code>into:</code> is there for this (I will have to read more on this). <code>for i &lt;- [1, 1, 5, 7, 8, 8, 16, 32, 32], into: %MapSet{}, do: i*i</code> does the trick!</p>
-
 <h2 id="playing-on">Playing on&hellip;</h2>
+<p>The <code>Enum</code> contains a good load of function to play with iterable structures. All I need to do is push <code>Enum.</code> and then the <code>&lt;TAB&gt;</code> button to see the list of possibilities and <code>h Enum.&lt;function&gt;</code> to see what it does in the <code>iex</code>. The documentation is fantastic and it's a piece of cake to know which function does what. The <code>|&gt;</code> operator can compose multiple expressions and still be readable and feel fluent. This is especially due to the consistancy of first argument being the structure that the pipe operator can function. Some of the functions here reside in <code>Kernel</code> instead of their respective modules, which I need to dig further to grok the reason why.</p>
+<p>Let's play a little more with <code>Enum</code>s (Will write the first few minutes&rsquo; ones here)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">[<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">34</span>, <span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">20</span>] <span style="color:#75715e"># Le list </span>
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>with_index <span style="color:#75715e"># Get indexed tuple at {value, index} formation </span>
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>filter(fn {v, idx} <span style="color:#f92672">-&gt;</span> rem(idx, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> end) <span style="color:#75715e"># Find odd-indexed tuples</span>
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>map(fn {v, idx} <span style="color:#f92672">-&gt;</span> v end) <span style="color:#75715e"># Extract the values as value-list</span>
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>reduce(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span><span style="color:#f92672">*</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>) <span style="color:#75715e"># Multiply all the things</span>
 
-<p>The <code>Enum</code> contains a good load of function to play with iterable structures. All I need to do is push <code>Enum.</code> and then the <code>&lt;TAB&gt;</code> button to see the list of possibilities and <code>h Enum.&lt;function&gt;</code> to see what it does in the <code>iex</code>. The documentation is fantastic and it&rsquo;s a piece of cake to know which function does what. The <code>|&gt;</code> operator can compose multiple expressions and still be readable and feel fluent. This is especially due to the consistancy of first argument being the structure that the pipe operator can function. Some of the functions here reside in <code>Kernel</code> instead of their respective modules, which I need to dig further to grok the reason why.</p>
+<span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1000</span> <span style="color:#75715e"># 1 to one thousand</span>
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>take_random(<span style="color:#ae81ff">10</span>) <span style="color:#75715e"># Take any random 10 element </span>
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>find(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, fn v <span style="color:#f92672">-&gt;</span> rem(v, <span style="color:#ae81ff">13</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#75715e"># Pluck ones whom 13 divides or -1</span>
 
-<p>Let&rsquo;s play a little more with <code>Enum</code>s (Will write the first few minutes&rsquo; ones here)</p>
+<span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>scan(<span style="color:#f92672">&amp;</span><span style="color:#f92672">+</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>) <span style="color:#75715e"># Like reduce, but all intermediate results are enlisted!</span>
 
-<pre><code class="language-elixir">[10, 34, 32, 12, 11, 19, 20] # Le list 
-    |&gt; Enum.with_index # Get indexed tuple at {value, index} formation 
-    |&gt; Enum.filter(fn {v, idx} -&gt; rem(idx, 2) == 1 end) # Find odd-indexed tuples
-    |&gt; Enum.map(fn {v, idx} -&gt; v end) # Extract the values as value-list
-    |&gt; Enum.reduce(1, &amp;*/2) # Multiply all the things
-
-1..1000 # 1 to one thousand
-    |&gt; Enum.take_random(10) # Take any random 10 element 
-    |&gt; Enum.find(-1, fn v -&gt; rem(v, 13) == 0) # Pluck ones whom 13 divides or -1
-
-1..100 |&gt; Enum.scan(&amp;+/2) # Like reduce, but all intermediate results are enlisted!
-
-# split_while, uniq, sort_by, zip, intersperse... my my!
-</code></pre>
-
-<blockquote>
+<span style="color:#75715e"># split_while, uniq, sort_by, zip, intersperse... my my!</span>
+</code></pre></div><blockquote>
 <p>Wow!</p>
 </blockquote>
-
-<p>Tomorrow I&rsquo;ll be playing with <code>Map</code> and <code>Stream</code>, and do some more <code>Enum</code> tricks, which I&rsquo;m finding to be superfun! It&rsquo;s Eid festival today and I&rsquo;m wishing everyone a great one!</p>
+<p>Tomorrow I'll be playing with <code>Map</code> and <code>Stream</code>, and do some more <code>Enum</code> tricks, which I'm finding to be superfun! It's Eid festival today and I'm wishing everyone a great one!</p>
 
   </section>
   <footer>
@@ -363,10 +316,10 @@ Mapset.member? a, 3 # true
     
     <ul class="pager">
       
-      <li class="previous"><a href="//mafinar.ca/posts/day-1/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      <li class="previous"><a href="//mafinar.ca/posts/day-3/"><span aria-hidden="true">&larr;</span> Older</a></li>
       
       
-      <li class="next"><a href="//mafinar.ca/posts/day-3/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next"><a href="//mafinar.ca/posts/day-1/">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
     
@@ -457,7 +410,6 @@ Mapset.member? a, 3 # true
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dart.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script>
     hljs.initHighlightingOnLoad();
@@ -474,7 +426,7 @@ Mapset.member? a, 3 # true
   
   
 
-  <script src="//www.powr.io/powr.js?external-type=html"></script>
+  <script src="//www.powr.io/powr.js?external-type=html"></script> 
   
   <div class="powr-hit-counter" id="9fb2ce72_1531159982"></div>
   

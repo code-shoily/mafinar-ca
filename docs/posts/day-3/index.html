@@ -9,7 +9,7 @@
  
   <meta property="og:site_name" content="learn ▷ play ▷ write" />
   <meta property="og:url" content="//mafinar.ca/posts/day-3/" />
-  <meta property="og:image" content="//mafinar.ca/images/logo.png" />
+  <meta property="og:image" content="http://mafinar.ca/images/logo.png" />
   
   
   <meta property="og:type" content="article" />
@@ -170,29 +170,17 @@
     </div>
   </header>
   <section>
-    
-
-<h2 id="hello-again">Hello Again</h2>
-
-<p>The past six month&rsquo;s been hectic at work and it&rsquo;s a pity I had little time for Elixir. And now version <code>1.4</code> is out, shame on me.
-This may not be the case anymore since I&rsquo;m planning on hijacking some of Elixir greatness to my work mix.</p>
-
-<p>And that&rsquo;s what I&rsquo;m starting off after the hiatus&hellip; <code>Mix</code></p>
-
+    <h2 id="hello-again">Hello Again</h2>
+<p>The past six month's been hectic at work and it's a pity I had little time for Elixir. And now version <code>1.4</code> is out, shame on me.
+This may not be the case anymore since I'm planning on hijacking some of Elixir greatness to my work mix.</p>
+<p>And that's what I'm starting off after the hiatus&hellip; <code>Mix</code></p>
 <h2 id="tools">Tools!</h2>
-
-<p>Every language comes encapsulated with a system of culture, tools and idioms. The tooling part is quintessential for developer productivity and happiness. It&rsquo;s really cool to see Elixir developers recognizing that part earlier on and building up a build tool which is known as <code>Mix</code>.</p>
-
-<p>There&rsquo;s a lot of grunt work when kicking off with a project. A lot of meta-work is done for it starting right at the preparation phase. <em>What other libraries do I need?</em>, <em>What happens when I compile?</em>, <em>What about tests?</em>, <em>Works on MY MACHINE!</em>, <em>Where do modules live?</em> are few of the decision that needs love. That gave rise to a lot of tools that automate some of these, decide some of these, and lets you make your own (decisions/automation) in a frameworkish fashion. For <code>Clojure</code>, we have the amazing <code>Leiningen</code> (or the equally great <code>Boot</code>), for <code>Elixir</code>, we have <code>Mix</code>. And that&rsquo;s what I&rsquo;ve played with (from) today, so that it in return allows <em>me</em> to play with the rest of the ecosystem in future.</p>
-
+<p>Every language comes encapsulated with a system of culture, tools and idioms. The tooling part is quintessential for developer productivity and happiness. It's really cool to see Elixir developers recognizing that part earlier on and building up a build tool which is known as <code>Mix</code>.</p>
+<p>There's a lot of grunt work when kicking off with a project. A lot of meta-work is done for it starting right at the preparation phase. <em>What other libraries do I need?</em>, <em>What happens when I compile?</em>, <em>What about tests?</em>, <em>Works on MY MACHINE!</em>, <em>Where do modules live?</em> are few of the decision that needs love. That gave rise to a lot of tools that automate some of these, decide some of these, and lets you make your own (decisions/automation) in a frameworkish fashion. For <code>Clojure</code>, we have the amazing <code>Leiningen</code> (or the equally great <code>Boot</code>), for <code>Elixir</code>, we have <code>Mix</code>. And that's what I've played with (from) today, so that it in return allows <em>me</em> to play with the rest of the ecosystem in future.</p>
 <h2 id="hello-mix">Hello Mix</h2>
-
 <p>The answer to those questions above is <code>Mix</code>. <code>Mix</code> is a build tool that lets you create, compile, dependancy-manage <code>Elixir</code> projects.</p>
-
-<p>Let&rsquo;s say we want to create a new <code>Elixir</code> project. We already have <code>Elixir</code> installed and <code>Mix</code> comes with it (thankfully). So all we need to do is, fire up the <code>mix</code> command and do something like <code>mix new HelloMix</code>. And it didn&rsquo;t work! This is because of how cool underscores and lower case letters are for folder names (see the cute little error message there?). Correcting ourselves: <code>mix new hello_mix</code> and it should work fine!</p>
-
-<p>Let&rsquo;s inspect the folder and see what <code>Mix</code> gave me-</p>
-
+<p>Let's say we want to create a new <code>Elixir</code> project. We already have <code>Elixir</code> installed and <code>Mix</code> comes with it (thankfully). So all we need to do is, fire up the <code>mix</code> command and do something like <code>mix new HelloMix</code>. And it didn't work! This is because of how cool underscores and lower case letters are for folder names (see the cute little error message there?). Correcting ourselves: <code>mix new hello_mix</code> and it should work fine!</p>
+<p>Let's inspect the folder and see what <code>Mix</code> gave me-</p>
 <pre><code>.
 ├── .gitignore
 ├── README.md
@@ -204,147 +192,111 @@ This may not be the case anymore since I&rsquo;m planning on hijacking some of E
 └── test
     ├── hello_mix_test.exs
     └── test_helper.exs
-</code></pre>
-
-<p>Well, without any preverification I could tell that <code>mix.exs</code> might just be <code>Mix</code>-s <code>project.clj</code> (i.e. <code>settings.py</code> :P), <code>test/</code> would contain the tests, <code>lib/</code> would house my modules, and with some verifications I got to know that <code>config/</code> contains all sorts of configuration maps of the modules I&rsquo;d be using. I absolutely could not find out what <code>.gitignore</code> or <code>README.md</code> does though, might need to upgrade my google-fu.</p>
-
+</code></pre><p>Well, without any preverification I could tell that <code>mix.exs</code> might just be <code>Mix</code>-s <code>project.clj</code> (i.e. <code>settings.py</code> :P), <code>test/</code> would contain the tests, <code>lib/</code> would house my modules, and with some verifications I got to know that <code>config/</code> contains all sorts of configuration maps of the modules I'd be using. I absolutely could not find out what <code>.gitignore</code> or <code>README.md</code> does though, might need to upgrade my google-fu.</p>
 <p>Next step would be to inspect the <code>mix.exs</code> file. Here is it-</p>
-
-<pre><code class="language-elixir">defmodule HelloMix.Mixfile do
-  use Mix.Project
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">HelloMix.Mixfile</span> do
+  use <span style="color:#a6e22e">Mix.Project</span>
 
   def project do
-    [app: :hello_mix,
-     version: &quot;0.1.0&quot;,
-     elixir: &quot;~&gt; 1.4&quot;,
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps()]
+    [<span style="color:#e6db74">app</span>: <span style="color:#e6db74">:hello_mix</span>,
+     <span style="color:#e6db74">version</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">0.1.0</span><span style="color:#e6db74">&#34;</span>,
+     <span style="color:#e6db74">elixir</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">~&gt; 1.4</span><span style="color:#e6db74">&#34;</span>,
+     <span style="color:#e6db74">build_embedded</span>: <span style="color:#a6e22e">Mix</span><span style="color:#f92672">.</span>env <span style="color:#f92672">==</span> <span style="color:#e6db74">:prod</span>,
+     <span style="color:#e6db74">start_permanent</span>: <span style="color:#a6e22e">Mix</span><span style="color:#f92672">.</span>env <span style="color:#f92672">==</span> <span style="color:#e6db74">:prod</span>,
+     <span style="color:#e6db74">deps</span>: deps()]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type &quot;mix help compile.app&quot; for more information
+  <span style="color:#75715e"># Configuration for the OTP application</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># Type &#34;mix help compile.app&#34; for more information</span>
   def application do
-    # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger]]
+    <span style="color:#75715e"># Specify extra applications you&#39;ll use from Erlang/Elixir</span>
+    [<span style="color:#e6db74">extra_applications</span>: [<span style="color:#e6db74">:logger</span>]]
   end
 
-  # Dependencies can be Hex packages:
-  #
-  #   {:my_dep, &quot;~&gt; 0.3.0&quot;}
-  #
-  # Or git/path repositories:
-  #
-  #   {:my_dep, git: &quot;https://github.com/elixir-lang/my_dep.git&quot;, tag: &quot;0.1.0&quot;}
-  #
-  # Type &quot;mix help deps&quot; for more examples and options
+  <span style="color:#75715e"># Dependencies can be Hex packages:</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e">#   {:my_dep, &#34;~&gt; 0.3.0&#34;}</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># Or git/path repositories:</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e">#   {:my_dep, git: &#34;https://github.com/elixir-lang/my_dep.git&#34;, tag: &#34;0.1.0&#34;}</span>
+  <span style="color:#75715e">#</span>
+  <span style="color:#75715e"># Type &#34;mix help deps&#34; for more examples and options</span>
   defp deps do
     []
   end
 end
-</code></pre>
-
-<p>First it&rsquo;s the omnipresent <code>defmodule</code> <em>powered by</em> <code>use Mix.Project</code>. It pimps up the module with <code>Mix.Project</code> induced goodness. There are three sections at play here-</p>
-
+</code></pre></div><p>First it's the omnipresent <code>defmodule</code> <em>powered by</em> <code>use Mix.Project</code>. It pimps up the module with <code>Mix.Project</code> induced goodness. There are three sections at play here-</p>
 <ul>
-<li><strong>project</strong> - I hold all the meta-information about what you&rsquo;re going to make. I decide how things get build, what <code>Elixir</code> you use, how to run things basically.</li>
+<li><strong>project</strong> - I hold all the meta-information about what you're going to make. I decide how things get build, what <code>Elixir</code> you use, how to run things basically.</li>
 <li><strong>application</strong> - I ensure what libraries need to get compiled before you compile your own?</li>
-<li><strong>deps</strong> - I manage dependancies, and I&rsquo;m private!</li>
+<li><strong>deps</strong> - I manage dependancies, and I'm private!</li>
 </ul>
-
-<p>I think other than the <code>version</code> part, I should leave the <code>application</code> segment alone, for now. Let&rsquo;s play with time a little, there&rsquo;s a lib for that: <a href="https://github.com/bitwalker/timex">Timex</a></p>
-
-<p><del>Common sense tells me to add a dependancy as a map, and it was correct</del> (erm, no it was not, we&rsquo;re not in Clojure anymore, use <code>Tuple</code>), so let&rsquo;s add <code>{:timex, &quot;~&gt; 3.0&quot;}</code> to our dependancy list so that it looks like:</p>
-
-<pre><code class="language-elixir">  defp deps do
-    [{:timex, &quot;~&gt; 3.0&quot;}]
+<p>I think other than the <code>version</code> part, I should leave the <code>application</code> segment alone, for now. Let's play with time a little, there's a lib for that: <a href="https://github.com/bitwalker/timex">Timex</a></p>
+<p><del>Common sense tells me to add a dependancy as a map, and it was correct</del> (erm, no it was not, we're not in Clojure anymore, use <code>Tuple</code>), so let's add <code>{:timex, &quot;~&gt; 3.0&quot;}</code> to our dependancy list so that it looks like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">  defp deps do
+    [{<span style="color:#e6db74">:timex</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">~&gt; 3.0</span><span style="color:#e6db74">&#34;</span>}]
   end
-</code></pre>
-
-<p>I learnt more about versioning <a href="https://hexdocs.pm/elixir/Version.html">from here</a>. Well I would blindly copy the recommended line from the libraries for the time being any way. The comment in <code>mix.exs</code> code was kind enough to let me know of other possibilities (i.e. from git?). Thanks guys.</p>
-
+</code></pre></div><p>I learnt more about versioning <a href="https://hexdocs.pm/elixir/Version.html">from here</a>. Well I would blindly copy the recommended line from the libraries for the time being any way. The comment in <code>mix.exs</code> code was kind enough to let me know of other possibilities (i.e. from git?). Thanks guys.</p>
 <p><code>mix deps.get</code> is the <code>npm install</code> of <code>Mix</code> it seems. Just did that and I intend to play with it in the REPL now. <code>iex -S mix</code> did the trick (<code>python manage.py shell</code> anyone?).</p>
-
 <p>One thing I have seen is that I did not have to put anything in the <code>application</code> section of my Mix module, and it looked different from other <code>mix.exs</code>-es that I have seen, luckily I stumbled upon <a href="https://sergiotapia.me/application-inference-in-elixir-1-4-ae9e43e90301#.mu8plww6p">this</a> which explained the reason and the application inference is really cool (although I have never lived a life before it).</p>
+<p>If I do a single <code>iex</code>, then I cannot get all the <code>deps</code> goodness I mentioned to <code>Mix</code>, the <code>-S mix</code> takes care of that and gives me an environment where <code>Time&lt;TAB&gt;</code> would autocomplete to <code>Timex</code>. So I can play with it straight away. Let's write something in <code>lib/hello_mix.ex</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">HelloMix</span> do
+  <span style="color:#a6e22e">@moduledoc</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">  </span><span style="color:#e6db74">Documentation for HelloMix.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
 
-<p>If I do a single <code>iex</code>, then I cannot get all the <code>deps</code> goodness I mentioned to <code>Mix</code>, the <code>-S mix</code> takes care of that and gives me an environment where <code>Time&lt;TAB&gt;</code> would autocomplete to <code>Timex</code>. So I can play with it straight away. Let&rsquo;s write something in <code>lib/hello_mix.ex</code>:</p>
-
-<pre><code class="language-elixir">defmodule HelloMix do
-  @moduledoc &quot;&quot;&quot;
-  Documentation for HelloMix.
-  &quot;&quot;&quot;
-
-  @doc &quot;&quot;&quot;
-  Returns the ISO:Extended format of current time.
-  &quot;&quot;&quot;
+  <span style="color:#a6e22e">@doc</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">  </span><span style="color:#e6db74">Returns the ISO:Extended format of current time.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
   def now do
-    {_, right_now} = Timex.format Timex.now(), &quot;{ISO:Extended}&quot;
+    {_, right_now} <span style="color:#f92672">=</span> <span style="color:#a6e22e">Timex</span><span style="color:#f92672">.</span>format <span style="color:#a6e22e">Timex</span><span style="color:#f92672">.</span>now(), <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{ISO:Extended}</span><span style="color:#e6db74">&#34;</span>
     right_now
   end
 end
-</code></pre>
-
-<p>Now if we <code>iex -S mix</code> and type in <code>HelloMix.now()</code>, we&rsquo;ll see a formatted string of time.</p>
-
+</code></pre></div><p>Now if we <code>iex -S mix</code> and type in <code>HelloMix.now()</code>, we'll see a formatted string of time.</p>
 <h2 id="aliases-tasks">Aliases, Tasks</h2>
-
 <p><code>mix compile</code>, as the name says, compiles your project, but what if I needed <code>mix c</code>? Aliases to the rescue&hellip;</p>
-
-<pre><code class="language-elixir">defp aliases do
- [c: &quot;compile&quot;]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defp aliases do
+ [<span style="color:#e6db74">c</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">compile</span><span style="color:#e6db74">&#34;</span>]
 end
-</code></pre>
-
-<p>And then add <code>aliases: aliases()</code> to the project vector.</p>
-
+</code></pre></div><p>And then add <code>aliases: aliases()</code> to the project vector.</p>
 <p>Aliases can also have functions defined within the module and work as task, so if, we say, have a <code>hello</code> function, it can run it out with <code>mix hello</code>. The function would be <code>defp hello(_), do: IO.puts &quot;Hello&quot;</code>. The first parameter is a list of arguments provided, so if we want to know about the arguments, we can go like:</p>
-
-<pre><code class="language-elixir"># Note to self, DO UPDATE the `project` with the `aliases`
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir"><span style="color:#75715e"># Note to self, DO UPDATE the `project` with the `aliases`</span>
 defp aliases do
-  [c: &quot;compile&quot;,
-   hello: &amp;hello/1,
-   concat: &amp;contact/1]
+  [<span style="color:#e6db74">c</span>: <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">compile</span><span style="color:#e6db74">&#34;</span>,
+   <span style="color:#e6db74">hello</span>: <span style="color:#f92672">&amp;</span>hello<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>,
+   <span style="color:#e6db74">concat</span>: <span style="color:#f92672">&amp;</span>contact<span style="color:#f92672">/</span><span style="color:#ae81ff">1</span>]
 end
 
 defp concat(args) do
   args 
-  |&gt; Enum.reduce(&amp;&lt;&gt;/2)
-  |&gt; String.reverser
-  |&gt; IO.puts
+  <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>reduce(<span style="color:#f92672">&amp;</span><span style="color:#f92672">&lt;&gt;</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
+  <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">String</span><span style="color:#f92672">.</span>reverser
+  <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">IO</span><span style="color:#f92672">.</span>puts
 end
-</code></pre>
-
-<p>The way of running tasks defined here is more likely to stay <code>private</code> to the app I am using, since the definitions all go into my own <code>mix.exs</code>. We can make usable by other project task by simple creating a module that <code>uses</code> the <code>Mix.Task</code> behaviour. Such as the one below: (I saved it in and as <code>lib/tasks/concat.ex</code>)</p>
-
-<pre><code class="language-elixir">defmodule Mix.Tasks.Concat do
-  use Mix.Task
+</code></pre></div><p>The way of running tasks defined here is more likely to stay <code>private</code> to the app I am using, since the definitions all go into my own <code>mix.exs</code>. We can make usable by other project task by simple creating a module that <code>uses</code> the <code>Mix.Task</code> behaviour. Such as the one below: (I saved it in and as <code>lib/tasks/concat.ex</code>)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Mix.Tasks.Concat</span> do
+  use <span style="color:#a6e22e">Mix.Task</span>
 
   def run(args) do
     args 
-    |&gt; Enum.reduce(&amp;&lt;&gt;/2)
-    |&gt; String.reverse
-    |&gt; IO.puts
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>reduce(<span style="color:#f92672">&amp;</span><span style="color:#f92672">&lt;&gt;</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">String</span><span style="color:#f92672">.</span>reverse
+    <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">IO</span><span style="color:#f92672">.</span>puts
   end
 end
-</code></pre>
-
-<p>If we run <code>mix concat hello world</code> now, it would call the <code>defp</code> version of <code>mix.exs</code>, so let&rsquo;s remove it and run it again and we see a <code>helloworld</code> nicely printed out.</p>
-
+</code></pre></div><p>If we run <code>mix concat hello world</code> now, it would call the <code>defp</code> version of <code>mix.exs</code>, so let's remove it and run it again and we see a <code>helloworld</code> nicely printed out.</p>
 <p>In the examples, they used <code>mix.shell.info</code> in lieu of <code>IO.puts</code> by the way :)</p>
-
-<h2 id="i-ll-be-back">I&rsquo;ll be back</h2>
-
+<h2 id="ill-be-back">I'll be back</h2>
 <p>There is more to (in fact way more to it seems, what I wrote is nothing) <code>Mix</code> than I brushed in here. The excellent documentation <a href="https://hexdocs.pm/mix/Mix.html">here</a> speaks volumes of it. You can play with environments, tests (all it takes is <code>mix test</code>, and OMG <code>Elixir</code> has <code>doctests</code>, next time!), more control in each of the parts of the module. But I guess from what I just practiced thus far should suffice in me trying to act like I can make projects now with Elixir.</p>
-
 <p>There are a few things though which at this point I am too lazy to google for:</p>
-
 <ul>
-<li>Is there any <code>mix init</code> that generates a mix project? (I know it&rsquo;s easy to make one)</li>
+<li>Is there any <code>mix init</code> that generates a mix project? (I know it's easy to make one)</li>
 <li>What about <code>mix install --save</code> akin to the one JS folks to? (i.e. gets me latest version of <code>Timex</code> and updates my <code>mix.exs</code> file?)</li>
 </ul>
-
-<p>I guess I could do those too, however, it&rsquo;s pleasant knowing <code>Mix</code>. I will try to be regular for a change and concentrate a lot more on <code>Elixir</code> than I did last year.</p>
+<p>I guess I could do those too, however, it's pleasant knowing <code>Mix</code>. I will try to be regular for a change and concentrate a lot more on <code>Elixir</code> than I did last year.</p>
 
   </section>
   <footer>
@@ -355,10 +307,10 @@ end
     
     <ul class="pager">
       
-      <li class="previous"><a href="//mafinar.ca/posts/day-2/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
       
       
-      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next"><a href="//mafinar.ca/posts/day-2/">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
     
@@ -449,7 +401,6 @@ end
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dart.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script>
     hljs.initHighlightingOnLoad();
@@ -466,7 +417,7 @@ end
   
   
 
-  <script src="//www.powr.io/powr.js?external-type=html"></script>
+  <script src="//www.powr.io/powr.js?external-type=html"></script> 
   
   <div class="powr-hit-counter" id="9fb2ce72_1531159982"></div>
   

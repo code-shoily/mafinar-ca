@@ -9,7 +9,7 @@
  
   <meta property="og:site_name" content="learn ▷ play ▷ write" />
   <meta property="og:url" content="//mafinar.ca/bn/posts/dart-101-4-variables-and-flow/" />
-  <meta property="og:image" content="//mafinar.ca/images/logo.png" />
+  <meta property="og:image" content="http://mafinar.ca/images/logo.png" />
   
   
   <meta property="og:type" content="article" />
@@ -176,393 +176,372 @@
     </div>
   </header>
   <section>
-    
-
-<p>এই পোস্টে আমরা কথা বলব ডার্ট টাইপ, ভ্যারিয়েবল ডিক্লারেশন, কন্ট্রোল ফ্লো নিয়ে। অনেকের কাছেই হয়ত আজকের পোস্ট অনেক সহজেবোধ্য হবে কারণ ডার্ট ও সি (ও তার পরিবারবর্গের) যথেষ্ট মিল রয়েছে, এমনকি একের কোড ওপরের ভেতর কপি/পেস্ট করলেও খুব অল্প পরিবর্তনেই রান করবে।</p>
-
-<h2 id="ভ-য-র-য়-বল-ও-এস-ইনম-ন-ট">ভ্যারিয়েবল ও এসাইনমেন্ট</h2>
-
-<h3 id="ট-ইপ">টাইপ</h3>
-
+    <p>এই পোস্টে আমরা কথা বলব ডার্ট টাইপ, ভ্যারিয়েবল ডিক্লারেশন, কন্ট্রোল ফ্লো নিয়ে। অনেকের কাছেই হয়ত আজকের পোস্ট অনেক সহজেবোধ্য হবে কারণ ডার্ট ও সি (ও তার পরিবারবর্গের) যথেষ্ট মিল রয়েছে, এমনকি একের কোড ওপরের ভেতর কপি/পেস্ট করলেও খুব অল্প পরিবর্তনেই রান করবে।</p>
+<h2 id="ভযরয়বল-ও-এসইনমনট">ভ্যারিয়েবল ও এসাইনমেন্ট</h2>
+<h3 id="টইপ">টাইপ</h3>
 <p>ডার্ট একটি টাইপসেফ ল্যাঙ্গুয়েজ। প্রতিটি ভ্যারিয়েবলের টাইপ থাকবে এবং এটি যেমন আপনার কোডকে করে সেলফ ডকুমেন্টেড, আবার স্ট্যাটিক এনালাইসিসের মাধ্যমে আপনি অনেক ধরণের এরর থেকে মুক্তি পেতে পারেন। আবার এডিটর অনেকটাই উপকারী হয়ে ওঠে টাইপ থাকার ফলে, যেমন রিফ্যাক্টরিং, ইন্টেলিজেন্স, অটোকমপ্লিট ইত্যাদি টাইপড ল্যাঙ্গুয়েজে অনেক শক্তিশালী ডাইনামিকালি টাইপড ল্যাঙ্গুয়েজ থেকে। তবে আমরা নিম্নের বুলেট পয়েন্ট থেকে বুঝতে পারব যে ডার্টের টাইপ অতটা দীর্ঘ করবে না আপনার কোডকে বরং এর টাইপ সিস্টেম কিছুটা স্মার্ট। এবং যদিও তা স্ক্যালা অথবা কটলিনের মত পাওয়ারফুল না, বোধগম্যতা ও শক্তির মাঝে বেশ ভালো সামঞ্জস্য স্থাপন করতে পেরেছে ডার্ট।</p>
-
 <p>যেহেতু ক্লাস ও অবজেক্ট নিয়ে আমরা এই পর্বে কথা বলছি না কাজেই টাইপের সাথে আমাদের দেখা আরেকবার হবে জেনেরিক্স এর পোস্টে, আপাতত আমরা বেসিক টাইপ নিয়ে আলোচনা করব</p>
-
 <ul>
-<li><p>ডার্ট ভ্যারিয়েবলের নামকরণের নিয়ম হল, নাম্বার দিয়ে শুরু হতে পারবে না, <code>_</code>, <code>$</code>, যে কোন নাম্বার অথবা লেটার থাকতে পারবে বাকিগুলি। পিএইচপি/জাভাস্ক্রিপ্টের মতো</p></li>
-
-<li><p>একগুচ্ছ কীওয়ার্ড রয়েছে যা <a href="https://www.dartlang.org/guides/language/language-tour#keywords">এখানে দেখতে পাবেন</a>, তবে, কিছু কিছু কীওয়ার্ডকে জায়গাভেদে কিন্তু আপনি ভ্যারিয়েবলের নাম হিসেবে ব্যবহার করতে পারবেন। যদিও তা না করাটাই ভাল।</p></li>
-
-<li><p>আপনি ডিক্লেয়ার করুন <code>String name = &quot;Dart&quot;</code>, সরাসরি ডিক্লেয়ার না করে ইনিশিয়ালাইজ করুন <code>var name = &quot;Dart&quot;</code>, অথবা শুধু ডিক্লেয়ার করুন <code>var name</code>। ডার্ট হয় টাইপ বাইনড করবে, টাইপ অনুমান করে নিবে (<a href="https://www.dartlang.org/guides/language/sound-dart#type-inference">টাইপ ইনফেয়ারেন্স</a>), অথবা <code>dynamic</code> টাইপ দিয়ে নিবে।</p></li>
-
-<li><p>ডার্ট ভ্যারিয়েবল এসাইনমেন্ট ও টাইপ সিনট্যাক্স সি, সি++, সি-শার্প অথবা যাবার মতোই, আগে টাইপ (অথবা <code>var</code>), এরপর ভ্যারিয়েবলের নাম, এরপর <code>=</code> ও তার মান যদি ইনিশিয়ালাইজ করেন, সেমিকোলন ও সমাপ্তি যদি বিনা বাইন্ডিং এ রেখে দেন ভবিষ্যতের জন্য। যেমন: <code>var answer = 42;</code> (ডিক্লেয়ারেশন) ও <code>int answer = 42;</code> (ইনফেয়ারেন্স) একই কাজ করে</p></li>
-
-<li><p>যদি শুধু <code>var</code> দিয়ে ডিক্লেয়ার করে বসে থাকেন, তাহলে তার টাইপ হবে <code>Null</code> অর্থাৎ যা প্রথমে দিবেন তার টাইপ গ্রহণ করবে ভ্যারিয়েবলটি। <code>dynamic</code> টাইপ থেকেও তা হতে পারে। উদাহরণস্বরূপ-</p></li>
+<li>
+<p>ডার্ট ভ্যারিয়েবলের নামকরণের নিয়ম হল, নাম্বার দিয়ে শুরু হতে পারবে না, <code>_</code>, <code>$</code>, যে কোন নাম্বার অথবা লেটার থাকতে পারবে বাকিগুলি। পিএইচপি/জাভাস্ক্রিপ্টের মতো</p>
+</li>
+<li>
+<p>একগুচ্ছ কীওয়ার্ড রয়েছে যা <a href="https://www.dartlang.org/guides/language/language-tour#keywords">এখানে দেখতে পাবেন</a>, তবে, কিছু কিছু কীওয়ার্ডকে জায়গাভেদে কিন্তু আপনি ভ্যারিয়েবলের নাম হিসেবে ব্যবহার করতে পারবেন। যদিও তা না করাটাই ভাল।</p>
+</li>
+<li>
+<p>আপনি ডিক্লেয়ার করুন <code>String name = &quot;Dart&quot;</code>, সরাসরি ডিক্লেয়ার না করে ইনিশিয়ালাইজ করুন <code>var name = &quot;Dart&quot;</code>, অথবা শুধু ডিক্লেয়ার করুন <code>var name</code>। ডার্ট হয় টাইপ বাইনড করবে, টাইপ অনুমান করে নিবে (<a href="https://www.dartlang.org/guides/language/sound-dart#type-inference">টাইপ ইনফেয়ারেন্স</a>), অথবা <code>dynamic</code> টাইপ দিয়ে নিবে।</p>
+</li>
+<li>
+<p>ডার্ট ভ্যারিয়েবল এসাইনমেন্ট ও টাইপ সিনট্যাক্স সি, সি++, সি-শার্প অথবা যাবার মতোই, আগে টাইপ (অথবা <code>var</code>), এরপর ভ্যারিয়েবলের নাম, এরপর <code>=</code> ও তার মান যদি ইনিশিয়ালাইজ করেন, সেমিকোলন ও সমাপ্তি যদি বিনা বাইন্ডিং এ রেখে দেন ভবিষ্যতের জন্য। যেমন: <code>var answer = 42;</code> (ডিক্লেয়ারেশন) ও <code>int answer = 42;</code> (ইনফেয়ারেন্স) একই কাজ করে</p>
+</li>
+<li>
+<p>যদি শুধু <code>var</code> দিয়ে ডিক্লেয়ার করে বসে থাকেন, তাহলে তার টাইপ হবে <code>Null</code> অর্থাৎ যা প্রথমে দিবেন তার টাইপ গ্রহণ করবে ভ্যারিয়েবলটি। <code>dynamic</code> টাইপ থেকেও তা হতে পারে। উদাহরণস্বরূপ-</p>
+</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> main() {
+  <span style="color:#66d9ef">dynamic</span> whatIsMyType;
+  <span style="color:#75715e">// অথবা var whatIsMyType
+</span><span style="color:#75715e"></span>
+  print(whatIsMyType.runtimeType);
 
-<pre><code class="language-dart">void main() {
-  dynamic whatIsMyType;
-  // অথবা var whatIsMyType
+  whatIsMyType <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Mafinar</span><span style="color:#e6db74">&#34;</span>;
 
   print(whatIsMyType.runtimeType);
 
-  whatIsMyType = &quot;Mafinar&quot;;
+  whatIsMyType <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>;
 
-  print(whatIsMyType.runtimeType);
-
-  whatIsMyType = 100;
-
-  print(whatIsMyType.runtimeType == int);
+  print(whatIsMyType.runtimeType <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>);
 }
-</code></pre>
-
-<p>ডার্টপ্যাডে রান করে দেখুন কখন কার মান কি আসে</p>
-
+</code></pre></div><p>ডার্টপ্যাডে রান করে দেখুন কখন কার মান কি আসে</p>
 <ul>
-<li><p>যদি শুধু ভ্যারিয়েবল ডিক্লেয়ার,করেন তাহলে তা যে টাইপেরই থাকুক না কেন, মান হবে &ldquo;<code>null</code>&ldquo;</p></li>
-
-<li><p>অপরিবর্তনশীল ভ্যালু বোঝাতে আপনি <code>final</code> অথবা <code>const</code> ব্যবহার করবেন। এদের পার্থক্য হল- <code>final</code> কেবলমাত্র একবারই এসাইন্ড হতে পারে, তার মানে, যে কোন ক্লাসের ফিল্ড <code>final</code> হতে পারে যা কন্সট্রাক্টরে ডিক্লেয়ার করা হবে (অন্যদিনের টপিক এটা), তবে <code>cont</code> কম্পাইল সময় থেকেই অপরিবর্তনশীল। <code>final</code>-কে আপনি এক্সেস না করলে তা কোন জায়গা দখল করবে না মেমোরিতে, তবে <code>const</code> ডিক্লেয়ার করা মাত্রই মেমোরি নিয়ে বসবে। এদের সম্পর্কে আরো জানতে পারবো পরের পোস্টগুলিতে।</p></li>
+<li>
+<p>যদি শুধু ভ্যারিয়েবল ডিক্লেয়ার,করেন তাহলে তা যে টাইপেরই থাকুক না কেন, মান হবে &ldquo;<code>null</code>&rdquo;</p>
+</li>
+<li>
+<p>অপরিবর্তনশীল ভ্যালু বোঝাতে আপনি <code>final</code> অথবা <code>const</code> ব্যবহার করবেন। এদের পার্থক্য হল- <code>final</code> কেবলমাত্র একবারই এসাইন্ড হতে পারে, তার মানে, যে কোন ক্লাসের ফিল্ড <code>final</code> হতে পারে যা কন্সট্রাক্টরে ডিক্লেয়ার করা হবে (অন্যদিনের টপিক এটা), তবে <code>cont</code> কম্পাইল সময় থেকেই অপরিবর্তনশীল। <code>final</code>-কে আপনি এক্সেস না করলে তা কোন জায়গা দখল করবে না মেমোরিতে, তবে <code>const</code> ডিক্লেয়ার করা মাত্রই মেমোরি নিয়ে বসবে। এদের সম্পর্কে আরো জানতে পারবো পরের পোস্টগুলিতে।</p>
+</li>
 </ul>
-
 <blockquote>
 <p><code>$</code> ও <code>${}</code> এর মাধ্যমে টাইপ ইন্টারপোলেশন হয়, যেমন-</p>
 </blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">void</span> main() {
+  <span style="color:#66d9ef">var</span> filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">string</span><span style="color:#e6db74">&#34;</span>;
+  <span style="color:#66d9ef">var</span> extension <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">.dart</span><span style="color:#e6db74">&#34;</span>;
+  <span style="color:#66d9ef">var</span> language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Dart</span><span style="color:#e6db74">&#34;</span>;
 
-<pre><code class="language-dart">void main() {
-  var filename = &quot;string&quot;;
-  var extension = &quot;.dart&quot;;
-  var language = &quot;Dart&quot;;
-
-  print(&quot;An example of $language filename could be ${filename + extension}&quot;);
+  print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">An example of </span><span style="color:#e6db74">$</span>language<span style="color:#e6db74"> filename could be </span><span style="color:#e6db74">${</span>filename <span style="color:#f92672">+</span> extension<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>);
 }
-</code></pre>
-
-<p>শুধু মান প্রতিস্থাপনের জন্য <code>$</code> এবং ডার্ট এক্সপ্রেশান প্রতিস্থাপনের জন্য <code>${}</code> ব্যবহৃত হয়</p>
-
+</code></pre></div><p>শুধু মান প্রতিস্থাপনের জন্য <code>$</code> এবং ডার্ট এক্সপ্রেশান প্রতিস্থাপনের জন্য <code>${}</code> ব্যবহৃত হয়</p>
 <ul>
-<li><p>ডাবল ও সিঙ্গেল দু&rsquo;ধরণের কোটেশন ব্যবহার করা যায় ডার্টে। এদের মধ্যে কোন পার্থক্য নেই (জাভাস্ক্রিপ্টের মত), আবার পাইথনের মতো ট্রিপল কোটেশনও রয়েছে।</p></li>
-
-<li><p><code>int</code>, <code>double</code>, <code>bool</code> অন্য ল্যাঙ্গুয়েজে (যেমন জাভা) প্রিমিটিভ টাইপ, অবজেক্ট নয়, তবে ডার্টে কিন্তু সবাই অবজেক্ট।</p></li>
-
-<li><p>লিস্ট একাধিক বস্তু ধারণ করে থাকে সারিভুত করে। যেমন: ১ থেকে ৫ পর্যন্ত সমস্ত নাম্বারকে আমরা রাখতে পারি লিস্টে সিনট্যাক্স <code>var oneToFive = [1,2,3,4,5];</code>। <code>[x]</code> এর মাধ্যমে আমরা লিস্টের x-তম সদস্য বের করতে পারি যা হবে উক্ত সদস্যের ক্রম সংখ্যা যা হয় শূন্য-ভিত্তিক। অর্থাৎ, <code>[0]</code> দিয়ে প্রথম সংখ্যা, <code>[1]</code> দিয়ে দ্বিতীয় ইত্যাদি।</p></li>
-
-<li><p>ম্যাপ এর সদস্যদের ক্রমবর্ধমান সংখ্যার মাধ্যমে না রেখে যে কোন <code>কী</code> মাধ্যমে রেখে থাকে, যা সম্ভব হ্যাশিং এর মাধ্যমে, যেখানে লিস্ট হবে- <code>var capitals = [&quot;Dhaka&quot;, &quot;Ottawa&quot;, &quot;Canberra&quot;];</code> সেখানে ম্যাপ হবে- <code>var capitals = {&quot;Bangladesh&quot;: &quot;Dhaka&quot;, &quot;Canada&quot;: &quot;Ottawa&quot;, &quot;Australia&quot;: &quot;Canberra&quot;}</code>, যেখানে লিস্টে আমরা ম্যান নির্ণয় করব- <code>capitals[0]</code> দিয়ে সেখানে ম্যাপে- <code>capitals[&quot;Bangladesh&quot;]</code> দিয়ে আমরা তা বের করব। বুঝাই যাচ্ছে- <code>{ক: খ}</code> হলো ম্যাপের সিনট্যাক্স যেখানে <code>ক</code> হল কী এবং <code>খ</code> হল ভ্যালু।</p></li>
-
-<li><p>লিস্ট ও ম্যাপ উভয়েই টাইপড হয়ে থাকে, তবে তা নিয়ে আমরা আলোচনা করব জেনেরিকসের পোস্টে, এই মুহূর্তে এগুলি নিয়ে কথা বলার কারণ, আগামী ২/১ পোস্টে আমাদের লিস্ট অথবা ম্যাপ নিয়ে কাজ করতে হতে পারে। আর এই পোস্ট এর নিচের এক সেকশানে লিস্ট সম্পর্কে জানা লাগবে।</p></li>
+<li>
+<p>ডাবল ও সিঙ্গেল দু'ধরণের কোটেশন ব্যবহার করা যায় ডার্টে। এদের মধ্যে কোন পার্থক্য নেই (জাভাস্ক্রিপ্টের মত), আবার পাইথনের মতো ট্রিপল কোটেশনও রয়েছে।</p>
+</li>
+<li>
+<p><code>int</code>, <code>double</code>, <code>bool</code> অন্য ল্যাঙ্গুয়েজে (যেমন জাভা) প্রিমিটিভ টাইপ, অবজেক্ট নয়, তবে ডার্টে কিন্তু সবাই অবজেক্ট।</p>
+</li>
+<li>
+<p>লিস্ট একাধিক বস্তু ধারণ করে থাকে সারিভুত করে। যেমন: ১ থেকে ৫ পর্যন্ত সমস্ত নাম্বারকে আমরা রাখতে পারি লিস্টে সিনট্যাক্স <code>var oneToFive = [1,2,3,4,5];</code>। <code>[x]</code> এর মাধ্যমে আমরা লিস্টের x-তম সদস্য বের করতে পারি যা হবে উক্ত সদস্যের ক্রম সংখ্যা যা হয় শূন্য-ভিত্তিক। অর্থাৎ, <code>[0]</code> দিয়ে প্রথম সংখ্যা, <code>[1]</code> দিয়ে দ্বিতীয় ইত্যাদি।</p>
+</li>
+<li>
+<p>ম্যাপ এর সদস্যদের ক্রমবর্ধমান সংখ্যার মাধ্যমে না রেখে যে কোন <code>কী</code> মাধ্যমে রেখে থাকে, যা সম্ভব হ্যাশিং এর মাধ্যমে, যেখানে লিস্ট হবে- <code>var capitals = [&quot;Dhaka&quot;, &quot;Ottawa&quot;, &quot;Canberra&quot;];</code> সেখানে ম্যাপ হবে- <code>var capitals = {&quot;Bangladesh&quot;: &quot;Dhaka&quot;, &quot;Canada&quot;: &quot;Ottawa&quot;, &quot;Australia&quot;: &quot;Canberra&quot;}</code>, যেখানে লিস্টে আমরা ম্যান নির্ণয় করব- <code>capitals[0]</code> দিয়ে সেখানে ম্যাপে- <code>capitals[&quot;Bangladesh&quot;]</code> দিয়ে আমরা তা বের করব। বুঝাই যাচ্ছে- <code>{ক: খ}</code> হলো ম্যাপের সিনট্যাক্স যেখানে <code>ক</code> হল কী এবং <code>খ</code> হল ভ্যালু।</p>
+</li>
+<li>
+<p>লিস্ট ও ম্যাপ উভয়েই টাইপড হয়ে থাকে, তবে তা নিয়ে আমরা আলোচনা করব জেনেরিকসের পোস্টে, এই মুহূর্তে এগুলি নিয়ে কথা বলার কারণ, আগামী ২/১ পোস্টে আমাদের লিস্ট অথবা ম্যাপ নিয়ে কাজ করতে হতে পারে। আর এই পোস্ট এর নিচের এক সেকশানে লিস্ট সম্পর্কে জানা লাগবে।</p>
+</li>
 </ul>
-
-<h3 id="অপ-র-টর">অপারেটর</h3>
-
+<h3 id="অপরটর">অপারেটর</h3>
 <ul>
-<li><p>অপেরেটর (ল্যাঙ্গুয়েজভেদে) সহজবোধ্য অথবা ভ্রান্তিকর বিষয় হতে পারে। সৌভাগ্যক্রমে ডার্টের ক্ষেত্রে তা প্রথমটি!</p></li>
-
-<li><p><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> কি করে তা বোঝানো কি দরকার পরবে?</p></li>
-
-<li><p><code>/</code> এর ক্ষেত্রে অবশ্য যদি আপনি দুটি <code>int</code> কে ভাগ দিয়ে রেজাল্ট <code>int</code> চান  তাহলে <code>~/</code> অপারেটর ব্যবরোমে হার করা লাগবে।</p></li>
-
-<li><p><code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code> যথাক্রমে <code>AND</code>, <code>OR</code>, <code>XOR</code>, <code>NOT</code>, <code>SHIFT LEFT</code> ও <code>SHIFT RIGHT</code> বোঝায়।</p></li>
-
-<li><p>লজিক্যাল অপারেটর যা বুলিয়ান ভেলুর উপর কাজ করে বুলিয়ান ভেলু প্রদান করে, তা হল <code>&amp;&amp;</code>, <code>||</code> <code>!</code> যা যথাক্রমে <code>এবং</code>, <code>অথবা</code> এবং <code>নট</code> বুঝায় (বুলিয়ান)।</p></li>
-
-<li><p><code>=</code> দিয়ে এসাইনমেন্ট বোঝানো হয়, এবং পূর্ববর্তী অপারেটর ও <code>=</code> একত্রিত হয়ে দুটি কাজ একত্রে করে, যেমন: <code>x += 10;</code> মানে <code>x = x + 10;</code>, অনুরূপভাবে <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>~/=</code>, <code>|=</code>, <code>&amp;=</code>।</p></li>
-
-<li><p><code>++</code> ও <code>--</code> <code>১</code> করে ইনক্রিমেন্ট ও ডিক্রিমেন্ট করে থাকে (সি/জাভা-র মতো)</p></li>
+<li>
+<p>অপেরেটর (ল্যাঙ্গুয়েজভেদে) সহজবোধ্য অথবা ভ্রান্তিকর বিষয় হতে পারে। সৌভাগ্যক্রমে ডার্টের ক্ষেত্রে তা প্রথমটি!</p>
+</li>
+<li>
+<p><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> কি করে তা বোঝানো কি দরকার পরবে?</p>
+</li>
+<li>
+<p><code>/</code> এর ক্ষেত্রে অবশ্য যদি আপনি দুটি <code>int</code> কে ভাগ দিয়ে রেজাল্ট <code>int</code> চান  তাহলে <code>~/</code> অপারেটর ব্যবরোমে হার করা লাগবে।</p>
+</li>
+<li>
+<p><code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code> যথাক্রমে <code>AND</code>, <code>OR</code>, <code>XOR</code>, <code>NOT</code>, <code>SHIFT LEFT</code> ও <code>SHIFT RIGHT</code> বোঝায়।</p>
+</li>
+<li>
+<p>লজিক্যাল অপারেটর যা বুলিয়ান ভেলুর উপর কাজ করে বুলিয়ান ভেলু প্রদান করে, তা হল <code>&amp;&amp;</code>, <code>||</code> <code>!</code> যা যথাক্রমে <code>এবং</code>, <code>অথবা</code> এবং <code>নট</code> বুঝায় (বুলিয়ান)।</p>
+</li>
+<li>
+<p><code>=</code> দিয়ে এসাইনমেন্ট বোঝানো হয়, এবং পূর্ববর্তী অপারেটর ও <code>=</code> একত্রিত হয়ে দুটি কাজ একত্রে করে, যেমন: <code>x += 10;</code> মানে <code>x = x + 10;</code>, অনুরূপভাবে <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>~/=</code>, <code>|=</code>, <code>&amp;=</code>।</p>
+</li>
+<li>
+<p><code>++</code> ও <code>--</code> <code>১</code> করে ইনক্রিমেন্ট ও ডিক্রিমেন্ট করে থাকে (সি/জাভা-র মতো)</p>
+</li>
 </ul>
-
 <blockquote>
 <p><code>??</code> একটি বিশেষ অপারেটর, এর মানে হল, <code>a ?? b</code> যদি <code>a</code> <code>null</code> হয় তাহলে তা <code>b</code> এর মান পাবে অথবা যা ছিল তা-ই থাকবে। অন্য কথায় <code>a = a == null ? b : a</code></p>
 </blockquote>
-
 <ul>
 <li>অনেক অপারেটর যেমন: <code>is</code>, <code>is!</code>, <code>as</code>, <code>.</code>, <code>.?</code>. <code>..</code> নিয়ে এখানে আলোচনা করিনি কারণ এদের স্থান অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং এ যা ভবিষ্যত পোস্টের টপিক।</li>
 </ul>
-
-<h2 id="কম-ন-ট-ও-স-ম-ক-লন">কমেন্ট ও সেমিকোলন</h2>
-
+<h2 id="কমনট-ও-সমকলন">কমেন্ট ও সেমিকোলন</h2>
 <ul>
-<li><p>ডার্ট স্টেটমেন্ট শেষ হয় সেমিকোলনের (<code>;</code>) মাধ্যমে।</p></li>
-
-<li><p>কমেন্ট তিন প্রকার, <code>/* */</code> হল একাধিক লাইনভুক্ত কমেন্ট, <code>//</code> এক লাইনিয় কমেন্ট, <code>///</code> <a href="https://en.wikipedia.org/wiki/Docstring">ডকস্ট্রিং</a></p></li>
-
-<li><p>ডকস্ট্রিং ফাংশন অথবা ভ্যারিয়েবলের পূর্বে বসে এবং তা মার্কডাউন গ্রহণ করতে পারে।</p></li>
-
-<li><p>লাইন ব্রেক প্রোগ্রামের মাঝে লাইন ব্রেক যদি হয় তাহলে সেমিকোলন পাওয়ার আগে পর্যন্ত চেষ্টা করবে কম্পাইলার এদের একত্রিত করে পার্স করতে, তবে কোন ভেলুর মাঝে যদি (যেমন নাম্বারের মাঝখানে, স্ট্রিংয়ের মাঝখানে ইত্যাদি) তা হয় তবে এরর দিবে।</p></li>
+<li>
+<p>ডার্ট স্টেটমেন্ট শেষ হয় সেমিকোলনের (<code>;</code>) মাধ্যমে।</p>
+</li>
+<li>
+<p>কমেন্ট তিন প্রকার, <code>/* */</code> হল একাধিক লাইনভুক্ত কমেন্ট, <code>//</code> এক লাইনিয় কমেন্ট, <code>///</code> <a href="https://en.wikipedia.org/wiki/Docstring">ডকস্ট্রিং</a></p>
+</li>
+<li>
+<p>ডকস্ট্রিং ফাংশন অথবা ভ্যারিয়েবলের পূর্বে বসে এবং তা মার্কডাউন গ্রহণ করতে পারে।</p>
+</li>
+<li>
+<p>লাইন ব্রেক প্রোগ্রামের মাঝে লাইন ব্রেক যদি হয় তাহলে সেমিকোলন পাওয়ার আগে পর্যন্ত চেষ্টা করবে কম্পাইলার এদের একত্রিত করে পার্স করতে, তবে কোন ভেলুর মাঝে যদি (যেমন নাম্বারের মাঝখানে, স্ট্রিংয়ের মাঝখানে ইত্যাদি) তা হয় তবে এরর দিবে।</p>
+</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello</span>
+  world<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">; // ভুল</span>
 
-<pre><code class="language-dart">var x = &quot;hello
-  world&quot;; // ভুল
-
-var x = &quot;hello &quot;
-  + &quot; world&quot;; // সঠিক
-
-var x = &quot;hello &quot;
-   &quot; world&quot;; // সঠিক
-
-var x = &quot;hello &quot; +
-   &quot; world&quot;; // সঠিক
-</code></pre>
-
-<blockquote>
+<span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello </span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> world</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// সঠিক
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello </span><span style="color:#e6db74">&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> world</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// সঠিক
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> world</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// সঠিক
+</span></code></pre></div><blockquote>
 <p>আমরা জানলাম দুটি স্ট্রিংয়ের মাঝে স্পেইস থাকলে তা <code>+</code> এর কাজ করে এবং তাদের যুক্ত করে।</p>
 </blockquote>
-
-<h2 id="কন-ট-র-ল-ফ-ল">কন্ট্রোল ফ্লো</h2>
-
-<h3 id="ব-র-নচ-ইফ-এলস">ব্রানচিং - ইফ/এলস</h3>
-
+<h2 id="কনটরল-ফল">কন্ট্রোল ফ্লো</h2>
+<h3 id="বরনচ---ইফএলস">ব্রানচিং - ইফ/এলস</h3>
 <ul>
 <li>ডার্ট <code>if</code> স্টেটমেন্ট জাভা/সি এর মতো। অর্থাৎ <code>if(&lt;bool condition&gt;) { &lt;body &gt; }</code>। <code>else</code> এবং <code>else if</code> একইরকম, যেমনটি নিচের কোড স্নিপেট-</li>
 </ul>
-
-<pre><code class="language-dart">  String status;
-  int grade = 47; // My HSC grade in English Paper II. Only God knows why though!
-  if (grade == null) {
-    status = &quot;ABSENT&quot;;
-  } else if (grade &gt; 33) {
-    status = &quot;PASS&quot;;
-  } else if (grade &lt;= 33) {
-    status = &quot;FAIL&quot;;
-  } else {
-    status = &quot;INVALID&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">  <span style="color:#66d9ef">String</span> status;
+  <span style="color:#66d9ef">int</span> grade <span style="color:#f92672">=</span> <span style="color:#ae81ff">47</span>; <span style="color:#75715e">// My HSC grade in English Paper II. Only God knows why though!
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (grade <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>) {
+    status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ABSENT</span><span style="color:#e6db74">&#34;</span>;
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (grade <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">33</span>) {
+    status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">PASS</span><span style="color:#e6db74">&#34;</span>;
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (grade <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">33</span>) {
+    status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">FAIL</span><span style="color:#e6db74">&#34;</span>;
+  } <span style="color:#66d9ef">else</span> {
+    status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">INVALID</span><span style="color:#e6db74">&#34;</span>
   }
-</code></pre>
-
-<ul>
-<li><p><code>else</code> এবং <code>else if</code> থাকা বাধ্যতামূলক না, তবে টার্নারি অপারেটর হলে তা লাগবে।</p></li>
-
-<li><p><code>&lt;condition&gt; ? &lt;true-value&gt; : &lt;false-value&gt;</code> হল টার্নারি অপারেটর, যেমন: <code>age &gt;= 18 ? &quot;can vote&quot; : &quot;can't vote&quot;;</code></p></li>
-
-<li><p>উপরে <code>&lt;condition&gt;</code> বলতে বুলিয়ান ভেলু (<code>true</code> অথবা <code>false</code>) বুঝানো হয়েছে, <code>null</code> <code>false</code> হিসেবে কাজ করবে তবে <code>0</code>, <code>&quot;&quot;</code> ইত্যাদি  বুলিয়ান হিসেবে কাজ করবে না</p></li>
+</code></pre></div><ul>
+<li>
+<p><code>else</code> এবং <code>else if</code> থাকা বাধ্যতামূলক না, তবে টার্নারি অপারেটর হলে তা লাগবে।</p>
+</li>
+<li>
+<p><code>&lt;condition&gt; ? &lt;true-value&gt; : &lt;false-value&gt;</code> হল টার্নারি অপারেটর, যেমন: <code>age &gt;= 18 ? &quot;can vote&quot; : &quot;can't vote&quot;;</code></p>
+</li>
+<li>
+<p>উপরে <code>&lt;condition&gt;</code> বলতে বুলিয়ান ভেলু (<code>true</code> অথবা <code>false</code>) বুঝানো হয়েছে, <code>null</code> <code>false</code> হিসেবে কাজ করবে তবে <code>0</code>, <code>&quot;&quot;</code> ইত্যাদি  বুলিয়ান হিসেবে কাজ করবে না</p>
+</li>
 </ul>
-
-<h3 id="ব-র-নচ-স-ইচ-ক-ইস">ব্রানচিং - সুইচ/কেইস</h3>
-
+<h3 id="বরনচ---সইচকইস">ব্রানচিং - সুইচ/কেইস</h3>
 <ul>
 <li><code>switch</code> অনেকটা সংক্ষিপ্ত <code>if/else</code> এর মতো, এর কাঠামোগত উদাহরণ হল-</li>
 </ul>
-
-<pre><code class="language-dart">switch (&lt;ভ্যারিয়েবল&gt;) {
-  case &lt;ক&gt;:
-      &lt;ভ্যারিয়েবল এর ভ্যালু যদি ক হয় তাহলে যা করণীয়&gt;
-      break;
-  case &lt;খ&gt;:
-  case &lt;গ&gt;:
-      &lt;ভ্যারিয়েবল এর ভ্যালু যদি খ অথবা গ হয় তাহলে যা করণীয়&gt;
-      break;
-  default:
-      &lt;ভ্যারিয়েবল এর ভ্যালু ক, খ, গ ব্যতিরেকে অন্য কিছু হলে যা করণীয়&gt;
-</code></pre>
-
-<ul>
-<li><p><code>==</code> দিয়ে মাপা যায় এমন সব মান <code>switch</code> এর <code>case</code> এ বসবে। অন্যান্য ল্যাঙ্গুয়েজের মতো প্যাটার্ন ম্যাচিং অথবা <code>&lt;</code>/<code>&gt;</code> ব্যবহার করা যাবে না</p></li>
-
-<li><p>যেখানে পাবেন <code>case</code> সেখানে থাকবে <code>break</code>! শুধুমাত্র খালি <code>case</code> ছাড়া (&lt;খ&gt; ও &lt;গ&gt; এর কেইসে যা হয়েছে)।</p></li>
-
-<li><p>উদাহরণ-</p></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">switch</span> (<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">ভ</span><span style="color:#960050;background-color:#1e0010">্</span><span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span><span style="color:#960050;background-color:#1e0010">র</span><span style="color:#960050;background-color:#1e0010">ি</span><span style="color:#960050;background-color:#1e0010">য়</span><span style="color:#960050;background-color:#1e0010">ে</span><span style="color:#960050;background-color:#1e0010">ব</span><span style="color:#960050;background-color:#1e0010">ল</span><span style="color:#f92672">&gt;</span>) {
+  <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">ক</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">:</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">ভ</span><span style="color:#960050;background-color:#1e0010">্</span><span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span><span style="color:#960050;background-color:#1e0010">র</span><span style="color:#960050;background-color:#1e0010">ি</span><span style="color:#960050;background-color:#1e0010">য়</span><span style="color:#960050;background-color:#1e0010">ে</span><span style="color:#960050;background-color:#1e0010">ব</span><span style="color:#960050;background-color:#1e0010">ল</span> <span style="color:#960050;background-color:#1e0010">এ</span><span style="color:#960050;background-color:#1e0010">র</span> <span style="color:#960050;background-color:#1e0010">ভ</span><span style="color:#960050;background-color:#1e0010">্</span><span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span><span style="color:#960050;background-color:#1e0010">ল</span><span style="color:#960050;background-color:#1e0010">ু</span> <span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">দ</span><span style="color:#960050;background-color:#1e0010">ি</span> <span style="color:#960050;background-color:#1e0010">ক</span> <span style="color:#960050;background-color:#1e0010">হ</span><span style="color:#960050;background-color:#1e0010">য়</span> <span style="color:#960050;background-color:#1e0010">ত</span><span style="color:#960050;background-color:#1e0010">া</span><span style="color:#960050;background-color:#1e0010">হ</span><span style="color:#960050;background-color:#1e0010">ল</span><span style="color:#960050;background-color:#1e0010">ে</span> <span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span> <span style="color:#960050;background-color:#1e0010">ক</span><span style="color:#960050;background-color:#1e0010">র</span><span style="color:#960050;background-color:#1e0010">ণ</span><span style="color:#960050;background-color:#1e0010">ী</span><span style="color:#960050;background-color:#1e0010">য়</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">খ</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">গ</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">:</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">ভ</span><span style="color:#960050;background-color:#1e0010">্</span><span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span><span style="color:#960050;background-color:#1e0010">র</span><span style="color:#960050;background-color:#1e0010">ি</span><span style="color:#960050;background-color:#1e0010">য়</span><span style="color:#960050;background-color:#1e0010">ে</span><span style="color:#960050;background-color:#1e0010">ব</span><span style="color:#960050;background-color:#1e0010">ল</span> <span style="color:#960050;background-color:#1e0010">এ</span><span style="color:#960050;background-color:#1e0010">র</span> <span style="color:#960050;background-color:#1e0010">ভ</span><span style="color:#960050;background-color:#1e0010">্</span><span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span><span style="color:#960050;background-color:#1e0010">ল</span><span style="color:#960050;background-color:#1e0010">ু</span> <span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">দ</span><span style="color:#960050;background-color:#1e0010">ি</span> <span style="color:#960050;background-color:#1e0010">খ</span> <span style="color:#960050;background-color:#1e0010">অ</span><span style="color:#960050;background-color:#1e0010">থ</span><span style="color:#960050;background-color:#1e0010">ব</span><span style="color:#960050;background-color:#1e0010">া</span> <span style="color:#960050;background-color:#1e0010">গ</span> <span style="color:#960050;background-color:#1e0010">হ</span><span style="color:#960050;background-color:#1e0010">য়</span> <span style="color:#960050;background-color:#1e0010">ত</span><span style="color:#960050;background-color:#1e0010">া</span><span style="color:#960050;background-color:#1e0010">হ</span><span style="color:#960050;background-color:#1e0010">ল</span><span style="color:#960050;background-color:#1e0010">ে</span> <span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span> <span style="color:#960050;background-color:#1e0010">ক</span><span style="color:#960050;background-color:#1e0010">র</span><span style="color:#960050;background-color:#1e0010">ণ</span><span style="color:#960050;background-color:#1e0010">ী</span><span style="color:#960050;background-color:#1e0010">য়</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">ভ</span><span style="color:#960050;background-color:#1e0010">্</span><span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span><span style="color:#960050;background-color:#1e0010">র</span><span style="color:#960050;background-color:#1e0010">ি</span><span style="color:#960050;background-color:#1e0010">য়</span><span style="color:#960050;background-color:#1e0010">ে</span><span style="color:#960050;background-color:#1e0010">ব</span><span style="color:#960050;background-color:#1e0010">ল</span> <span style="color:#960050;background-color:#1e0010">এ</span><span style="color:#960050;background-color:#1e0010">র</span> <span style="color:#960050;background-color:#1e0010">ভ</span><span style="color:#960050;background-color:#1e0010">্</span><span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span><span style="color:#960050;background-color:#1e0010">ল</span><span style="color:#960050;background-color:#1e0010">ু</span> <span style="color:#960050;background-color:#1e0010">ক</span>, <span style="color:#960050;background-color:#1e0010">খ</span>, <span style="color:#960050;background-color:#1e0010">গ</span> <span style="color:#960050;background-color:#1e0010">ব</span><span style="color:#960050;background-color:#1e0010">্</span><span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">ত</span><span style="color:#960050;background-color:#1e0010">ি</span><span style="color:#960050;background-color:#1e0010">র</span><span style="color:#960050;background-color:#1e0010">ে</span><span style="color:#960050;background-color:#1e0010">ক</span><span style="color:#960050;background-color:#1e0010">ে</span> <span style="color:#960050;background-color:#1e0010">অ</span><span style="color:#960050;background-color:#1e0010">ন</span><span style="color:#960050;background-color:#1e0010">্</span><span style="color:#960050;background-color:#1e0010">য</span> <span style="color:#960050;background-color:#1e0010">ক</span><span style="color:#960050;background-color:#1e0010">ি</span><span style="color:#960050;background-color:#1e0010">ছ</span><span style="color:#960050;background-color:#1e0010">ু</span> <span style="color:#960050;background-color:#1e0010">হ</span><span style="color:#960050;background-color:#1e0010">ল</span><span style="color:#960050;background-color:#1e0010">ে</span> <span style="color:#960050;background-color:#1e0010">য</span><span style="color:#960050;background-color:#1e0010">া</span> <span style="color:#960050;background-color:#1e0010">ক</span><span style="color:#960050;background-color:#1e0010">র</span><span style="color:#960050;background-color:#1e0010">ণ</span><span style="color:#960050;background-color:#1e0010">ী</span><span style="color:#960050;background-color:#1e0010">য়</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><ul>
+<li>
+<p><code>==</code> দিয়ে মাপা যায় এমন সব মান <code>switch</code> এর <code>case</code> এ বসবে। অন্যান্য ল্যাঙ্গুয়েজের মতো প্যাটার্ন ম্যাচিং অথবা <code>&lt;</code>/<code>&gt;</code> ব্যবহার করা যাবে না</p>
+</li>
+<li>
+<p>যেখানে পাবেন <code>case</code> সেখানে থাকবে <code>break</code>! শুধুমাত্র খালি <code>case</code> ছাড়া (&lt;খ&gt; ও &lt;গ&gt; এর কেইসে যা হয়েছে)।</p>
+</li>
+<li>
+<p>উদাহরণ-</p>
+</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">main() {
+  <span style="color:#66d9ef">var</span> grade <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#34;</span>;
 
-<pre><code class="language-dart">main() {
-  var grade = &quot;A&quot;;
+  <span style="color:#66d9ef">switch</span> (grade) {
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span>
+      print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Excellent</span><span style="color:#e6db74">&#34;</span>);
+      <span style="color:#66d9ef">break</span>;
 
-  switch (grade) {
-    case &quot;A&quot;:
-      print(&quot;Excellent&quot;);
-      break;
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">B</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">C</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span>
+      print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Fair</span><span style="color:#e6db74">&#34;</span>);
+      <span style="color:#66d9ef">break</span>;
 
-    case &quot;B&quot;:
-    case &quot;C&quot;:
-      print(&quot;Fair&quot;);
-      break;
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">D</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span>
+      print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Poor</span><span style="color:#e6db74">&#34;</span>);
+      <span style="color:#66d9ef">break</span>;
 
-    case &quot;D&quot;:
-      print(&quot;Poor&quot;);
-      break;
-
-    case &quot;F&quot;:
-      print(&quot;Fail :)&quot;);
-      break;
-    default:
-      print(&quot;Invalid choice&quot;);
+    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">F</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">:</span>
+      print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Fail :)</span><span style="color:#e6db74">&#34;</span>);
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Invalid choice</span><span style="color:#e6db74">&#34;</span>);
   }
 }
-</code></pre>
-
-<ul>
+</code></pre></div><ul>
 <li><code>if</code> এর এক-লাইন বডি থাকলে <code>{}</code> না দিলেও পারি।  যেমন: <code>if (number &lt; 0) break;</code>।</li>
 </ul>
-
-<h2 id="ল-প">লুপিং</h2>
-
+<h2 id="লপ">লুপিং</h2>
 <p><a href="https://en.wikipedia.org/wiki/List_of_C-family_programming_languages">সি ফ্যামিলির</a> ট্রেডিশানকে মাথায় রেখে ডার্ট তিন ধরণের লুপের ফ্যাসিলিটি প্রদান করে থাকে- <code>for</code>, <code>while</code> ও <code>do...while</code>, <code>for</code> আবার <code>foreach</code> এর কাজও করে</p>
-
 <p>যে কোন কাজ যা বার বার করতে হয়, তার কিছু কন্ট্রোলিং ফ্যাক্টর- শুরু/শেষ থাকে। মাঝপথে বের হয়ে যাওয়ার পন্থা থাকে, কাজ শেষ হওয়ার আগেই পরবর্তী ধাপে যাওয়ার ব্যবস্থা থাকে। একগুচ্ছ কোডকে যখন বার বার একই কাজ করবেন, তখন অবশ্যই আপনার বলে দিতে হবে এর শেষ কখন হবে? এবং যদি না হয়, তাহলে প্রোগ্রামিং ল্যাঙ্গুয়েজের ব্যবস্থা করে দিতে হবে লুপটিকে থামানোর। <code>break</code> দিয়ে যে কোন লুপ থেকে বের হওয়া যায়, আবার <code>continue</code> দিয়ে লুপের বাদবাকি অংশ স্কিপ পরে পরবর্তী লুপ চালু করানো যায়, এবং লুপ কন্ট্রোল করতে হলে কিভাবে চিন্তা করা লাগবে তার উপর ভিত্তি করেই আসে <code>for</code>, <code>for(each)</code>, <code>while</code> ইত্যাদি।</p>
-
-<h3 id="for-ল-প"><code>for</code> লুপ</h3>
-
+<h3 id="for-লপ"><code>for</code> লুপ</h3>
 <p>ডার্ট ২ ধরণের <code>for</code> কীওয়ার্ড প্রদত্ত লুপ দিয়ে থাকে, প্রথমটি সি এর মতো- অর্থাৎ <code>for (&lt;ক্রম শুরু&gt;, &lt;ক্রোম কি চলবে?&gt;, &lt;ক্রম শেষের দিকে এক ধাপ অগ্রসর&gt;) { &lt;যা করা দরকার&gt; }</code> খেয়াল করুন, ক্রম শুরু থেকে শেষ যে বেড়ে বেড়ে যাবে তা কিন্তু বলা হয়নি, বলা হয়েছে শেষের পথে অগ্রসর। ক্রম যদি শুরু হয় <code>১০০</code> দিয়ে এবং শেষ হয় <code>০</code> তে তাহলে কিন্তু অগ্রসর বলতে বিয়োগ বোঝাবে, অন্যথায় তা জীবনেও শেষ হবে না, যদি না কোনো <code>break</code> থাকে কোড। <code>ক্রোম কি চলবে?</code> কিন্তু একটা প্রশ্ন ছিল। ক্রম শেষ হবে একটা মানে পৌঁছালে এবং তা হয়েছে কিনা তা একটা প্রশ্ন, যার উত্তর হ্যা/না তথা বুলিয়ানে হবে। এবং সবশেষে ক্রমের মান পরিবর্তন, যা হওয়া উচিত এমন যেন তা কোনো না কোনো সময়ে ক্রমকে শেষ মানের দিকে নিয়ে যায়-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">main() {
+  <span style="color:#66d9ef">var</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">var</span> product <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
 
-<pre><code class="language-dart">main() {
-  var sum = 0;
-  var product = 1;
-
-  for (var i = 0; i &lt; 15; i++) {
-    sum += i;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">15</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+    sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> i;
   }
 
-  for (var j = 1; j &lt; 15; j++) {
-    product *= j;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">15</span>; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+    product <span style="color:#f92672">*</span><span style="color:#f92672">=</span> j;
   }
 
-  print(&quot;SUM: $sum \n PRODUCT: $product&quot;);
+  print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SUM: </span><span style="color:#e6db74">$</span>sum<span style="color:#e6db74"> </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> PRODUCT: </span><span style="color:#e6db74">$</span>product<span style="color:#e6db74">&#34;</span>);
 }
-</code></pre>
+</code></pre></div><p><code>break</code> ও <code>continue</code> এখানে কাজ করে। নিচের কোডটি দেখি-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">main() {
+  <span style="color:#66d9ef">var</span> output <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+  <span style="color:#66d9ef">var</span> isItPrime <span style="color:#f92672">=</span> <span style="color:#ae81ff">8310270189677</span>;
 
-<p><code>break</code> ও <code>continue</code> এখানে কাজ করে। নিচের কোডটি দেখি-</p>
-
-<pre><code class="language-dart">main() {
-  var output = true;
-  var isItPrime = 8310270189677;
-
-  if (isItPrime%2 == 0) output = false;
-  else {
-    for (var i = 3; i*i &lt; 123; i += 2) {
-      if (isItPrime%i == 0) {
-        output = false;
-        break;
+  <span style="color:#66d9ef">if</span> (isItPrime<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) output <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+  <span style="color:#66d9ef">else</span> {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; i<span style="color:#f92672">*</span>i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">123</span>; i <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) {
+      <span style="color:#66d9ef">if</span> (isItPrime<span style="color:#f92672">%</span>i <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {
+        output <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+        <span style="color:#66d9ef">break</span>;
       }
     }
   }
 
-  print(&quot;Is $isItPrime a prime? AND: $output&quot;);
+  print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Is </span><span style="color:#e6db74">$</span>isItPrime<span style="color:#e6db74"> a prime? AND: </span><span style="color:#e6db74">$</span>output<span style="color:#e6db74">&#34;</span>);
 }
-</code></pre>
-
-<p>এখানে আমরা দেখছি শুরু, শেষ এবং বর্ধন যথাক্রমে এসাইনমেন্ট, কন্ডিশন এবং রি-এসাইনমেন্ট। যদি কোন লজিকে লুপ শেষ হওয়ার আগে বের হতে হয়, তাহলে <code>break</code> দিয়ে করতে পারি।</p>
-
+</code></pre></div><p>এখানে আমরা দেখছি শুরু, শেষ এবং বর্ধন যথাক্রমে এসাইনমেন্ট, কন্ডিশন এবং রি-এসাইনমেন্ট। যদি কোন লজিকে লুপ শেষ হওয়ার আগে বের হতে হয়, তাহলে <code>break</code> দিয়ে করতে পারি।</p>
 <p>লিস্ট ও <code>for</code> লুপ নিয়ে একটু চিন্তা করা যাক এবার। আমরা জানি একটি লিস্টকে কি করে এক্সেস করা যায় (<code>[]</code> এর মাধ্যমে), কাজেই, আমাদের ওই ১ থেকে ৫ এর লিস্টের প্রত্যেকের যোগফলকে যদি আমরা পেতে চাই তাহলে নিচের কোডটি চালাতে পারি-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">main() {
+  <span style="color:#66d9ef">var</span> list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+  <span style="color:#66d9ef">var</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 
-<pre><code class="language-dart">main() {
-  var list = [1, 2, 3, 4, 5];
-  var sum = 0;
-
-  for (var i = 0; i &lt; 5; i++) {
-    sum += list[i];
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+    sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> list[i];
   }
 
   print(sum);
 }
-</code></pre>
+</code></pre></div><p>এর আরেকটি সহজ উপায় আছে, কেননা লুপটির মূলনীতি- <code>আমি এক থেকে লিস্টের সাইজ পর্যন্ত যাবো, এবং তুমি প্রত্যেকটি নাম্বার নিয়ে লিস্টকে দাও এবং বল যে তত-তম সদস্য দাও</code> না হয়ে <code>আমি লিস্ট থেকে একটা একটা করে সদস্য তোমাকে দিচ্ছি</code>? ঠিক এই এটিচুড দেখায় <code>for</code> লুপের দ্বিতীয় রূপ, যার সিনট্যাক্স <code>for (&lt;লিস্টের সদস্য&gt; in &lt;লিস্ট অথবা লিস্টের মতো কিছু&gt;) { &lt;যা করার&gt; }</code>। এতে উপরের কোডটি দাঁড়ায়-</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">main() {
+  <span style="color:#66d9ef">var</span> list <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+  <span style="color:#66d9ef">var</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 
-<p>এর আরেকটি সহজ উপায় আছে, কেননা লুপটির মূলনীতি- <code>আমি এক থেকে লিস্টের সাইজ পর্যন্ত যাবো, এবং তুমি প্রত্যেকটি নাম্বার নিয়ে লিস্টকে দাও এবং বল যে তত-তম সদস্য দাও</code> না হয়ে <code>আমি লিস্ট থেকে একটা একটা করে সদস্য তোমাকে দিচ্ছি</code>? ঠিক এই এটিচুড দেখায় <code>for</code> লুপের দ্বিতীয় রূপ, যার সিনট্যাক্স <code>for (&lt;লিস্টের সদস্য&gt; in &lt;লিস্ট অথবা লিস্টের মতো কিছু&gt;) { &lt;যা করার&gt; }</code>। এতে উপরের কোডটি দাঁড়ায়-</p>
-
-<pre><code class="language-dart">main() {
-  var list = [1, 2, 3, 4, 5];
-  var sum = 0;
-
-  for (var i in list) {
-    sum += i;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> i <span style="color:#66d9ef">in</span> list) {
+    sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> i;
   }
 
   print(sum);
 }
-</code></pre>
-
-<h3 id="while-ও-do-while"><code>while</code> ও  <code>do...while</code></h3>
-
+</code></pre></div><h3 id="while-ও--dowhile"><code>while</code> ও  <code>do...while</code></h3>
 <p><code>for</code> লুপকে একটু ঘুরিয়ে চিন্তা করা যাক, ধরুন কন্ট্রোল ভ্যারিয়েবল আগে থেকেই ডিক্লেয়ার করা এবং আমাদের লুপিং বক্তব্য দাঁড়ায়- <code>যতক্ষন কন্ট্রোল ভ্যারিয়েবলের মান  অমুক মানের সমান না হবে ততক্ষন পর্যন্ত লুপ চালাও</code> এখানেই আসে <code>while</code> ও <code>do...while</code> লুপ।</p>
-
 <p><code>while</code> এর সিনট্যাক্স হল- <code>while (&lt;লুপ কি চলবে?&gt;) { &lt;চালিয়ে যাও&gt;}</code> আর <code>do...while</code> লুপ দাঁড়ায়- <code>do { &lt;চালিয়ে যাও&gt;} while (&lt;লুপ থামানোর শর্ত কি পূর্ন  হয়েছে?&gt;)</code>। দুটোর মধ্যে পার্থক্য? নিচের কোড দেখি-</p>
-
-<pre><code class="language-dart">main() {
-  var i = 0;
-  do {
-    i++;
-  } while (i &lt; 0);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">main() {
+  <span style="color:#66d9ef">var</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">do</span> {
+    i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+  } <span style="color:#66d9ef">while</span> (i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>);
 
   print(i);
 
-  var j = 0;
+  <span style="color:#66d9ef">var</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 
-  while (j &lt; 0) {
-    j++;
+  <span style="color:#66d9ef">while</span> (j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+    j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
   }
 
   print(j);
 }
-</code></pre>
-
-<p>রেজাল্ট কী হল? একজন <code>0</code> আরেকজন <code>1</code>। কারণ <code>while</code> লজিকে কন্ডিশন আগে দেখা হয়, এব <code>do... while</code> পরে। এই ক্ষেত্রে মান আগে থেকেই ছিল কন্ডিশন বহির্ভুত, কাজেই while লুপ তা ধরে বের করে দেয়, কিন্তু <code>do...while</code> লুপ একবার লুপ চালিয়ে এরপর শর্ত অতিক্রম দেখতে পায় ও বন্ধ করে লুপ, কিন্তু ততক্ষনে ১ বার লুপ চলেছে, যে কারণে এ দু&rsquo;রকম বিহেভিয়ার।</p>
-
+</code></pre></div><p>রেজাল্ট কী হল? একজন <code>0</code> আরেকজন <code>1</code>। কারণ <code>while</code> লজিকে কন্ডিশন আগে দেখা হয়, এব <code>do... while</code> পরে। এই ক্ষেত্রে মান আগে থেকেই ছিল কন্ডিশন বহির্ভুত, কাজেই while লুপ তা ধরে বের করে দেয়, কিন্তু <code>do...while</code> লুপ একবার লুপ চালিয়ে এরপর শর্ত অতিক্রম দেখতে পায় ও বন্ধ করে লুপ, কিন্তু ততক্ষনে ১ বার লুপ চলেছে, যে কারণে এ দু'রকম বিহেভিয়ার।</p>
 <p><code>for</code> ও <code>while</code> লুপ একই কাজ দুভাবে প্রেজেন্ট করে, নিচের কোড দেখা যাক-</p>
-
-<pre><code class="language-dart">main() {
-  var forSum = 0;
-  for (var i = 0; i &lt; 10; i++) {
-    forSum += i;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">main() {
+  <span style="color:#66d9ef">var</span> forSum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+    forSum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> i;
   }
 
-  var whileSum = 0;
+  <span style="color:#66d9ef">var</span> whileSum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 
-  var j = 0; // Initialization
-  while (j &lt; 10) { // Condition
-    whileSum += j;
-    j++; // Increment
-  }
+  <span style="color:#66d9ef">var</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// Initialization
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span> (j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) { <span style="color:#75715e">// Condition
+</span><span style="color:#75715e"></span>    whileSum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> j;
+    j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>; <span style="color:#75715e">// Increment
+</span><span style="color:#75715e"></span>  }
 
-  print(&quot;FOR: $forSum &lt;=&gt; WHILE: $whileSum&quot;);
+  print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">FOR: </span><span style="color:#e6db74">$</span>forSum<span style="color:#e6db74"> &lt;=&gt; WHILE: </span><span style="color:#e6db74">$</span>whileSum<span style="color:#e6db74">&#34;</span>);
 }
-</code></pre>
-
-<p>কোড দেখেই আমরা পার্থক্য বুঝতে পারছি, একই কাজ, দু&rsquo;রকম চেহারা।</p>
-
+</code></pre></div><p>কোড দেখেই আমরা পার্থক্য বুঝতে পারছি, একই কাজ, দু'রকম চেহারা।</p>
 <p><code>if</code> এর মতো <code>for</code> ও <code>while</code> এও এক-লাইন বডি থাকলে <code>{}</code> না দিলেও পারি।  যেমন: <code>for (var item in list) sum += item;</code>।</p>
-
 <p>লুপ সমাপ্ত!</p>
-
-<h2 id="ন-জ-ক-প-রশ-ন-কর-ন">নিজেকে প্রশ্ন করুন</h2>
-
+<h2 id="নজক-পরশন-করন">নিজেকে প্রশ্ন করুন</h2>
 <ul>
-<li><p>ইন্টিজার ওভারফ্লো হয় ডার্টে? ইন্টিজার ওভারফ্লো কী?</p></li>
-
-<li><p>বাংলা নাম কি রাখতে পারবেন আপনার ভ্যারিয়েবলের?</p></li>
-
-<li><p><code>continue</code> এর ব্যবহার কোথায় এবং কিভাবে হতে পারে?</p></li>
-
-<li><p>স্টেটমেন্ট ও এক্সপ্রেশনের পার্থক্য কি? এই পোস্টে প্রাপ্ত সিন্ট্যাক্সগুলির মাঝে কোনগুলি স্টেটমেন্ট? এক্সপ্রেশন কে কে?</p></li>
-
-<li><p><code>null</code> ভ্যালু যদি <code>if</code> স্টেটমেন্টে দেন তাহলে কি <code>== null</code> দেয়া লাগবে? যদি না লাগে তাহলে কেন? শূন্য মানের ক্ষেত্রে তা লাগে কেন?</p></li>
-
-<li><p><code>switch</code> স্টেটমেন্টে <code>break</code> কেন লাগে? এমনতো না যে পরবর্তী কেইসের লজিক মিলে যাবে?</p></li>
-
-<li><p><code>if</code> না শিখে শুধু <code>switch</code> শিখে কি সমস্ত টাইপ প্রব্লেম সল্ভ করতে পারবেন? উল্টোটা কি সম্ভব?</p></li>
-
-<li><p><code>for</code> লুপে কি আপনি কোন অংশ খালি রাখতে পারবেন? যেমন: ইনিশিয়ালাইজার দিবেন না, অথবা চেঞ্জ করবেন না?</p></li>
-
-<li><p><code>while</code> ও <code>for</code> এর আসল পার্থক্য কি? এদের কোনো একটা কখনো ব্যবহার না করে কি আপনি প্রোগ্রামিং প্রব্লেম সল্ভ করতে পারবেন?</p></li>
-
-<li><p>কয়েকটা নাম্বার সর্টিং করেন, এই পর্যন্ত যা শিখেছেন তা দিয়ে, উল্টা ও সিধা দু ধরণের সর্টিংই করে দেখান।</p></li>
-
-<li><p>একটা লিস্টকে উল্টা করে দেখান এই পর্যন্ত যা শিখেছেন তা দিয়ে</p></li>
+<li>
+<p>ইন্টিজার ওভারফ্লো হয় ডার্টে? ইন্টিজার ওভারফ্লো কী?</p>
+</li>
+<li>
+<p>বাংলা নাম কি রাখতে পারবেন আপনার ভ্যারিয়েবলের?</p>
+</li>
+<li>
+<p><code>continue</code> এর ব্যবহার কোথায় এবং কিভাবে হতে পারে?</p>
+</li>
+<li>
+<p>স্টেটমেন্ট ও এক্সপ্রেশনের পার্থক্য কি? এই পোস্টে প্রাপ্ত সিন্ট্যাক্সগুলির মাঝে কোনগুলি স্টেটমেন্ট? এক্সপ্রেশন কে কে?</p>
+</li>
+<li>
+<p><code>null</code> ভ্যালু যদি <code>if</code> স্টেটমেন্টে দেন তাহলে কি <code>== null</code> দেয়া লাগবে? যদি না লাগে তাহলে কেন? শূন্য মানের ক্ষেত্রে তা লাগে কেন?</p>
+</li>
+<li>
+<p><code>switch</code> স্টেটমেন্টে <code>break</code> কেন লাগে? এমনতো না যে পরবর্তী কেইসের লজিক মিলে যাবে?</p>
+</li>
+<li>
+<p><code>if</code> না শিখে শুধু <code>switch</code> শিখে কি সমস্ত টাইপ প্রব্লেম সল্ভ করতে পারবেন? উল্টোটা কি সম্ভব?</p>
+</li>
+<li>
+<p><code>for</code> লুপে কি আপনি কোন অংশ খালি রাখতে পারবেন? যেমন: ইনিশিয়ালাইজার দিবেন না, অথবা চেঞ্জ করবেন না?</p>
+</li>
+<li>
+<p><code>while</code> ও <code>for</code> এর আসল পার্থক্য কি? এদের কোনো একটা কখনো ব্যবহার না করে কি আপনি প্রোগ্রামিং প্রব্লেম সল্ভ করতে পারবেন?</p>
+</li>
+<li>
+<p>কয়েকটা নাম্বার সর্টিং করেন, এই পর্যন্ত যা শিখেছেন তা দিয়ে, উল্টা ও সিধা দু ধরণের সর্টিংই করে দেখান।</p>
+</li>
+<li>
+<p>একটা লিস্টকে উল্টা করে দেখান এই পর্যন্ত যা শিখেছেন তা দিয়ে</p>
+</li>
 </ul>
-
-<h2 id="ট-পস">টিপস</h2>
-
+<h2 id="টপস">টিপস</h2>
 <ul>
-<li><p>হয়ত বুঝতেই পেরেছেন, সিন্ট্যাক্সীয় নৈকট্যের জন্য সি অথবা জাভা বই পড়েও আপনি ডার্ট সম্পর্কে জানতে পারবেন। ধরুন আপনি অনেক জটিল একটা এলগোরিদম ইমপ্লিমেন্ট করতে চাচ্ছেন ডার্ট দিয়ে তবে আটকে গিয়েছেন। ইন্টারনেটে কিন্তু হাজার খানেক রিসোর্সে পাবেন যা সি, জাভা অথবা সি শার্পে করা, সেগুলো থেকে কিন্তু সহজেই ডার্টে পরিণত করতে পারবেন আপনার কোডকে।</p></li>
-
-<li><p>এরর মেসেজ থেকে অনেক কিছুই শিক্ষণীয় আছে। যা-ই শিখবেন, ডার্টপ্যাড খুলে রাখবেন ব্রাউজারে এবং তা ট্রাই করবেন, যদি এরর পান, তাহলে প্রথমেই এররটিকে গুগল করে নিবেন, ফলো করতে করতে দেখবেন, যা শিখেছেন, ২/৩টি বই শেষ করেও শিখতে পার্বতেন না।</p></li>
-
-<li><p>সমস্যায় যদি না পরেন, অর্থাৎ যা টেস্ট করছেন তা যদি কারেক্ট হয়, তাহলে প্যারামিটার চেঞ্জ করে করে এরর পাওয়ার চেষ্টা করেন, এবং পূর্বের বুলেট পয়েন্ট ফলো করেন।</p></li>
-
-<li><p>&ldquo;What If&hellip;&rdquo; অনেক ভাল একটা উপায় ব্রেন-টিজ  করার, সিনট্যাক্স এর বিভিন্ন কম্বিনেশন ট্রাই করুন, অন্য (আপনার আগে থেকে জানা) ল্যাঙ্গুয়েজে এর সাথে তুলনা করে সে ল্যাঙ্গুয়েজে এর ফীচার নেই কেন তা নিয়ে গুগল করুন, কাহিনী পড়ুন, ভিডিও দেখুন।</p></li>
-
-<li><p>ডার্ট কনফারেন্সের সিলেক্ট করা দেখুন, ইউটিউব ঘাটলেই পাবেন।</p></li>
+<li>
+<p>হয়ত বুঝতেই পেরেছেন, সিন্ট্যাক্সীয় নৈকট্যের জন্য সি অথবা জাভা বই পড়েও আপনি ডার্ট সম্পর্কে জানতে পারবেন। ধরুন আপনি অনেক জটিল একটা এলগোরিদম ইমপ্লিমেন্ট করতে চাচ্ছেন ডার্ট দিয়ে তবে আটকে গিয়েছেন। ইন্টারনেটে কিন্তু হাজার খানেক রিসোর্সে পাবেন যা সি, জাভা অথবা সি শার্পে করা, সেগুলো থেকে কিন্তু সহজেই ডার্টে পরিণত করতে পারবেন আপনার কোডকে।</p>
+</li>
+<li>
+<p>এরর মেসেজ থেকে অনেক কিছুই শিক্ষণীয় আছে। যা-ই শিখবেন, ডার্টপ্যাড খুলে রাখবেন ব্রাউজারে এবং তা ট্রাই করবেন, যদি এরর পান, তাহলে প্রথমেই এররটিকে গুগল করে নিবেন, ফলো করতে করতে দেখবেন, যা শিখেছেন, ২/৩টি বই শেষ করেও শিখতে পার্বতেন না।</p>
+</li>
+<li>
+<p>সমস্যায় যদি না পরেন, অর্থাৎ যা টেস্ট করছেন তা যদি কারেক্ট হয়, তাহলে প্যারামিটার চেঞ্জ করে করে এরর পাওয়ার চেষ্টা করেন, এবং পূর্বের বুলেট পয়েন্ট ফলো করেন।</p>
+</li>
+<li>
+<p>&ldquo;What If&hellip;&rdquo; অনেক ভাল একটা উপায় ব্রেন-টিজ  করার, সিনট্যাক্স এর বিভিন্ন কম্বিনেশন ট্রাই করুন, অন্য (আপনার আগে থেকে জানা) ল্যাঙ্গুয়েজে এর সাথে তুলনা করে সে ল্যাঙ্গুয়েজে এর ফীচার নেই কেন তা নিয়ে গুগল করুন, কাহিনী পড়ুন, ভিডিও দেখুন।</p>
+</li>
+<li>
+<p>ডার্ট কনফারেন্সের সিলেক্ট করা দেখুন, ইউটিউব ঘাটলেই পাবেন।</p>
+</li>
 </ul>
-
 <p>আজকের জন্য এতটুকু এডভাইজ যথেষ্ট। তবে এগুলো কে যদি অভ্যাসে পরিণত করা যায় তাহলে যে কোন ল্যাঙ্গুয়েজের বেসিক আয়ত্ব করা ব্যাপার থাকবে না।</p>
-
 <p>আগামী পোস্ট হবে ফাংশন নিয়ে এবং সেটি আজকের মতো এতো বড় হবে না।</p>
-
 <p>তো আমরা এই পোস্টটি থেকে খুবই বেসিক সিন্ট্যাক্সের সাথে পরিচিত হলাম ডার্টের। আমরা শিখলাম ভ্যারিয়েবল ডিক্লেয়ার করা, টাইপ চিনলাম, জানলাম লুপিং ও ব্রানচিং নিয়ে।</p>
 
   </section>
@@ -574,10 +553,10 @@ var x = &quot;hello &quot; +
     
     <ul class="pager">
       
-      <li class="previous"><a href="//mafinar.ca/bn/posts/dart-101-3-pub/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      <li class="previous"><a href="//mafinar.ca/bn/posts/dart-101-5-functions/"><span aria-hidden="true">&larr;</span> Older</a></li>
       
       
-      <li class="next"><a href="//mafinar.ca/bn/posts/dart-101-5-functions/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next"><a href="//mafinar.ca/bn/posts/dart-101-3-pub/">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
     
@@ -668,7 +647,6 @@ var x = &quot;hello &quot; +
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dart.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script>
     hljs.initHighlightingOnLoad();
@@ -685,7 +663,7 @@ var x = &quot;hello &quot; +
   
   
 
-  <script src="//www.powr.io/powr.js?external-type=html"></script>
+  <script src="//www.powr.io/powr.js?external-type=html"></script> 
   
   <div class="powr-hit-counter" id="9fb2ce72_1531159982"></div>
   

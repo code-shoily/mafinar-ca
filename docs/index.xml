@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>learn ▷ play ▷ write</title>
@@ -18,9 +18,7 @@
       <pubDate>Mon, 16 Jan 2017 23:14:07 +0600</pubDate>
       
       <guid>//mafinar.ca/posts/day-3/</guid>
-      <description>Hello Again The past six month&amp;rsquo;s been hectic at work and it&amp;rsquo;s a pity I had little time for Elixir. And now version 1.4 is out, shame on me. This may not be the case anymore since I&amp;rsquo;m planning on hijacking some of Elixir greatness to my work mix.
-And that&amp;rsquo;s what I&amp;rsquo;m starting off after the hiatus&amp;hellip; Mix
-Tools! Every language comes encapsulated with a system of culture, tools and idioms.</description>
+      <description>OMG It&#39;s over six months and I&#39;m at day 3! Let&#39;s mix in some tooling today</description>
     </item>
     
     <item>
@@ -29,7 +27,7 @@ Tools! Every language comes encapsulated with a system of culture, tools and idi
       <pubDate>Tue, 05 Jul 2016 01:54:13 +0600</pubDate>
       
       <guid>//mafinar.ca/posts/day-2/</guid>
-      <description>Since last night I&amp;rsquo;ve been playing with some of Elixir&amp;rsquo;s data structures, mostly lists, tuples and maps. While I&amp;rsquo;m not new to these data structures, the way Elixir&amp;rsquo;s API is laid out is a little different and took awhile to get used to. The syntaxes for list and tuple seemed intuitive enough, [1, 2, [3, 4]] is a list, {91, 23} is a tuple. With maps it was a little different, %{&amp;quot;key&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;} or %{keyThatsAtom: &amp;quot;value&amp;quot;}.</description>
+      <description>Since last night I&#39;ve been playing with some of the data structures of Elixir, mostly lists, tuples and maps. While I&#39;m not new to these data structures, the way Elixir&#39;s API is laid out is a little different and took awhile to get used to</description>
     </item>
     
     <item>
@@ -38,7 +36,7 @@ Tools! Every language comes encapsulated with a system of culture, tools and idi
       <pubDate>Sat, 02 Jul 2016 01:54:13 +0600</pubDate>
       
       <guid>//mafinar.ca/posts/day-1/</guid>
-      <description>I did enough explorations the past few days and it&amp;rsquo;s time I emptied my cup and proceeded as a total newcomer to the language. Not a Python programmer trying to translate Python idioms into Elixir nor a Clojure programmer checking the language out, but starting with a clean slate and learning from zero. It is not an easy thing to do. Most of the time I would fight the urge to skip a line of the documentation with the assumption that &amp;ldquo;I already know&amp;rdquo;.</description>
+      <description>I did enough exploration the past few days and it&#39;s time I clean slate and proceed as someone learning Elixir. Not a Python programmer trying to translate Python idioms into Elixir or a Clojure programmer&#39;s view of the language, but starting with a clean slate and learning from zero.</description>
     </item>
     
     <item>
@@ -47,17 +45,7 @@ Tools! Every language comes encapsulated with a system of culture, tools and idi
       <pubDate>Mon, 27 Jun 2016 10:29:32 +0600</pubDate>
       
       <guid>//mafinar.ca/posts/day-0/</guid>
-      <description>Get, Set, Go!!! Obviously the first thing I need to do is, to unbox the goodies. For me, it&amp;rsquo;s just brew install elixir and that&amp;rsquo;s it. I will try out my Linux machine tomorrow. Moving on&amp;hellip;
-The Editor Vim&amp;rsquo;s been good to me for the past decade and I see no reason why I should not use it. A quick googling introduced me to alchemist.vim and vim-elixir. I&amp;rsquo;m guessing the former does autocompletion and stuff while the latter is for syntax highlighting.</description>
-    </item>
-    
-    <item>
-      <title>about.ex</title>
-      <link>//mafinar.ca/pages/about/</link>
-      <pubDate>Sun, 01 Jul 2018 21:42:43 -0400</pubDate>
-      
-      <guid>//mafinar.ca/pages/about/</guid>
-      <description>defmodule MafinarCa.About do defstruct name: &amp;quot;Mafinar Khan&amp;quot;, tagline: &amp;quot;Pythonista. Djangonaut. Alchemist&amp;quot;, date_of_birth: ~D[1982-12-07], location: %{ city: &amp;quot;Toronto&amp;quot;, province: &amp;quot;ON&amp;quot;, country: &amp;quot;Canada&amp;quot; }, work: %{ company_name: &amp;quot;Planswell&amp;quot;, designation: &amp;quot;Software Engineer&amp;quot;, email: &amp;quot;mkhan@planswell.com&amp;quot;, tags: ~w/elixir phoenix absinthe graphql react relay/ }, skills: %{ programming_languages: [ python: %{since: 2001, love: 9 / 10, score: 8 / 10}, elixir: %{since: 2016, love: 10 / 10, score: 7 / 10}, clojure: %{since: 2011, love: 9 / 10, score: 5 / 10}, javascript: %{since: 2002, love: 1 / 10, score: 6 / 10}, golang: %{since: 2017, love: 5 / 10, score: 6 / 10}, java: %{since: 2001, love: 7 / 10, score: 7 / 10} ], frameworks: %{ django: %{since: 2009, love: 9 / 10, score: 8 / 10}, phoenix: %{since: 2018, love: 9 / 10, score: 5 / 10}, react: %{since: 2015, love: 3 / 10, score: 6 / 10}, mobx: %{since: 2015, love: 5 / 10, score: 6 / 10}, vue: %{since: 2016, love: 1 / 10, score: 6 / 10} }, databases: %{ postgres: %{since: 2002, love: 10 / 10, score: 6 / 10} }, others: %{ functional_programming: %{ since: 2003, love: 10 / 10, score: 7 / 10, continue?</description>
+      <description>Let&#39;s install this thing and do some explorations. This is a totally random, unplanned, whatever-may-come-into-your-mind post where I just query syntactic constructs and map it with Elixir&#39;s. Going to be full of misinformations and bloopers, I assume</description>
     </item>
     
   </channel>

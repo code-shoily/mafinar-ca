@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Repl on learn ▷ play ▷ write</title>
+    <title>repl on learn ▷ play ▷ write</title>
     <link>//mafinar.ca/tags/repl/</link>
-    <description>Recent content in Repl on learn ▷ play ▷ write</description>
+    <description>Recent content in repl on learn ▷ play ▷ write</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
@@ -18,8 +18,7 @@
       <pubDate>Mon, 27 Jun 2016 10:29:32 +0600</pubDate>
       
       <guid>//mafinar.ca/posts/day-0/</guid>
-      <description>Get, Set, Go!!! Obviously the first thing I need to do is, to unbox the goodies. For me, it&amp;rsquo;s just brew install elixir and that&amp;rsquo;s it. I will try out my Linux machine tomorrow. Moving on&amp;hellip;
-The Editor Vim&amp;rsquo;s been good to me for the past decade and I see no reason why I should not use it. A quick googling introduced me to alchemist.vim and vim-elixir. I&amp;rsquo;m guessing the former does autocompletion and stuff while the latter is for syntax highlighting.</description>
+      <description>Let&#39;s install this thing and do some explorations. This is a totally random, unplanned, whatever-may-come-into-your-mind post where I just query syntactic constructs and map it with Elixir&#39;s. Going to be full of misinformations and bloopers, I assume</description>
     </item>
     
   </channel>

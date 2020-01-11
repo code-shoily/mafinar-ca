@@ -9,7 +9,7 @@
  
   <meta property="og:site_name" content="learn ▷ play ▷ write" />
   <meta property="og:url" content="//mafinar.ca/posts/day-0/" />
-  <meta property="og:image" content="//mafinar.ca/images/logo.png" />
+  <meta property="og:image" content="http://mafinar.ca/images/logo.png" />
   
   
   <meta property="og:type" content="article" />
@@ -170,196 +170,144 @@
     </div>
   </header>
   <section>
-    
-
-<h2 id="get-set-go">Get, Set, Go!!!</h2>
-
-<p>Obviously the first thing I need to do is, to unbox the goodies. For me, it&rsquo;s just <code>brew install elixir</code> and that&rsquo;s it. I will try out my Linux machine tomorrow. Moving on&hellip;</p>
-
+    <h2 id="get-set-go">Get, Set, Go!!!</h2>
+<p>Obviously the first thing I need to do is, to unbox the goodies. For me, it's just <code>brew install elixir</code> and that's it. I will try out my Linux machine tomorrow. Moving on&hellip;</p>
 <h2 id="the-editor">The Editor</h2>
-
-<p>Vim&rsquo;s been good to me for the past decade and I see no reason why I should not use it. A quick googling introduced me to <a href="https://github.com/slashmili/alchemist.vim">alchemist.vim</a> and <a href="https://github.com/elixir-lang/vim-elixir">vim-elixir</a>. I&rsquo;m guessing the former does autocompletion and stuff while the latter is for syntax highlighting.</p>
-
-<p>I&rsquo;m also liking Visual Studio Code a lot these days so might as well go and set it up too. I think the command I&rsquo;m looking for is <code>ext install vscode-elixir</code>. Done. Though I don&rsquo;t think I&rsquo;ll be using the editor much today.</p>
-
+<p>Vim's been good to me for the past decade and I see no reason why I should not use it. A quick googling introduced me to <a href="https://github.com/slashmili/alchemist.vim">alchemist.vim</a> and <a href="https://github.com/elixir-lang/vim-elixir">vim-elixir</a>. I'm guessing the former does autocompletion and stuff while the latter is for syntax highlighting.</p>
+<p>I'm also liking Visual Studio Code a lot these days so might as well go and set it up too. I think the command I'm looking for is <code>ext install vscode-elixir</code>. Done. Though I don't think I'll be using the editor much today.</p>
 <h2 id="the-shell">The Shell</h2>
-
-<p>Here&rsquo;s the fun part. I like languages with REPLs, and those that encourage the use of it by giving some nice helpers built-in. After firing up the <code>iex</code> command, it seems to me that Elixir has awesome support for it. Just go ahead and try typing <code>h()</code> in the shell and you&rsquo;ll see what I mean.</p>
-
-<p>One thing I noticed is the naming of the form <code>xxx/n</code> (i.e. <code>pwd/0</code>, <code>r/1</code>). A quick googling later, I see it&rsquo;s a function/arity pair Erlang guys use. <strong>Does that mean no variadic argument for Elixir?</strong></p>
-
-<p>Anyway, one of the things we Pythonistas are used to is the <code>help()</code> and <code>dir()</code> functions. Is there a way to do it in Elixir? The <code>h/0</code> and <code>h/1</code> are your friends for the former, and <em>dot(.) + TAB</em> for the latter. So, if I do a <code>h(List)</code> (or <code>h List</code>) in the shell, then I&rsquo;d see good old documentation of <code>List</code>. Parentheses are optional for function calls, a little Ruby envy I always had. Awesome! But I still need to explore if I can get a list of methods of a particular module (That&rsquo;s what they call it?) like Python does with <code>dir()</code>. I can get it by <code>&lt;module&gt;.__info__(:functions)</code> expression. Let&rsquo;s try: <code>List.__info__(:functions)</code>. Like a charm.</p>
-
-<p>How do I get out? <code>CTRL+C</code> does it for Elixir shell. That&rsquo;s exit!</p>
-
+<p>Here's the fun part. I like languages with REPLs, and those that encourage the use of it by giving some nice helpers built-in. After firing up the <code>iex</code> command, it seems to me that Elixir has awesome support for it. Just go ahead and try typing <code>h()</code> in the shell and you'll see what I mean.</p>
+<p>One thing I noticed is the naming of the form <code>xxx/n</code> (i.e. <code>pwd/0</code>, <code>r/1</code>). A quick googling later, I see it's a function/arity pair Erlang guys use. <strong>Does that mean no variadic argument for Elixir?</strong></p>
+<p>Anyway, one of the things we Pythonistas are used to is the <code>help()</code> and <code>dir()</code> functions. Is there a way to do it in Elixir? The <code>h/0</code> and <code>h/1</code> are your friends for the former, and <em>dot(.) + TAB</em> for the latter. So, if I do a <code>h(List)</code> (or <code>h List</code>) in the shell, then I'd see good old documentation of <code>List</code>. Parentheses are optional for function calls, a little Ruby envy I always had. Awesome! But I still need to explore if I can get a list of methods of a particular module (That's what they call it?) like Python does with <code>dir()</code>. I can get it by <code>&lt;module&gt;.__info__(:functions)</code> expression. Let's try: <code>List.__info__(:functions)</code>. Like a charm.</p>
+<p>How do I get out? <code>CTRL+C</code> does it for Elixir shell. That's exit!</p>
 <h2 id="exploration">Exploration</h2>
+<p>This is where I fire up the shell and start playing. The first thing I need to see is how I get to assign stuff. That's easy, just do a <code>variable_name = value</code>. No <code>let</code>, <code>var</code>, <code>val</code> etc. Since Elixir is a functional programming language, the first thing I'd look for is, well, functions? Let's see,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">odd? <span style="color:#f92672">=</span> fn(n) <span style="color:#f92672">-&gt;</span> rem(n, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> end
+even? <span style="color:#f92672">=</span> fn n <span style="color:#f92672">-&gt;</span> not odd?<span style="color:#f92672">.</span>(n) end
 
-<p>This is where I fire up the shell and start playing. The first thing I need to see is how I get to assign stuff. That&rsquo;s easy, just do a <code>variable_name = value</code>. No <code>let</code>, <code>var</code>, <code>val</code> etc. Since Elixir is a functional programming language, the first thing I&rsquo;d look for is, well, functions? Let&rsquo;s see,</p>
-
-<pre><code class="language-elixir">odd? = fn(n) -&gt; rem(n, 2) == 1 end
-even? = fn n -&gt; not odd?.(n) end
-
-IO.puts odd?.(11) #=&gt; true
-IO.puts even?.(11) #=&gt; false
-</code></pre>
-
-<p>Despite knowing it, I did end up calling the function as <code>odd?(11)</code>. It seems that Elixir anonymous functions need a <code>.()</code> for the arguments to be applied. True and False are just true/false. There&rsquo;s a convenient shortcut for it too:</p>
-
-<pre><code class="language-elixir">odd? = &amp;(rem(&amp;1, 2) == 1)
-event? = &amp;(not odd?.(&amp;1))
-right_triangle? = &amp;(&amp;1*&amp;1 == &amp;2*&amp;2 + &amp;3*&amp;3)
-</code></pre>
-
-<p>Sort of like Clojure&rsquo;s <code>#(odd? %1)</code>. Convenient. But how do I make stuff that I can call without the parenthesis? Define a named function inside a module:</p>
-
-<pre><code class="language-elixir">defmodule OddEven do
+<span style="color:#a6e22e">IO</span><span style="color:#f92672">.</span>puts odd?<span style="color:#f92672">.</span>(<span style="color:#ae81ff">11</span>) <span style="color:#75715e">#=&gt; true</span>
+<span style="color:#a6e22e">IO</span><span style="color:#f92672">.</span>puts even?<span style="color:#f92672">.</span>(<span style="color:#ae81ff">11</span>) <span style="color:#75715e">#=&gt; false</span>
+</code></pre></div><p>Despite knowing it, I did end up calling the function as <code>odd?(11)</code>. It seems that Elixir anonymous functions need a <code>.()</code> for the arguments to be applied. True and False are just true/false. There's a convenient shortcut for it too:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">odd? <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(rem(&amp;1, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>)
+event? <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(not odd?<span style="color:#f92672">.</span>(&amp;1))
+right_triangle? <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>(&amp;1<span style="color:#f92672">*</span>&amp;1 <span style="color:#f92672">==</span> &amp;2<span style="color:#f92672">*</span>&amp;2 <span style="color:#f92672">+</span> &amp;3<span style="color:#f92672">*</span>&amp;3)
+</code></pre></div><p>Sort of like Clojure's <code>#(odd? %1)</code>. Convenient. But how do I make stuff that I can call without the parenthesis? Define a named function inside a module:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">OddEven</span> do
     def odd? n do
-        rem(n, 2) == 1
+        rem(n, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
     end
 
     def even? n do
         not odd? n
     end
 end
-</code></pre>
-
-<p>Oh, and comments begin <code># with a hash</code></p>
-
-<p>It is a common syntax pattern of Elixir to have constructs like <code>&lt;something&gt; &lt;expression&gt; do &lt;body&gt; end</code> it seems. Let&rsquo;s take a look at <code>if</code>:</p>
-
-<pre><code class="language-elixir">defmodule LeapYear do
+</code></pre></div><p>Oh, and comments begin <code># with a hash</code></p>
+<p>It is a common syntax pattern of Elixir to have constructs like <code>&lt;something&gt; &lt;expression&gt; do &lt;body&gt; end</code> it seems. Let's take a look at <code>if</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">LeapYear</span> do
     def leap_year? year do
-        if rem(n, 400) == 0 do
+        if rem(n, <span style="color:#ae81ff">400</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> do
             return true
         end
-        if rem(n, 100) == 0 do
+        if rem(n, <span style="color:#ae81ff">100</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> do
             return false
         end
-        if rem(n, 4) == 0 do
+        if rem(n, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> do
             return true
         end
 
         false
     end
 end
-</code></pre>
-
-<p>See what I mean? But Elixir is a very pattern-happy language, so there&rsquo;s another way of doing it:</p>
-
-<pre><code class="language-elixir">defmodule LeapYear do
-    def leap_year?(year) when rem(year, 400) == 0 do
+</code></pre></div><p>See what I mean? But Elixir is a very pattern-happy language, so there's another way of doing it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">LeapYear</span> do
+    def leap_year?(year) when rem(year, <span style="color:#ae81ff">400</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> do
         true
     end
-    def leap_year?(year) when rem(year, 100) == 0 do
+    def leap_year?(year) when rem(year, <span style="color:#ae81ff">100</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> do
         false
     end
-    def leap_year?(year) when rem(year, 4) == 0 do
+    def leap_year?(year) when rem(year, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> do
         true
     end
     def leap_year? year do
         false
     end
 end
-</code></pre>
-
-<p>It&rsquo;s like those piecewise defined functions we did at school.</p>
-
-<p>We skimmed <code>conditions</code>, let&rsquo;s <code>loop</code>. I didn&rsquo;t see any C-style <code>for</code> equivalent yet. And I&rsquo;m not supposed to since Elixir doesn&rsquo;t mutate things. Instead I get recursion:</p>
-
-<pre><code class="language-elixir">defmodule Fibonacci do
+</code></pre></div><p>It's like those piecewise defined functions we did at school.</p>
+<p>We skimmed <code>conditions</code>, let's <code>loop</code>. I didn't see any C-style <code>for</code> equivalent yet. And I'm not supposed to since Elixir doesn't mutate things. Instead I get recursion:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Fibonacci</span> do
     def compute n do
-        if n &lt;= 1 do
+        if n <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span> do
             n
         else
-            compute(n - 1) + compute(n - 2)
+            compute(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> compute(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>)
         end
     end
 
     def range n do
-        for i &lt;- 1..n do
+        for i <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>n do
             compute(i)
         end
     end
 end
-</code></pre>
-
-<p>So we have a <code>foreach</code>-ish construct. It&rsquo;s called comprehension and is better viewed as <code>for i &lt;- &lt;range&gt; do: ...</code>. The <code>something do body end</code>-s have a short form of <code>something, do: ...</code> it seems. And instead of the <code>if</code> as base case in <code>compute</code>, could we instead use that piecewise defined thingy?</p>
-
-<pre><code class="language-elixir">defmodule Fibonacci do
-    def compute(n) when n &lt;= 1 do
+</code></pre></div><p>So we have a <code>foreach</code>-ish construct. It's called comprehension and is better viewed as <code>for i &lt;- &lt;range&gt; do: ...</code>. The <code>something do body end</code>-s have a short form of <code>something, do: ...</code> it seems. And instead of the <code>if</code> as base case in <code>compute</code>, could we instead use that piecewise defined thingy?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">defmodule <span style="color:#a6e22e">Fibonacci</span> do
+    def compute(n) when n <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span> do
         n
     end
 
     def compute(n) do
-        compute(n - 1) + compute(n - 2)
+        compute(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> compute(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>)
     end
 
     def range(n) do
-        for i &lt;- 1..n, do: compute i
+        for i <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>n, <span style="color:#e6db74">do</span>: compute i
     end
 end
-</code></pre>
+</code></pre></div><p>An interesting thing about for comprehensions is that you can put conditions in the comma separated values, or multiple iterations too, take for example, this one:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir"><span style="color:#75715e"># Can you tell me what this yields?</span>
+triplets <span style="color:#f92672">=</span> for a <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#ae81ff">10</span>, b <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#ae81ff">10</span>, c <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#ae81ff">10</span>, c<span style="color:#f92672">*</span>c <span style="color:#f92672">=</span> a<span style="color:#f92672">*</span>a <span style="color:#f92672">+</span> b<span style="color:#f92672">*</span>b, <span style="color:#e6db74">do</span>: {a, b, c}
+</code></pre></div><p>This brings us to composite types. It's safe to assume that List and Map types exist. And there's a Tuple too. There's more, obviously.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir"><span style="color:#75715e"># Lists</span>
+lost_numbers <span style="color:#f92672">=</span> [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">42</span>]
+<span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>at(lost_numbers, <span style="color:#ae81ff">0</span>) <span style="color:#75715e">#=&gt; 4</span>
+<span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>map(lost_numbers, fn n <span style="color:#f92672">-&gt;</span> n<span style="color:#f92672">*</span>n end) <span style="color:#75715e">#=&gt; Square each of lost numbers</span>
+<span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>reduce(lost_numbers, <span style="color:#f92672">&amp;</span>(&amp;1 <span style="color:#f92672">+</span> &amp;2)) <span style="color:#75715e">#=&gt; Find the sum of lost numbers</span>
+<span style="color:#ae81ff">42</span> in lost_numbers <span style="color:#75715e">#=&gt; true</span>
 
-<p>An interesting thing about for comprehensions is that you can put conditions in the comma separated values, or multiple iterations too, take for example, this one:</p>
-
-<pre><code class="language-elixir"># Can you tell me what this yields?
-triplets = for a &lt;- 1..10, b &lt;- 1..10, c &lt;- 1..10, c*c = a*a + b*b, do: {a, b, c}
-</code></pre>
-
-<p>This brings us to composite types. It&rsquo;s safe to assume that List and Map types exist. And there&rsquo;s a Tuple too. There&rsquo;s more, obviously.</p>
-
-<pre><code class="language-elixir"># Lists
-lost_numbers = [4, 8, 15, 16, 23, 42]
-Enum.at(lost_numbers, 0) #=&gt; 4
-Enum.map(lost_numbers, fn n -&gt; n*n end) #=&gt; Square each of lost numbers
-Enum.reduce(lost_numbers, &amp;(&amp;1 + &amp;2)) #=&gt; Find the sum of lost numbers
-42 in lost_numbers #=&gt; true
-
-# MAPS
-lost_candidates = %{
-    4 =&gt; &quot;Locke&quot;,
-    8 =&gt; &quot;Hugo&quot;,
-    15 =&gt; &quot;Sawyer&quot;,
-    16 =&gt; &quot;Sayid&quot;,
-    23 =&gt; &quot;Jack&quot;,
-    42 =&gt; &quot;Kwon&quot;,
+<span style="color:#75715e"># MAPS</span>
+lost_candidates <span style="color:#f92672">=</span> %{
+    <span style="color:#ae81ff">4</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Locke</span><span style="color:#e6db74">&#34;</span>,
+    <span style="color:#ae81ff">8</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hugo</span><span style="color:#e6db74">&#34;</span>,
+    <span style="color:#ae81ff">15</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Sawyer</span><span style="color:#e6db74">&#34;</span>,
+    <span style="color:#ae81ff">16</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Sayid</span><span style="color:#e6db74">&#34;</span>,
+    <span style="color:#ae81ff">23</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Jack</span><span style="color:#e6db74">&#34;</span>,
+    <span style="color:#ae81ff">42</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Kwon</span><span style="color:#e6db74">&#34;</span>,
 }
 
-Dict.keys(lost_candidates) == lost_numbers #=&gt; true
-Dict.values(lost_candidates) #=&gt; [&quot;Locke&quot;, &quot;Hugo&quot;, &quot;Sawyer&quot;, &quot;Sayid&quot;, &quot;Jack&quot;, &quot;Kwon&quot;]
-Dict.put(lost_candidates, 47, &quot;Mafinar&quot;) #=&gt; Returns a new Dict with me with number 47
-Dict.get(lost_candidates, 4) #=&gt; &quot;Locke&quot;
-lost_candidates[23] #=&gt; &quot;Jack&quot;
-</code></pre>
+<span style="color:#a6e22e">Dict</span><span style="color:#f92672">.</span>keys(lost_candidates) <span style="color:#f92672">==</span> lost_numbers <span style="color:#75715e">#=&gt; true</span>
+<span style="color:#a6e22e">Dict</span><span style="color:#f92672">.</span>values(lost_candidates) <span style="color:#75715e">#=&gt; [&#34;Locke&#34;, &#34;Hugo&#34;, &#34;Sawyer&#34;, &#34;Sayid&#34;, &#34;Jack&#34;, &#34;Kwon&#34;]</span>
+<span style="color:#a6e22e">Dict</span><span style="color:#f92672">.</span>put(lost_candidates, <span style="color:#ae81ff">47</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Mafinar</span><span style="color:#e6db74">&#34;</span>) <span style="color:#75715e">#=&gt; Returns a new Dict with me with number 47</span>
+<span style="color:#a6e22e">Dict</span><span style="color:#f92672">.</span>get(lost_candidates, <span style="color:#ae81ff">4</span>) <span style="color:#75715e">#=&gt; &#34;Locke&#34;</span>
+lost_candidates[<span style="color:#ae81ff">23</span>] <span style="color:#75715e">#=&gt; &#34;Jack&#34;</span>
+</code></pre></div><p>Looks to me like Elixir calls module functions a lot. It's not <code>lost_candidates.keys</code> but <code>Dict.keys lost_candidates</code>, not <code>lost_numbers.at(0)</code> but <code>Enum.at lost_numbers, 0</code>. The first argument being lost_numbers can have an important impact:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir"><span style="color:#75715e"># Square the lost_numbers, then find the odd ones, then spit out the product.</span>
+square <span style="color:#f92672">=</span> fn n <span style="color:#f92672">-&gt;</span> n<span style="color:#f92672">*</span>n end
+odd? <span style="color:#f92672">=</span> fn n <span style="color:#f92672">-&gt;</span> rem(n, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> end
+product <span style="color:#f92672">=</span> fn a, b <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">*</span> b end
 
-<p>Looks to me like Elixir calls module functions a lot. It&rsquo;s not <code>lost_candidates.keys</code> but <code>Dict.keys lost_candidates</code>, not <code>lost_numbers.at(0)</code> but <code>Enum.at lost_numbers, 0</code>. The first argument being lost_numbers can have an important impact:</p>
+<span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>reduce(<span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>filter(<span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>map(lost_numbers, square), odd?), product)
+</code></pre></div><p>So, the <code>map</code> gives out the squared numbers, and feeds it as the first argument to the <code>filter</code>, which in turn spits the odd numbers and becomes the first argument of the <code>reduce</code> function. Instead, why not do a pipe? Remember those UNIX <code>|</code> constructs?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">square <span style="color:#f92672">=</span> fn n <span style="color:#f92672">-&gt;</span> n<span style="color:#f92672">*</span>n end
+odd? <span style="color:#f92672">=</span> fn n <span style="color:#f92672">-&gt;</span> rem(n, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> end
+product <span style="color:#f92672">=</span> fn a, b <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">*</span> b end
 
-<pre><code class="language-elixir"># Square the lost_numbers, then find the odd ones, then spit out the product.
-square = fn n -&gt; n*n end
-odd? = fn n -&gt; rem(n, 2) == 1 end
-product = fn a, b -&gt; a * b end
-
-Enum.reduce(Enum.filter(Enum.map(lost_numbers, square), odd?), product)
-</code></pre>
-
-<p>So, the <code>map</code> gives out the squared numbers, and feeds it as the first argument to the <code>filter</code>, which in turn spits the odd numbers and becomes the first argument of the <code>reduce</code> function. Instead, why not do a pipe? Remember those UNIX <code>|</code> constructs?</p>
-
-<pre><code class="language-elixir">square = fn n -&gt; n*n end
-odd? = fn n -&gt; rem(n, 2) == 1 end
-product = fn a, b -&gt; a * b end
-
-lost_numbers |&gt; Enum.map(square) |&gt; Enum.filter(odd?) |&gt; Enum.reduce(product)
-</code></pre>
-
-<p>I have always loved Clojure&rsquo;s threading macros. Looks like Elixir has one too. And it looks awesome with Firacode ligatures!</p>
-
-<p>I must admit, I was a little confused with some of the Map examples I saw, <code>%{ 2 =&gt; &quot;Two&quot;}</code> works but <code>%{2: &quot;Two&quot;}</code> spits out an error. And what&rsquo;s with this <code>[:x 25, :y 30]</code> thingy? Looks like I need to inspect the APIs better and get a good understanding of Atoms and Tuples.</p>
-
+lost_numbers <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>map(square) <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>filter(odd?) <span style="color:#f92672">|&gt;</span> <span style="color:#a6e22e">Enum</span><span style="color:#f92672">.</span>reduce(product)
+</code></pre></div><p>I have always loved Clojure's threading macros. Looks like Elixir has one too. And it looks awesome with Firacode ligatures!</p>
+<p>I must admit, I was a little confused with some of the Map examples I saw, <code>%{ 2 =&gt; &quot;Two&quot;}</code> works but <code>%{2: &quot;Two&quot;}</code> spits out an error. And what's with this <code>[:x 25, :y 30]</code> thingy? Looks like I need to inspect the APIs better and get a good understanding of Atoms and Tuples.</p>
 <h2 id="okay-then">Okay then</h2>
-
-<p>This was just random scribbles on my part, hence the <em>day 0</em> bit. I just wanted to do a quick run down on Elixir and see how things fall and write-up whatever came out. And I must say, Elixir seems to have potential of being a super fun language. So far, it seemed braing and sanity friendly to me. And I find the code beautiful too. I&rsquo;m glad I took it.</p>
-
-<p>I am tired right now. That&rsquo;s all exploration for me that I&rsquo;d write about. I&rsquo;ll just go and explore more (i.e string, structs etc) on my own and share it tomorrow?</p>
+<p>This was just random scribbles on my part, hence the <em>day 0</em> bit. I just wanted to do a quick run down on Elixir and see how things fall and write-up whatever came out. And I must say, Elixir seems to have potential of being a super fun language. So far, it seemed braing and sanity friendly to me. And I find the code beautiful too. I'm glad I took it.</p>
+<p>I am tired right now. That's all exploration for me that I'd write about. I'll just go and explore more (i.e string, structs etc) on my own and share it tomorrow?</p>
 
   </section>
   <footer>
@@ -370,10 +318,10 @@ lost_numbers |&gt; Enum.map(square) |&gt; Enum.filter(odd?) |&gt; Enum.reduce(pr
     
     <ul class="pager">
       
-      <li class="previous"><a href="//mafinar.ca/pages/about/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      <li class="previous"><a href="//mafinar.ca/posts/day-1/"><span aria-hidden="true">&larr;</span> Older</a></li>
       
       
-      <li class="next"><a href="//mafinar.ca/posts/day-1/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
     
@@ -464,7 +412,6 @@ lost_numbers |&gt; Enum.map(square) |&gt; Enum.filter(odd?) |&gt; Enum.reduce(pr
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dart.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script>
     hljs.initHighlightingOnLoad();
@@ -481,7 +428,7 @@ lost_numbers |&gt; Enum.map(square) |&gt; Enum.filter(odd?) |&gt; Enum.reduce(pr
   
   
 
-  <script src="//www.powr.io/powr.js?external-type=html"></script>
+  <script src="//www.powr.io/powr.js?external-type=html"></script> 
   
   <div class="powr-hit-counter" id="9fb2ce72_1531159982"></div>
   

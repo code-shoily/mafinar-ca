@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on learn ▷ play ▷ write</title>
@@ -7,31 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 Mafinar K.</copyright>
-    <lastBuildDate>Fri, 01 Jun 2018 02:00:13 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 16 Dec 2018 13:24:01 -0500</lastBuildDate>
     
 	<atom:link href="//mafinar.ca/bn/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Admin</title>
-      <link>//mafinar.ca/bn/tags/admin/</link>
-      <pubDate>Fri, 01 Jun 2018 02:00:13 -0400</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/admin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Control Flow</title>
-      <link>//mafinar.ca/bn/tags/control-flow/</link>
-      <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/control-flow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dart 101</title>
+      <title>dart-101</title>
       <link>//mafinar.ca/bn/tags/dart-101/</link>
       <pubDate>Sun, 16 Dec 2018 13:24:01 -0500</pubDate>
       
@@ -40,16 +22,25 @@
     </item>
     
     <item>
-      <title>Django</title>
-      <link>//mafinar.ca/bn/tags/django/</link>
-      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
+      <title>oop</title>
+      <link>//mafinar.ca/bn/tags/oop/</link>
+      <pubDate>Sun, 16 Dec 2018 13:24:01 -0500</pubDate>
       
-      <guid>//mafinar.ca/bn/tags/django/</guid>
+      <guid>//mafinar.ca/bn/tags/oop/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Function</title>
+      <title>series</title>
+      <link>//mafinar.ca/bn/tags/series/</link>
+      <pubDate>Sun, 16 Dec 2018 13:24:01 -0500</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>function</title>
       <link>//mafinar.ca/bn/tags/function/</link>
       <pubDate>Wed, 12 Dec 2018 13:23:53 -0500</pubDate>
       
@@ -58,20 +49,65 @@
     </item>
     
     <item>
-      <title>Graphql</title>
-      <link>//mafinar.ca/bn/tags/graphql/</link>
-      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
+      <title>control-flow</title>
+      <link>//mafinar.ca/bn/tags/control-flow/</link>
+      <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
       
-      <guid>//mafinar.ca/bn/tags/graphql/</guid>
+      <guid>//mafinar.ca/bn/tags/control-flow/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Introduction</title>
+      <title>types</title>
+      <link>//mafinar.ca/bn/tags/types/</link>
+      <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/types/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>project-structure</title>
+      <link>//mafinar.ca/bn/tags/project-structure/</link>
+      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/project-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pub</title>
+      <link>//mafinar.ca/bn/tags/pub/</link>
+      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/pub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>setup</title>
+      <link>//mafinar.ca/bn/tags/setup/</link>
+      <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>introduction</title>
       <link>//mafinar.ca/bn/tags/introduction/</link>
       <pubDate>Thu, 06 Dec 2018 21:24:50 -0500</pubDate>
       
       <guid>//mafinar.ca/bn/tags/introduction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meta</title>
+      <link>//mafinar.ca/bn/tags/meta/</link>
+      <pubDate>Thu, 06 Dec 2018 21:24:50 -0500</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/meta/</guid>
       <description></description>
     </item>
     
@@ -81,15 +117,6 @@
       <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
       
       <guid>//mafinar.ca/bn/tags/jupyter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meta</title>
-      <link>//mafinar.ca/bn/tags/meta/</link>
-      <pubDate>Thu, 06 Dec 2018 21:24:50 -0500</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/meta/</guid>
       <description></description>
     </item>
     
@@ -112,83 +139,11 @@
     </item>
     
     <item>
-      <title>Oop</title>
-      <link>//mafinar.ca/bn/tags/oop/</link>
-      <pubDate>Sun, 16 Dec 2018 13:24:01 -0500</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/oop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Orm</title>
-      <link>//mafinar.ca/bn/tags/orm/</link>
-      <pubDate>Fri, 01 Jun 2018 02:00:13 -0400</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/orm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Pandas</title>
       <link>//mafinar.ca/bn/tags/pandas/</link>
       <pubDate>Mon, 02 Jul 2018 15:39:06 -0400</pubDate>
       
       <guid>//mafinar.ca/bn/tags/pandas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project Structure</title>
-      <link>//mafinar.ca/bn/tags/project-structure/</link>
-      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/project-structure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pub</title>
-      <link>//mafinar.ca/bn/tags/pub/</link>
-      <pubDate>Sat, 08 Dec 2018 13:30:57 -0500</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/pub/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>//mafinar.ca/bn/tags/python/</link>
-      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Series</title>
-      <link>//mafinar.ca/bn/tags/series/</link>
-      <pubDate>Sun, 16 Dec 2018 13:24:01 -0500</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/series/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Setup</title>
-      <link>//mafinar.ca/bn/tags/setup/</link>
-      <pubDate>Sat, 08 Dec 2018 09:00:22 -0500</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/setup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Types</title>
-      <link>//mafinar.ca/bn/tags/types/</link>
-      <pubDate>Sun, 09 Dec 2018 13:23:36 -0500</pubDate>
-      
-      <guid>//mafinar.ca/bn/tags/types/</guid>
       <description></description>
     </item>
     
@@ -207,6 +162,51 @@
       <pubDate>Tue, 12 Jun 2018 01:12:19 -0400</pubDate>
       
       <guid>//mafinar.ca/bn/tags/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>django</title>
+      <link>//mafinar.ca/bn/tags/django/</link>
+      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>graphql</title>
+      <link>//mafinar.ca/bn/tags/graphql/</link>
+      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>//mafinar.ca/bn/tags/python/</link>
+      <pubDate>Sat, 02 Jun 2018 01:23:42 -0400</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>admin</title>
+      <link>//mafinar.ca/bn/tags/admin/</link>
+      <pubDate>Fri, 01 Jun 2018 02:00:13 -0400</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ORM</title>
+      <link>//mafinar.ca/bn/tags/orm/</link>
+      <pubDate>Fri, 01 Jun 2018 02:00:13 -0400</pubDate>
+      
+      <guid>//mafinar.ca/bn/tags/orm/</guid>
       <description></description>
     </item>
     

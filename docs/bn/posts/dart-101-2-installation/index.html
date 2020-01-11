@@ -9,7 +9,7 @@
  
   <meta property="og:site_name" content="learn ▷ play ▷ write" />
   <meta property="og:url" content="//mafinar.ca/bn/posts/dart-101-2-installation/" />
-  <meta property="og:image" content="//mafinar.ca/images/logo.png" />
+  <meta property="og:image" content="http://mafinar.ca/images/logo.png" />
   
   
   <meta property="og:type" content="article" />
@@ -171,52 +171,31 @@
   </header>
   <section>
     <p>আজকের পোস্ট হবে ডার্ট ইনস্টলেশন নিয়ে। <a href="https://www.dartlang.org/install">ডার্ট ইনস্টলেশন পেজে</a> গেলে আমরা দেখতে পাব যে তিন ধরণের ইনস্টলেশনের কথা বলা হয়েছে। আমরা যেহেতু সামনের কিছুদিন ভেনিলা ডার্ট প্রোগ্রামিং নিয়ে আলোচনা করব তাই ডার্ট SDK ইনস্টলেশন এই পোস্টের স্কোপভুক্ত।</p>
-
 <p>যদি আপনি এই মুহূর্তে ইনস্টল করতে না চান তাহলে <a href="https://dartpad.dartlang.org/">ডার্টপ্যাডে</a> কোড টাইপ করে দেখতে পারেন যদিও তা খুবই ছোট স্ক্রিপ্ট টাইপ স্নিপেটের জন্য।</p>
-
 <p>এবার আসা যাক আসল কোথায়। SDK ইনস্টলেশন পেজ এ আপনার অপারেটিং সিস্টেমের জন্য ইন্স্টলেশন প্রক্রিয়া ফলো করলে সহজেই ডার্ট ইনস্টল করতে পারবেন। ডার্ট ইনস্টলেশন যদিও কঠিন কিছু না, তবে বেশ কিছু ছোট বিষয় রয়েছে যা, বলে রাখলে হয়ত আপনার ডার্ট নিয়ে প্রাথমিক অভিজ্ঞতা ভাল হতে পারে।</p>
-
 <p>১. অবশ্যই এনভায়রনমেন্ট ভ্যারিয়েবল সেট করে নিবেন ডার্ট এর জন্যে। অর্থাৎ কমান্ডলাইন থেকে যাতে ডার্ট প্রদত্ত কমান্ড রান করা যায়।
 ২. ডার্ট আমাদের বেশ কিছু কমান্ড টুল দিয়ে থাকে। আপাতত আমাদের প্রয়োজন হবে <code>pub</code> কমান্ডের।
 ৩. <code>pub</code> কমান্ড অনেকটা <code>yarn</code> কমান্ডের মত, পার্থক্য হল এটি কোর ল্যাঙ্গুয়েজে প্রদত্ত এবং এর জাতের কেবল একটাই এমন টুল  রয়েছে ডার্টে, ১০০০ টি নয়, এর মাধ্যমে আপনি সোর্স কোড এক্সেকিউট, ডিপেন্ডেন্সি ফেচিং, টেস্ট রান, এবং ডার্ট সংশ্লিষ্ট টুল ইনস্টল করতে পারবেন। এর সাইট (<a href="https://www.dartlang.org/tools/pub">https://www.dartlang.org/tools/pub</a>) থেকে আরো জানতে পারবেন।</p>
-
 <p>তো ডার্ট ইনস্টল করা হল, টেস্ট করা যাক এবার। আমরা একটি ফোল্ডার খুলি পছন্দসই কোন এক স্থানে (ভাল হবে যদি আমরা ডার্ট-১০১ এর সমস্ত টিউটোরিয়াল এবং অনুশীলনী একটা নির্দিষ্ট ফোল্ডার অর্গানিজশন (যেমন: <code>~/dart101/day_1/hello.dart</code>) মেইনটেইন করে সাজাই। এটা  একটা সাজেশান, বাধ্যতামূলক কিছু না। তো, আমাদের <code>hello.dart</code> ফাইল খুলি এবং সেখান লিখি-</p>
-
-<pre><code class="language-dart">main() {
-  print(&quot;Hello Dart-101&quot;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">main() {
+  print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello Dart-101</span><span style="color:#e6db74">&#34;</span>);
 }
-</code></pre>
-
-<p>এবার টার্মিনাল থেকে <code>cd</code> করে যে ফোল্ডারে <code>hello.dart</code> রয়েছে যেখানে যায় এবং <code>dart hello.dart</code> লিখি, যদি রান করে তাহলে একটা বড় কাজ সারলাম। রান না করলে দেখুন কি বলে, ওই মেসেজ টাইপ করে গুগুল সার্চ করে দেখেন অন্যদের সমাধান কি ছিল? অথবা ফেইসবুক গ্রূপে গিয়ে প্রশ্নক্ষেপণ করেন, যদিও ৯৯% চান্স রয়েছে যে তা রান করবেই।</p>
-
+</code></pre></div><p>এবার টার্মিনাল থেকে <code>cd</code> করে যে ফোল্ডারে <code>hello.dart</code> রয়েছে যেখানে যায় এবং <code>dart hello.dart</code> লিখি, যদি রান করে তাহলে একটা বড় কাজ সারলাম। রান না করলে দেখুন কি বলে, ওই মেসেজ টাইপ করে গুগুল সার্চ করে দেখেন অন্যদের সমাধান কি ছিল? অথবা ফেইসবুক গ্রূপে গিয়ে প্রশ্নক্ষেপণ করেন, যদিও ৯৯% চান্স রয়েছে যে তা রান করবেই।</p>
 <p>কিছু কথা পাইথন প্রোগ্রামারদের  জন্য-</p>
-
 <p>১. ডার্ট অফিসিয়ালি কোন REPL দেয় না। সব ফাইলে টাইপ করে করতে হবে
 ২. ফাইলকে রান করাতে হলে, রানাবল কোডকে <code>main</code> ফাংশনের অধীনস্ত করতে হবে, ফ্রি/ভাসমান কোড এররের সম্মুখীন করবে আপনাকে। অর্থাৎ <code>print(&quot;Helio!&quot;);</code>  ফাইলে ফেলে রাখলে চলবে না
 ৩. ডার্ট অনেকটা জাভা অথবা জাভাস্ক্রিপ্টের মত, তা এর ডিজাইন ডিসিশান। তবে এটি (ভার্সন ২ পরবর্তি) স্ট্যাটিক টাইপড, কিন্তু এর টাইপিং কিছুটা স্মার্ট, আপনি কোডে <code>void main</code> দিয়েও শুরু করতে পারতেন।</p>
-
 <p>যে কোন বড় প্রজেক্ট হয়ে দাঁড়ায় সোর্সকোড, কনফিগারেশন ফাইল, টেস্ট ডাটা, রিসোর্স ফাইল, মেনিফেস্ট ফাইল ইত্যাদির সমষ্টি। আমরা এই মুহূর্তে পারদর্শী যে কোন ডার্ট প্রোগ্রাম রান করতে <code>.dart</code> ফাইল রান করার মাধ্যমে। কাজেই তাত্ত্বিকভাবে, আমরা ১০/১২টি ডার্ট ফাইল, কিছু ইমেজ, ডিপেন্ডেন্সি লিস্ট ইত্যাদিকে ফোল্ডারে রেখে তাকে আমাদের প্রজেক্ট দাবি করে চালিয়ে যেতে পারি। কিন্তু এর মাঝে দুটি জিনিস বাধা হয়ে দাঁড়াবে- রিডেবিলিটি ও স্ট্যান্ডার্ডাইজেশন। কিছুদিন পরে আপনি নিজেই বিরক্ত হবেন অতি ফ্ল্যাট স্ট্রাকচার নিয়ে, আবার অন্যদিকে, দুদিন পরপর স্ট্রাকচার পাল্টাতে ইচ্ছা করবে, যেমন, কনফিগারেশন কি জ্যাংগোর মত ল্যাংগুয়েজ ফাইলে রাখব (যেমন: <code>settings.dart</code>) নাকি মেইভেনের মতো (খোদা নাখাস্তা) <code>XML</code>? সোর্সকোড কি <code>src</code> নাকি <code>lib</code>? এহেন ঝামেলাতে যদি কেউ আমাদের জন্য সিদ্ধান্ত নিয়ে রাখত তাহলে কতই না ভাল হতো, <code>pub</code> ঠিক তা-ই করে থাকে।</p>
-
 <p><code>pub</code> এর মাধ্যম্যে আপনি আপনার ডার্ট প্রজেক্টকে ফোল্ডার অর্গানাইজেশন থেকে শুরু করে ডিপেন্ডেন্সি ম্যানেজমেন্ট, কোড রান ইত্যাদি করতে পারবেন। তবে, এর কিছু নিজস্ব নিয়ম রয়েছে যা মেনে চললে ভাল হবে-</p>
-
 <p>১. <code>pub</code> কমান্ডকে বুঝতে হবে যে আপনি যে ফোল্ডারে রয়েছেন তা একটি <code>pub</code> বান্ধব প্রজেক্ট। এবং তা বোঝার উপায় হলো উক্ত ফোল্ডারে <code>pubspec.yaml</code> ফাইলের অস্তিত্ব। (<code>yaml</code> সম্পর্কে জানতে চাইলে <a href="https://yaml.org/">এর সাইটে</a> গিয়ে দেখুন, এটি একটা বেশ হিউমান রেডাবল ফরম্যাট (অন্তত ২/৩ লেভেল নেস্টিং পর্যন্ত) যা কনফিগারেশনের জন্য ভাল)। এই ফাইলটি তে রয়েছে আপনার প্রজেক্টের সেটাপ কনফিগারেশন। <a href="https://www.dartlang.org/tools/pub/pubspec">এই উদাহরণ</a> থেকে দেখতে পারবেন কেমন হয় <code>pubspec</code> ফাইল।</p>
-
 <p>২. আপনার সোর্স কোডকে <code>lib/</code>, রান করার সোর্সকোড তথা <code>main.dart</code> কে <code>bin/</code>, টেস্টকে <code>test/</code> ফোলডারে রাখা উচিৎ হবে।</p>
-
 <p>চলুন আমাদের খুদে ফাইলটিকে <code>pub</code> প্রজেক্টে পরিণত করি-</p>
-
 <p>১. প্রথমে একটা <code>hello/</code> নামক ফোল্ডার সৃষ্টি করা যাক।</p>
-
 <p>২. যেহেতু আমাদের একটাই ফাইল, এবং তা <code>main</code> ফাংশন ধারণ করে, কাজেই একে <code>hello/bin/</code> ফোল্ডারে রাখি।</p>
-
 <p>৩. এটি এখনো <code>pub</code> বান্ধব হয়নি, কারন <code>pubspec.yaml</code> ফোল্ডার নেই- অবস্থার পরিবর্তন করা যাক <code>hello/pubspec.yaml</code> সৃষ্টির মাধ্যমে।</p>
-
 <p>৪. <code>pubspec.yaml</code> কে খালি রাখলে চলবে না, অন্তত একটা নাম দেওয়া দরকার আমাদের প্রজেক্টের যা সে ফাইল থেকে <code>pub</code> কমান্ড পড়ে নেবে, ফাইলটিকে খুলে আমরা লিখি- <code>name: hello</code> এবং সেভ করি। (আরো অনেক কিছুই লিখা যেত কিন্তু সেটা আরেকদিনের স্কোপভুক্ত)</p>
-
 <p>উপরের ধাপ সম্পন্ন করার পর আমরা <code>cd</code> করে <code>hello</code> ফোল্ডারে যাই এবং টাইপ করি <code>pub run bin/main.dart</code> এবং দেখি কি হয়! হল কিছু?</p>
-
 <p>এই পোস্টার উদ্দেশ্য ছিল ইন্স্টলেশন এবং আপনি যদি এই পর্যন্ত এসে থাকেন সব বাধাবিঘ্ন পার করে তাহলে বুঝব উদ্দেশ্য সফল হয়েছে। আগামী পোস্টে থাকবে <code>pub</code> এর আরও কিছু তথ্য এবং আরেকটু সম্পূর্ণ একটা উদাহরণ।</p>
-
 <p>যদি কোন প্রশ্ন থাকে তাহলে ফেইসবুক গ্রুপে অথবা এইখানে কমেন্ট দিয়ে রাখুন। গুড লাক!</p>
 
   </section>
@@ -228,10 +207,10 @@
     
     <ul class="pager">
       
-      <li class="previous"><a href="//mafinar.ca/bn/posts/dart-101-1/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      <li class="previous"><a href="//mafinar.ca/bn/posts/dart-101-3-pub/"><span aria-hidden="true">&larr;</span> Older</a></li>
       
       
-      <li class="next"><a href="//mafinar.ca/bn/posts/dart-101-3-pub/">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      <li class="next"><a href="//mafinar.ca/bn/posts/dart-101-1/">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
     
@@ -322,7 +301,6 @@
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dart.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script>
     hljs.initHighlightingOnLoad();
@@ -339,7 +317,7 @@
   
   
 
-  <script src="//www.powr.io/powr.js?external-type=html"></script>
+  <script src="//www.powr.io/powr.js?external-type=html"></script> 
   
   <div class="powr-hit-counter" id="9fb2ce72_1531159982"></div>
   
